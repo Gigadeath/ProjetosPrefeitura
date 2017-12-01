@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3305848-4402-4D3E-9E32-CD967C879672}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OS_CodeFirst</RootNamespace>
+    <AssemblyName>OS_CodeFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>OS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.4.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.4.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.4.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\FuncionarioController.cs" />
+    <Compile Include="Controller\OSController.cs" />
+    <Compile Include="Controller\PrioridadeController.cs" />
+    <Compile Include="Controller\SistemaController.cs" />
+    <Compile Include="Controller\StatusController.cs" />
+    <Compile Include="Controller\StatusOSController.cs" />
+    <Compile Include="Controller\TipoServicoController.cs" />
+    <Compile Include="Controller\TotalServicoController.cs" />
+    <Compile Include="Controller\Validacao.cs" />
+    <Compile Include="Migrations\201711221322300_Initial.cs" />
+    <Compile Include="Migrations\201711221322300_Initial.Designer.cs">
+      <DependentUpon>201711221322300_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711221410052_Initialv2.cs" />
+    <Compile Include="Migrations\201711221410052_Initialv2.Designer.cs">
+      <DependentUpon>201711221410052_Initialv2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711241522382_Initialv3.cs" />
+    <Compile Include="Migrations\201711241522382_Initialv3.Designer.cs">
+      <DependentUpon>201711241522382_Initialv3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711241626373_Initialv4.cs" />
+    <Compile Include="Migrations\201711241626373_Initialv4.Designer.cs">
+      <DependentUpon>201711241626373_Initialv4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711241635270_Initialv5.cs" />
+    <Compile Include="Migrations\201711241635270_Initialv5.Designer.cs">
+      <DependentUpon>201711241635270_Initialv5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711241843102_Initialv6.cs" />
+    <Compile Include="Migrations\201711241843102_Initialv6.Designer.cs">
+      <DependentUpon>201711241843102_Initialv6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Status.cs" />
+    <Compile Include="Model\TipoServico.cs" />
+    <Compile Include="Model\TotalServico.cs" />
+    <Compile Include="ordemservicoDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ordemservicoDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ordemservicoDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ordemservicoDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="View\Alteracao\Alteracao_OS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alteracao\Alteracao_OS.Designer.cs">
+      <DependentUpon>Alteracao_OS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Alteracao\Alteracao_StatusOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alteracao\Alteracao_StatusOS.Designer.cs">
+      <DependentUpon>Alteracao_StatusOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Prioridade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Prioridade.Designer.cs">
+      <DependentUpon>Cadastro_Prioridade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_OS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_OS.Designer.cs">
+      <DependentUpon>Cadastro_OS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Funcionario.Designer.cs">
+      <DependentUpon>Cadastro_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Sistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Sistema.Designer.cs">
+      <DependentUpon>Cadastro_Sistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Status.Designer.cs">
+      <DependentUpon>Cadastro_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_TipoServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_TipoServico.Designer.cs">
+      <DependentUpon>Cadastro_TipoServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Status.Designer.cs">
+      <DependentUpon>Consulta_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Funcionario.Designer.cs">
+      <DependentUpon>Consulta_Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Prioridade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Prioridade.Designer.cs">
+      <DependentUpon>Consulta_Prioridade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Sistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_Sistema.Designer.cs">
+      <DependentUpon>Consulta_Sistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_StatusOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_StatusOS.Designer.cs">
+      <DependentUpon>Consulta_StatusOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_TipoServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_TipoServico.Designer.cs">
+      <DependentUpon>Consulta_TipoServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_OS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta\Consulta_OS.Designer.cs">
+      <DependentUpon>Consulta_OS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Consulta_TotalServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Consulta_TotalServico.Designer.cs">
+      <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\ControleOS.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\OS.cs" />
+    <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Model\Prioridade.cs" />
+    <Compile Include="Model\Sistema.cs" />
+    <Compile Include="Model\StatusOS.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\201711221322300_Initial.resx">
+      <DependentUpon>201711221322300_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711221410052_Initialv2.resx">
+      <DependentUpon>201711221410052_Initialv2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711241522382_Initialv3.resx">
+      <DependentUpon>201711241522382_Initialv3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711241626373_Initialv4.resx">
+      <DependentUpon>201711241626373_Initialv4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711241635270_Initialv5.resx">
+      <DependentUpon>201711241635270_Initialv5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711241843102_Initialv6.resx">
+      <DependentUpon>201711241843102_Initialv6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Alteracao\Alteracao_OS.resx">
+      <DependentUpon>Alteracao_OS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Alteracao\Alteracao_StatusOS.resx">
+      <DependentUpon>Alteracao_StatusOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_Funcionario.resx">
+      <DependentUpon>Cadastro_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_Prioridade.resx">
+      <DependentUpon>Cadastro_Prioridade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_OS.resx">
+      <DependentUpon>Cadastro_OS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_Sistema.resx">
+      <DependentUpon>Cadastro_Sistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_Status.resx">
+      <DependentUpon>Cadastro_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_TipoServico.resx">
+      <DependentUpon>Cadastro_TipoServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta\Consulta_Status.resx">
+      <DependentUpon>Consulta_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta\Consulta_Funcionario.resx">
+      <DependentUpon>Consulta_Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta\Consulta_Prioridade.resx">
+      <DependentUpon>Consulta_Prioridade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta\Consulta_Sistema.resx">
+      <DependentUpon>Consulta_Sistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta\Consulta_StatusOS.resx">
+      <DependentUpon>Consulta_StatusOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta\Consulta_TipoServico.resx">
+      <DependentUpon>Consulta_TipoServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta_TotalServico.resx">
+      <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Consulta\Consulta_OS.resx">
+      <DependentUpon>Consulta_OS.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ordemservicoDataSet11.xsc">
+      <DependentUpon>ordemservicoDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ordemservicoDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ordemservicoDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ordemservicoDataSet11.xss">
+      <DependentUpon>ordemservicoDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ordemservicoDataSet2.xsc">
+      <DependentUpon>ordemservicoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ordemservicoDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ordemservicoDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ordemservicoDataSet2.xss">
+      <DependentUpon>ordemservicoDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="docs\MySqlCommand.xml" />
+    <Content Include="docs\MySqlCommandBuilder.xml" />
+    <Content Include="docs\MySqlConnection.xml" />
+    <Content Include="docs\MySqlConnectionStringBuilder.xml" />
+    <Content Include="docs\MySqlDataAdapter.xml" />
+    <Content Include="docs\MySqlDataReader.xml" />
+    <Content Include="docs\MySqlException.xml" />
+    <Content Include="docs\MySqlHelper.xml" />
+    <Content Include="docs\MySqlParameter.xml" />
+    <Content Include="docs\MySqlParameterCollection.xml" />
+    <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="OS.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
