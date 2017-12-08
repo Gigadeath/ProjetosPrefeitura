@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Consulta_StatusOS
     {
@@ -31,16 +33,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_StatusOS));
             this.dgvStatusOS = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OS_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oSNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataEmissaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataPrevistaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataEntregueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mtxtDataEmis = new System.Windows.Forms.MaskedTextBox();
             this.lblEmissao = new System.Windows.Forms.Label();
             this.lblPrevista = new System.Windows.Forms.Label();
@@ -50,8 +42,21 @@
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
             this.lblOS = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
+            this.statusosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet4 = new OS_CodeFirst.BD.ordemservicoDataSet4();
+            this.statusosTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet4TableAdapters.statusosTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oSIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAlteracaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEmissao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataPrevista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataEntregue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatusOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusOSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvStatusOS
@@ -61,95 +66,22 @@
             this.dgvStatusOS.AutoGenerateColumns = false;
             this.dgvStatusOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStatusOS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.OS_Id,
-            this.Status_Id,
-            this.oSNDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.descricaoDataGridViewTextBoxColumn,
-            this.dataEmissaoDataGridViewTextBoxColumn,
-            this.dataPrevistaDataGridViewTextBoxColumn,
-            this.dataEntregueDataGridViewTextBoxColumn});
-            this.dgvStatusOS.DataSource = this.statusOSBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.oSIdDataGridViewTextBoxColumn,
+            this.statusIdDataGridViewTextBoxColumn,
+            this.OSN,
+            this.dataAlteracaoDataGridViewTextBoxColumn,
+            this.DataEmissao,
+            this.DataPrevista,
+            this.DataEntregue,
+            this.Status});
+            this.dgvStatusOS.DataSource = this.statusosBindingSource;
             this.dgvStatusOS.Location = new System.Drawing.Point(12, 114);
             this.dgvStatusOS.Name = "dgvStatusOS";
             this.dgvStatusOS.ReadOnly = true;
             this.dgvStatusOS.Size = new System.Drawing.Size(641, 188);
             this.dgvStatusOS.TabIndex = 0;
             this.dgvStatusOS.DoubleClick += new System.EventHandler(this.dgvStatusOS_DoubleClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // OS_Id
-            // 
-            this.OS_Id.DataPropertyName = "OS_Id";
-            this.OS_Id.HeaderText = "OS_Id";
-            this.OS_Id.Name = "OS_Id";
-            this.OS_Id.ReadOnly = true;
-            this.OS_Id.Visible = false;
-            // 
-            // Status_Id
-            // 
-            this.Status_Id.DataPropertyName = "Status_Id";
-            this.Status_Id.HeaderText = "Status_Id";
-            this.Status_Id.Name = "Status_Id";
-            this.Status_Id.ReadOnly = true;
-            this.Status_Id.Visible = false;
-            // 
-            // oSNDataGridViewTextBoxColumn
-            // 
-            this.oSNDataGridViewTextBoxColumn.DataPropertyName = "OSN";
-            this.oSNDataGridViewTextBoxColumn.HeaderText = "OSN";
-            this.oSNDataGridViewTextBoxColumn.Name = "oSNDataGridViewTextBoxColumn";
-            this.oSNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataEmissaoDataGridViewTextBoxColumn
-            // 
-            this.dataEmissaoDataGridViewTextBoxColumn.DataPropertyName = "DataEmissao";
-            this.dataEmissaoDataGridViewTextBoxColumn.HeaderText = "DataEmissao";
-            this.dataEmissaoDataGridViewTextBoxColumn.Name = "dataEmissaoDataGridViewTextBoxColumn";
-            this.dataEmissaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataPrevistaDataGridViewTextBoxColumn
-            // 
-            this.dataPrevistaDataGridViewTextBoxColumn.DataPropertyName = "DataPrevista";
-            this.dataPrevistaDataGridViewTextBoxColumn.HeaderText = "DataPrevista";
-            this.dataPrevistaDataGridViewTextBoxColumn.Name = "dataPrevistaDataGridViewTextBoxColumn";
-            this.dataPrevistaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataEntregueDataGridViewTextBoxColumn
-            // 
-            this.dataEntregueDataGridViewTextBoxColumn.DataPropertyName = "DataEntregue";
-            this.dataEntregueDataGridViewTextBoxColumn.HeaderText = "DataEntregue";
-            this.dataEntregueDataGridViewTextBoxColumn.Name = "dataEntregueDataGridViewTextBoxColumn";
-            this.dataEntregueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusOSBindingSource
-            // 
-            this.statusOSBindingSource.DataMember = "statusOS";
-            // 
-            // statusOSSet
-            // 
             // 
             // mtxtDataEmis
             // 
@@ -225,9 +157,6 @@
             this.lblOS.TabIndex = 8;
             this.lblOS.Text = "OS:";
             // 
-            // statusOSTableAdapter
-            // 
-            // 
             // btnAtualizar
             // 
             this.btnAtualizar.Location = new System.Drawing.Point(550, 85);
@@ -237,6 +166,86 @@
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
+            // statusosBindingSource
+            // 
+            this.statusosBindingSource.DataMember = "statusos";
+            this.statusosBindingSource.DataSource = this.ordemservicoDataSet4;
+            // 
+            // ordemservicoDataSet4
+            // 
+            this.ordemservicoDataSet4.DataSetName = "ordemservicoDataSet4";
+            this.ordemservicoDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // statusosTableAdapter
+            // 
+            this.statusosTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // oSIdDataGridViewTextBoxColumn
+            // 
+            this.oSIdDataGridViewTextBoxColumn.DataPropertyName = "OS_Id";
+            this.oSIdDataGridViewTextBoxColumn.HeaderText = "OS_Id";
+            this.oSIdDataGridViewTextBoxColumn.Name = "oSIdDataGridViewTextBoxColumn";
+            this.oSIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oSIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // statusIdDataGridViewTextBoxColumn
+            // 
+            this.statusIdDataGridViewTextBoxColumn.DataPropertyName = "Status_Id";
+            this.statusIdDataGridViewTextBoxColumn.HeaderText = "Status_Id";
+            this.statusIdDataGridViewTextBoxColumn.Name = "statusIdDataGridViewTextBoxColumn";
+            this.statusIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statusIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // OSN
+            // 
+            this.OSN.DataPropertyName = "OSN";
+            this.OSN.HeaderText = "OSN";
+            this.OSN.Name = "OSN";
+            this.OSN.ReadOnly = true;
+            // 
+            // dataAlteracaoDataGridViewTextBoxColumn
+            // 
+            this.dataAlteracaoDataGridViewTextBoxColumn.DataPropertyName = "dataAlteracao";
+            this.dataAlteracaoDataGridViewTextBoxColumn.HeaderText = "dataAlteracao";
+            this.dataAlteracaoDataGridViewTextBoxColumn.Name = "dataAlteracaoDataGridViewTextBoxColumn";
+            this.dataAlteracaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // DataEmissao
+            // 
+            this.DataEmissao.DataPropertyName = "DataEmissao";
+            this.DataEmissao.HeaderText = "DataEmissao";
+            this.DataEmissao.Name = "DataEmissao";
+            this.DataEmissao.ReadOnly = true;
+            // 
+            // DataPrevista
+            // 
+            this.DataPrevista.DataPropertyName = "DataPrevista";
+            this.DataPrevista.HeaderText = "DataPrevista";
+            this.DataPrevista.Name = "DataPrevista";
+            this.DataPrevista.ReadOnly = true;
+            // 
+            // DataEntregue
+            // 
+            this.DataEntregue.DataPropertyName = "DataEntregue";
+            this.DataEntregue.HeaderText = "DataEntregue";
+            this.DataEntregue.Name = "DataEntregue";
+            this.DataEntregue.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // Consulta_StatusOS
             // 
@@ -258,7 +267,8 @@
             this.Text = "Consulta / alteração do Status da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Consulta_StatusOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatusOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusOSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,7 +277,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvStatusOS;
-        private System.Windows.Forms.BindingSource statusOSBindingSource;
         private System.Windows.Forms.MaskedTextBox mtxtDataEmis;
         private System.Windows.Forms.Label lblEmissao;
         private System.Windows.Forms.Label lblPrevista;
@@ -277,8 +286,6 @@
         private System.Windows.Forms.MaskedTextBox mtxtOS;
         private System.Windows.Forms.Label lblOS;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OS_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn oSNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
@@ -286,5 +293,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPrevistaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEntregueDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnAtualizar;
+        private ordemservicoDataSet4 ordemservicoDataSet4;
+        private System.Windows.Forms.BindingSource statusosBindingSource;
+        private BD.ordemservicoDataSet4TableAdapters.statusosTableAdapter statusosTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oSIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OSN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataAlteracaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataEmissao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataPrevista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataEntregue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

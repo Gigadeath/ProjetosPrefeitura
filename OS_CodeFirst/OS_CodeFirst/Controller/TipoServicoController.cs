@@ -85,5 +85,12 @@ namespace OS_CodeFirst.Controller
                 }
             }
         }
+        public TipoServico getDados(int codigo)
+        {
+
+            var query = db.TipoServico.Where(x => x.Id == codigo).First();
+            return query;
+
+        }
     }
 }

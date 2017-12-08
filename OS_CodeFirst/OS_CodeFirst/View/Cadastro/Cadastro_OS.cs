@@ -31,11 +31,14 @@ namespace OS_CodeFirst.View
 
         private void Cadastro_OS_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet1.sistema'. Você pode movê-la ou removê-la conforme necessário.
-            this.sistemaTableAdapter.Fill(this.ordemservicoDataSet1.sistema);
-
-
-
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet2.tiposervico'. Você pode movê-la ou removê-la conforme necessário.
+            this.tiposervicoTableAdapter.Fill(this.ordemservicoDataSet2.tiposervico);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet1.prioridade'. Você pode movê-la ou removê-la conforme necessário.
+            this.prioridadeTableAdapter.Fill(this.ordemservicoDataSet1.prioridade);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
+            this.funcionarioTableAdapter.Fill(this.ordemservicoDataSet.funcionario);
+            // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
+            this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
 
 
 

@@ -19,8 +19,8 @@ namespace OS_CodeFirst.View
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet2.totalservico'. Você pode movê-la ou removê-la conforme necessário.
-            //this.totalservicoTableAdapter.Fill(this.TotalServicoSet.totalservico);
+            // TODO: esta linha de código carrega dados na tabela 'totalServicoDataSet.totalservico'. Você pode movê-la ou removê-la conforme necessário.
+            this.totalservicoTableAdapter.Fill(this.totalServicoDataSet.totalservico);
 
         }
 

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ordemservicoDataSet4" targetNamespace="http://tempuri.org/ordemservicoDataSet4.xsd" xmlns:mstns="http://tempuri.org/ordemservicoDataSet4.xsd" xmlns="http://tempuri.org/ordemservicoDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ordemservicoConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ordemservicoConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.OS_CodeFirst.Properties.Settings.GlobalReference.Default.ordemservicoConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="statusosTableAdapter" GeneratorDataComponentClassName="statusosTableAdapter" Name="statusos" UserDataComponentName="statusosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ordemservicoConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        statusos.Id, statusos.Descricao, statusos.OS_Id, statusos.Status_Id, statusos.dataAlteracao, os.OSN, os.DataEmissao, os.DataPrevista, os.DataEntregue, 
+                         status.Nome AS Status
+FROM            statusos INNER JOIN
+                         os ON statusos.OS_Id = os.Id INNER JOIN
+                         status ON statusos.Status_Id = status.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
+              <Mapping SourceColumn="OS_Id" DataSetColumn="OS_Id" />
+              <Mapping SourceColumn="Status_Id" DataSetColumn="Status_Id" />
+              <Mapping SourceColumn="dataAlteracao" DataSetColumn="dataAlteracao" />
+              <Mapping SourceColumn="OSN" DataSetColumn="OSN" />
+              <Mapping SourceColumn="DataEmissao" DataSetColumn="DataEmissao" />
+              <Mapping SourceColumn="DataPrevista" DataSetColumn="DataPrevista" />
+              <Mapping SourceColumn="DataEntregue" DataSetColumn="DataEntregue" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ordemservicoDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ordemservicoDataSet4" msprop:Generator_UserDSName="ordemservicoDataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="statusos" msprop:Generator_TableClassName="statusosDataTable" msprop:Generator_TableVarName="tablestatusos" msprop:Generator_TablePropName="statusos" msprop:Generator_RowDeletingName="statusosRowDeleting" msprop:Generator_RowChangingName="statusosRowChanging" msprop:Generator_RowEvHandlerName="statusosRowChangeEventHandler" msprop:Generator_RowDeletedName="statusosRowDeleted" msprop:Generator_UserTableName="statusos" msprop:Generator_RowChangedName="statusosRowChanged" msprop:Generator_RowEvArgName="statusosRowChangeEvent" msprop:Generator_RowClassName="statusosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Descricao" msprop:Generator_ColumnVarNameInTable="columnDescricao" msprop:Generator_ColumnPropNameInRow="Descricao" msprop:Generator_ColumnPropNameInTable="DescricaoColumn" msprop:Generator_UserColumnName="Descricao" type="xs:string" />
+              <xs:element name="OS_Id" msprop:Generator_ColumnVarNameInTable="columnOS_Id" msprop:Generator_ColumnPropNameInRow="OS_Id" msprop:Generator_ColumnPropNameInTable="OS_IdColumn" msprop:Generator_UserColumnName="OS_Id" type="xs:int" />
+              <xs:element name="Status_Id" msprop:Generator_ColumnVarNameInTable="columnStatus_Id" msprop:Generator_ColumnPropNameInRow="Status_Id" msprop:Generator_ColumnPropNameInTable="Status_IdColumn" msprop:Generator_UserColumnName="Status_Id" type="xs:int" />
+              <xs:element name="dataAlteracao" msprop:Generator_ColumnVarNameInTable="columndataAlteracao" msprop:Generator_ColumnPropNameInRow="dataAlteracao" msprop:Generator_ColumnPropNameInTable="dataAlteracaoColumn" msprop:Generator_UserColumnName="dataAlteracao" type="xs:dateTime" />
+              <xs:element name="OSN" msprop:Generator_ColumnVarNameInTable="columnOSN" msprop:Generator_ColumnPropNameInRow="OSN" msprop:Generator_ColumnPropNameInTable="OSNColumn" msprop:Generator_UserColumnName="OSN" type="xs:string" />
+              <xs:element name="DataEmissao" msprop:Generator_ColumnVarNameInTable="columnDataEmissao" msprop:Generator_ColumnPropNameInRow="DataEmissao" msprop:Generator_ColumnPropNameInTable="DataEmissaoColumn" msprop:Generator_UserColumnName="DataEmissao" type="xs:dateTime" />
+              <xs:element name="DataPrevista" msprop:Generator_ColumnVarNameInTable="columnDataPrevista" msprop:Generator_ColumnPropNameInRow="DataPrevista" msprop:Generator_ColumnPropNameInTable="DataPrevistaColumn" msprop:Generator_UserColumnName="DataPrevista" type="xs:dateTime" />
+              <xs:element name="DataEntregue" msprop:Generator_ColumnVarNameInTable="columnDataEntregue" msprop:Generator_ColumnPropNameInRow="DataEntregue" msprop:Generator_ColumnPropNameInTable="DataEntregueColumn" msprop:Generator_UserColumnName="DataEntregue" type="xs:dateTime" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:statusos" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Consulta_OS
     {
@@ -37,35 +39,32 @@
             this.lblDataPrev = new System.Windows.Forms.Label();
             this.mtxtEntregue = new System.Windows.Forms.MaskedTextBox();
             this.lblEntregue = new System.Windows.Forms.Label();
-            this.statusOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgvOS = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sistemaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oSNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataPrevistaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataEntregueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataEmissaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.solicitacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.osBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Sistema_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSistema = new System.Windows.Forms.Label();
             this.cmbSistema = new System.Windows.Forms.ComboBox();
-            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.statusOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            this.btnGerar = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
+            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
+            this.oSSet = new OS_CodeFirst.BD.OSSet();
+            this.osBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.osTableAdapter = new OS_CodeFirst.BD.OSSetTableAdapters.osTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oSSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // statusOSTableAdapter
-            // 
             // 
             // lblOS
             // 
@@ -130,21 +129,6 @@
             this.lblEntregue.TabIndex = 8;
             this.lblEntregue.Text = "Data Entregue:";
             // 
-            // statusOSSet
-            // 
-            // 
-            // statusOSBindingSource
-            // 
-            // 
-            // statusSet
-            // 
-            // 
-            // statusBindingSource
-            // 
-            // 
-            // statusTableAdapter
-            // 
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "OS_Id";
@@ -156,13 +140,10 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Status_Id";
-            this.dataGridViewTextBoxColumn2.DataSource = this.statusBindingSource;
-            this.dataGridViewTextBoxColumn2.DisplayMember = "Nome";
             this.dataGridViewTextBoxColumn2.HeaderText = "Status_Id";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn2.ValueMember = "Id";
             // 
             // dgvOS
             // 
@@ -171,13 +152,12 @@
             this.dgvOS.AutoGenerateColumns = false;
             this.dgvOS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.sistemaIdDataGridViewTextBoxColumn,
-            this.oSNDataGridViewTextBoxColumn,
-            this.dataPrevistaDataGridViewTextBoxColumn,
-            this.dataEntregueDataGridViewTextBoxColumn,
-            this.dataEmissaoDataGridViewTextBoxColumn,
-            this.solicitacaoDataGridViewTextBoxColumn});
+            this.idDataGridViewTextBoxColumn,
+            this.Sistema_Id,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
             this.dgvOS.DataSource = this.osBindingSource;
             this.dgvOS.Location = new System.Drawing.Point(12, 110);
             this.dgvOS.Name = "dgvOS";
@@ -187,62 +167,13 @@
             this.dgvOS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOS_CellContentClick);
             this.dgvOS.DoubleClick += new System.EventHandler(this.dgvOS_DoubleClick);
             // 
-            // Id
+            // Sistema_Id
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // sistemaIdDataGridViewTextBoxColumn
-            // 
-            this.sistemaIdDataGridViewTextBoxColumn.DataPropertyName = "Sistema_Id";
-            this.sistemaIdDataGridViewTextBoxColumn.HeaderText = "Sistema_Id";
-            this.sistemaIdDataGridViewTextBoxColumn.Name = "sistemaIdDataGridViewTextBoxColumn";
-            this.sistemaIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sistemaIdDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // oSNDataGridViewTextBoxColumn
-            // 
-            this.oSNDataGridViewTextBoxColumn.DataPropertyName = "OSN";
-            this.oSNDataGridViewTextBoxColumn.HeaderText = "OSN";
-            this.oSNDataGridViewTextBoxColumn.Name = "oSNDataGridViewTextBoxColumn";
-            this.oSNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataPrevistaDataGridViewTextBoxColumn
-            // 
-            this.dataPrevistaDataGridViewTextBoxColumn.DataPropertyName = "DataPrevista";
-            this.dataPrevistaDataGridViewTextBoxColumn.HeaderText = "DataPrevista";
-            this.dataPrevistaDataGridViewTextBoxColumn.Name = "dataPrevistaDataGridViewTextBoxColumn";
-            this.dataPrevistaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataEntregueDataGridViewTextBoxColumn
-            // 
-            this.dataEntregueDataGridViewTextBoxColumn.DataPropertyName = "DataEntregue";
-            this.dataEntregueDataGridViewTextBoxColumn.HeaderText = "DataEntregue";
-            this.dataEntregueDataGridViewTextBoxColumn.Name = "dataEntregueDataGridViewTextBoxColumn";
-            this.dataEntregueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataEmissaoDataGridViewTextBoxColumn
-            // 
-            this.dataEmissaoDataGridViewTextBoxColumn.DataPropertyName = "DataEmissao";
-            this.dataEmissaoDataGridViewTextBoxColumn.HeaderText = "DataEmissao";
-            this.dataEmissaoDataGridViewTextBoxColumn.Name = "dataEmissaoDataGridViewTextBoxColumn";
-            this.dataEmissaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // solicitacaoDataGridViewTextBoxColumn
-            // 
-            this.solicitacaoDataGridViewTextBoxColumn.DataPropertyName = "Solicitacao";
-            this.solicitacaoDataGridViewTextBoxColumn.HeaderText = "Solicitacao";
-            this.solicitacaoDataGridViewTextBoxColumn.Name = "solicitacaoDataGridViewTextBoxColumn";
-            this.solicitacaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // osBindingSource
-            // 
-            // 
-            // oSSet
-            // 
+            this.Sistema_Id.DataPropertyName = "Sistema_Id";
+            this.Sistema_Id.HeaderText = "Sistema_Id";
+            this.Sistema_Id.Name = "Sistema_Id";
+            this.Sistema_Id.ReadOnly = true;
+            this.Sistema_Id.Visible = false;
             // 
             // lblSistema
             // 
@@ -265,19 +196,6 @@
             this.cmbSistema.ValueMember = "Id";
             this.cmbSistema.TextChanged += new System.EventHandler(this.cmbSistema_TextChanged);
             // 
-            // sistemaBindingSource
-            // 
-            this.sistemaBindingSource.DataMember = "sistema";
-            this.sistemaBindingSource.DataSource = this.sistemaSetBindingSource;
-            // 
-            // sistemaSetBindingSource
-            // 
-            // 
-            // sistemaSet
-            // 
-            // 
-            // sistemaTableAdapter
-            // 
             // mtxtOS
             // 
             this.mtxtOS.Location = new System.Drawing.Point(60, 12);
@@ -286,9 +204,6 @@
             this.mtxtOS.Size = new System.Drawing.Size(100, 20);
             this.mtxtOS.TabIndex = 14;
             this.mtxtOS.TextChanged += new System.EventHandler(this.mtxtOS_TextChanged);
-            // 
-            // osTableAdapter
-            // 
             // 
             // btnAtualizar
             // 
@@ -300,11 +215,86 @@
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
+            // btnGerar
+            // 
+            this.btnGerar.Location = new System.Drawing.Point(458, 81);
+            this.btnGerar.Name = "btnGerar";
+            this.btnGerar.Size = new System.Drawing.Size(75, 23);
+            this.btnGerar.TabIndex = 16;
+            this.btnGerar.Text = "Gerar";
+            this.btnGerar.UseVisualStyleBackColor = true;
+            this.btnGerar.Click += new System.EventHandler(this.btnGerar_Click);
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DataEntregue";
+            this.dataGridViewTextBoxColumn6.HeaderText = "DataEntregue";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DataPrevista";
+            this.dataGridViewTextBoxColumn5.HeaderText = "DataPrevista";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataEmissao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "DataEmissao";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OSN";
+            this.dataGridViewTextBoxColumn3.HeaderText = "OSN";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sistemaSet
+            // 
+            this.sistemaSet.DataSetName = "SistemaSet";
+            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sistemaBindingSource
+            // 
+            this.sistemaBindingSource.DataMember = "sistema";
+            this.sistemaBindingSource.DataSource = this.sistemaSet;
+            // 
+            // sistemaTableAdapter
+            // 
+            this.sistemaTableAdapter.ClearBeforeFill = true;
+            // 
+            // oSSet
+            // 
+            this.oSSet.DataSetName = "OSSet";
+            this.oSSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // osBindingSource
+            // 
+            this.osBindingSource.DataMember = "os";
+            this.osBindingSource.DataSource = this.oSSet;
+            // 
+            // osTableAdapter
+            // 
+            this.osTableAdapter.ClearBeforeFill = true;
+            // 
             // Consulta_OS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 314);
+            this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.mtxtOS);
             this.Controls.Add(this.cmbSistema);
@@ -321,12 +311,11 @@
             this.Name = "Consulta_OS";
             this.Text = "Consulta/Alteração da OS";
             this.Load += new System.EventHandler(this.Consulta_StatusOS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.statusOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oSSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,18 +331,12 @@
         private System.Windows.Forms.Label lblDataPrev;
         private System.Windows.Forms.MaskedTextBox mtxtEntregue;
         private System.Windows.Forms.Label lblEntregue;
-        private System.Windows.Forms.BindingSource statusOSBindingSource;
-        private System.Windows.Forms.BindingSource statusBindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridView dgvOS;
         private System.Windows.Forms.Label lblSistema;
         private System.Windows.Forms.ComboBox cmbSistema;
-        private System.Windows.Forms.BindingSource sistemaSetBindingSource;
-        private System.Windows.Forms.BindingSource sistemaBindingSource;
         private System.Windows.Forms.MaskedTextBox mtxtOS;
-        private System.Windows.Forms.BindingSource osBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn sistemaIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oSNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPrevistaDataGridViewTextBoxColumn;
@@ -361,5 +344,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEmissaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn solicitacaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sistema_Id;
+        private System.Windows.Forms.Button btnGerar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private SistemaSet sistemaSet;
+        private System.Windows.Forms.BindingSource sistemaBindingSource;
+        private BD.SistemaSetTableAdapters.sistemaTableAdapter sistemaTableAdapter;
+        private OSSet oSSet;
+        private System.Windows.Forms.BindingSource osBindingSource;
+        private BD.OSSetTableAdapters.osTableAdapter osTableAdapter;
     }
 }

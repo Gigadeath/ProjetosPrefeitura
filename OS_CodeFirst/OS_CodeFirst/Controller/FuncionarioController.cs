@@ -85,6 +85,13 @@ namespace OS_CodeFirst.Controller
                 }
             }
         }
+        public Funcionario getDados(int codigo)
+        {
+
+            var query = db.Funcionario.Where(x => x.Id == codigo).First();
+            return query;
+
+        }
     }
 }
 

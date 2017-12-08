@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Consulta_TipoServico
     {
@@ -31,12 +33,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_TipoServico));
             this.dgvTipoServ = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblTipoServico = new System.Windows.Forms.Label();
             this.txtTipoServico = new System.Windows.Forms.TextBox();
+            this.tipoServicoDataSet = new OS_CodeFirst.BD.TipoServicoDataSet();
+            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposervicoTableAdapter = new OS_CodeFirst.BD.TipoServicoDataSetTableAdapters.tiposervicoTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoServ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,35 +51,13 @@
             this.dgvTipoServ.AutoGenerateColumns = false;
             this.dgvTipoServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTipoServ.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
             this.dgvTipoServ.DataSource = this.tiposervicoBindingSource;
             this.dgvTipoServ.Location = new System.Drawing.Point(12, 108);
             this.dgvTipoServ.Name = "dgvTipoServ";
             this.dgvTipoServ.Size = new System.Drawing.Size(641, 194);
             this.dgvTipoServ.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // tiposervicoBindingSource
-            // 
-            // 
-            // tipoServicoSet
-            // 
-            // 
-            // tiposervicoTableAdapter
-            // 
             // 
             // lblTipoServico
             // 
@@ -93,6 +76,33 @@
             this.txtTipoServico.TabIndex = 2;
             this.txtTipoServico.TextChanged += new System.EventHandler(this.txtTipoServico_TextChanged);
             // 
+            // tipoServicoDataSet
+            // 
+            this.tipoServicoDataSet.DataSetName = "TipoServicoDataSet";
+            this.tipoServicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tiposervicoBindingSource
+            // 
+            this.tiposervicoBindingSource.DataMember = "tiposervico";
+            this.tiposervicoBindingSource.DataSource = this.tipoServicoDataSet;
+            // 
+            // tiposervicoTableAdapter
+            // 
+            this.tiposervicoTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
             // Consulta_TipoServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +116,7 @@
             this.Text = "Consulta/Alteração do Tipo de Serviço";
             this.Load += new System.EventHandler(this.Consulta_TipoServico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoServ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,10 +126,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTipoServ;
-        private System.Windows.Forms.BindingSource tiposervicoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblTipoServico;
         private System.Windows.Forms.TextBox txtTipoServico;
+        private TipoServicoDataSet tipoServicoDataSet;
+        private System.Windows.Forms.BindingSource tiposervicoBindingSource;
+        private BD.TipoServicoDataSetTableAdapters.tiposervicoTableAdapter tiposervicoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

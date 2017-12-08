@@ -83,8 +83,15 @@ namespace OS_CodeFirst.Controller
                     }
                     //Fecha form
                 }
+                
             }
         }
+        public Prioridade getDados(int codigo)
+        {
 
+            var query = db.Prioridade.Where(x => x.Id == codigo).First();
+            return query;
+
+        }
     }
 }

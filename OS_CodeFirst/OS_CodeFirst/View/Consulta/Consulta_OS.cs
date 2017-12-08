@@ -1,12 +1,15 @@
-﻿using System;
+﻿using OS_CodeFirst.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Xceed.Words.NET;
 
 namespace OS_CodeFirst.View
 {
@@ -19,24 +22,15 @@ namespace OS_CodeFirst.View
 
         private void Consulta_StatusOS_Load(object sender, EventArgs e)
         {
-            /*// TODO: esta linha de código carrega dados na tabela 'oSSet.os'. Você pode movê-la ou removê-la conforme necessário.
+            // TODO: esta linha de código carrega dados na tabela 'oSSet.os'. Você pode movê-la ou removê-la conforme necessário.
             this.osTableAdapter.Fill(this.oSSet.os);
-            // TODO: esta linha de código carrega dados na tabela 'oSSet1.os'. Você pode movê-la ou removê-la conforme necessário.
             // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
             this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
             // TODO: esta linha de código carrega dados na tabela 'oSSet.os'. Você pode movê-la ou removê-la conforme necessário.
             this.osTableAdapter.Fill(this.oSSet.os);
-            // TODO: esta linha de código carrega dados na tabela 'statusSet.status'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusTableAdapter.Fill(this.statusSet.status);
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusOS'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusOSTableAdapter.Fill(this.statusOSSet.statusOS);
-            // TODO: esta linha de código carrega dados na tabela 'statusSet.status'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusTableAdapter.Fill(this.statusSet.status);
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusOS'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusOSTableAdapter.Fill(this.statusOSSet.statusOS);
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusos'. Você pode movê-la ou removê-la conforme necessário.
-            */
-           
+            // TODO: esta linha de código carrega dados na tabela 'oSSet.os'. Você pode movê-la ou removê-la conforme necessário.
+            this.osTableAdapter.Fill(this.oSSet.os);
+
 
         }
 
@@ -210,24 +204,14 @@ namespace OS_CodeFirst.View
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            /*// TODO: esta linha de código carrega dados na tabela 'oSSet.os'. Você pode movê-la ou removê-la conforme necessário.
-            this.osTableAdapter.Fill(this.oSSet.os);
-            // TODO: esta linha de código carrega dados na tabela 'oSSet1.os'. Você pode movê-la ou removê-la conforme necessário.
-            // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
-            this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
             // TODO: esta linha de código carrega dados na tabela 'oSSet.os'. Você pode movê-la ou removê-la conforme necessário.
             this.osTableAdapter.Fill(this.oSSet.os);
-            // TODO: esta linha de código carrega dados na tabela 'statusSet.status'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusTableAdapter.Fill(this.statusSet.status);
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusOS'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusOSTableAdapter.Fill(this.statusOSSet.statusOS);
-            // TODO: esta linha de código carrega dados na tabela 'statusSet.status'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusTableAdapter.Fill(this.statusSet.status);
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusOS'. Você pode movê-la ou removê-la conforme necessário.
-            this.statusOSTableAdapter.Fill(this.statusOSSet.statusOS);
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusos'. Você pode movê-la ou removê-la conforme necessário.
-            */
+        }
 
+        private void btnGerar_Click(object sender, EventArgs e)
+        {
+            OSController osc = new OSController();
+            osc.MontaOS(Convert.ToInt32(Convert.ToInt32(dgvOS.SelectedRows[0].Cells[0].Value.ToString())));
         }
     }
 }

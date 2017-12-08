@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Consulta_Funcionario
     {
@@ -31,25 +33,24 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Funcionario));
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.setorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            //this.funcionarioSet = new OS_CodeFirst.FuncionarioSet();
-            this.funcionarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.funcionarioSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            //this.funcionarioTableAdapter = new OS_CodeFirst.FuncionarioSetTableAdapters.funcionarioTableAdapter();
+            this.ordemservicoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet = new OS_CodeFirst.BD.ordemservicoDataSet();
             this.lblRF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtSetor = new System.Windows.Forms.TextBox();
             this.lblSetor = new System.Windows.Forms.Label();
             this.mtxtRF = new System.Windows.Forms.MaskedTextBox();
+            this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFuncionario
@@ -59,10 +60,10 @@
             this.dgvFuncionario.AutoGenerateColumns = false;
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.rFDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.setorDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
             this.dgvFuncionario.DataSource = this.funcionarioBindingSource;
             this.dgvFuncionario.Location = new System.Drawing.Point(12, 77);
             this.dgvFuncionario.Name = "dgvFuncionario";
@@ -70,49 +71,46 @@
             this.dgvFuncionario.TabIndex = 0;
             this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // idDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
-            // rFDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.rFDataGridViewTextBoxColumn.DataPropertyName = "RF";
-            this.rFDataGridViewTextBoxColumn.HeaderText = "RF";
-            this.rFDataGridViewTextBoxColumn.Name = "rFDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "RF";
+            this.dataGridViewTextBoxColumn2.HeaderText = "RF";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // nomeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // setorDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.setorDataGridViewTextBoxColumn.DataPropertyName = "Setor";
-            this.setorDataGridViewTextBoxColumn.HeaderText = "Setor";
-            this.setorDataGridViewTextBoxColumn.Name = "setorDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Setor";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Setor";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // funcionarioBindingSource
             // 
             this.funcionarioBindingSource.DataMember = "funcionario";
+            this.funcionarioBindingSource.DataSource = this.ordemservicoDataSetBindingSource;
             // 
-            // funcionarioSet
+            // ordemservicoDataSetBindingSource
             // 
+            this.ordemservicoDataSetBindingSource.DataSource = this.ordemservicoDataSet;
+            this.ordemservicoDataSetBindingSource.Position = 0;
+            this.ordemservicoDataSetBindingSource.CurrentChanged += new System.EventHandler(this.ordemservicoDataSetBindingSource_CurrentChanged);
             // 
-            // funcionarioBindingSource1
+            // ordemservicoDataSet
             // 
-            this.funcionarioBindingSource1.DataMember = "funcionario";
-            this.funcionarioBindingSource1.DataSource = this.funcionarioSetBindingSource;
-            // 
-            // funcionarioSetBindingSource
-            // 
-            this.funcionarioSetBindingSource.Position = 0;
-            // 
-            // funcionarioTableAdapter
-            // 
+            this.ordemservicoDataSet.DataSetName = "ordemservicoDataSet";
+            this.ordemservicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblRF
             // 
@@ -167,6 +165,10 @@
             this.mtxtRF.TabIndex = 7;
             this.mtxtRF.TextChanged += new System.EventHandler(this.mtxtRF_TextChanged);
             // 
+            // funcionarioTableAdapter
+            // 
+            this.funcionarioTableAdapter.ClearBeforeFill = true;
+            // 
             // Consulta_Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,8 +187,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,12 +197,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvFuncionario;
-        private System.Windows.Forms.BindingSource funcionarioSetBindingSource;
-        private System.Windows.Forms.BindingSource funcionarioBindingSource;
         private System.Windows.Forms.Label lblRF;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.BindingSource funcionarioBindingSource1;
         private System.Windows.Forms.TextBox txtSetor;
         private System.Windows.Forms.Label lblSetor;
         private System.Windows.Forms.MaskedTextBox mtxtRF;
@@ -208,5 +207,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rFDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn setorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource ordemservicoDataSetBindingSource;
+        private ordemservicoDataSet ordemservicoDataSet;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource;
+        private BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter funcionarioTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

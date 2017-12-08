@@ -19,8 +19,8 @@ namespace OS_CodeFirst.View
 
         private void Consulta_Prioridade_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet.prioridade'. Você pode movê-la ou removê-la conforme necessário.
-           // this.prioridadeTableAdapter.Fill(this.ordemservicoDataSet.prioridade);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet1.prioridade'. Você pode movê-la ou removê-la conforme necessário.
+            this.prioridadeTableAdapter.Fill(this.ordemservicoDataSet1.prioridade);
 
         }
 

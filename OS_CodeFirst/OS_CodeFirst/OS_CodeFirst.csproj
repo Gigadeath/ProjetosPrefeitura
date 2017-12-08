@@ -35,6 +35,8 @@
     <ApplicationIcon>OS.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.1823.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data.MySql, Version=8.10.1031.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -44,8 +46,10 @@
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.4.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -58,6 +62,7 @@
       <HintPath>..\packages\System.Security.Principal.Windows.4.4.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +72,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Words.NET, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.1.0\lib\Xceed.Words.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\FuncionarioController.cs" />
@@ -105,15 +114,50 @@
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\TipoServico.cs" />
     <Compile Include="Model\TotalServico.cs" />
-    <Compile Include="ordemservicoDataSet11.Designer.cs">
+    <Compile Include="BD\FuncionarioSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ordemservicoDataSet11.xsd</DependentUpon>
+      <DependentUpon>FuncionarioSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ordemservicoDataSet2.Designer.cs">
+    <Compile Include="BD\ordemservicoDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ordemservicoDataSet2.xsd</DependentUpon>
+      <DependentUpon>ordemservicoDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\ordemservicoDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ordemservicoDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\OSSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OSSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\PrioridadeSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrioridadeSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\TipoServicoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoServicoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\TipoServicoset1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoServicoset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\SistemaSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\TotalServicoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalServicoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="View\Alteracao\Alteracao_OS.cs">
       <SubType>Form</SubType>
@@ -211,6 +255,12 @@
     <Compile Include="View\Consulta_TotalServico.Designer.cs">
       <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Geracao\Geracao_OS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Geracao\Geracao_OS.Designer.cs">
+      <DependentUpon>Geracao_OS.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,33 +348,92 @@
     <EmbeddedResource Include="View\Consulta_TotalServico.resx">
       <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Geracao\Geracao_OS.resx">
+      <DependentUpon>Geracao_OS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Consulta\Consulta_OS.resx">
       <DependentUpon>Consulta_OS.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ordemservicoDataSet11.xsc">
-      <DependentUpon>ordemservicoDataSet11.xsd</DependentUpon>
+    <None Include="Documentos\Ordem de Serviço PAPA.docx" />
+    <None Include="BD\FuncionarioSet.xsc">
+      <DependentUpon>FuncionarioSet.xsd</DependentUpon>
     </None>
-    <None Include="ordemservicoDataSet11.xsd">
+    <None Include="BD\FuncionarioSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ordemservicoDataSet11.Designer.cs</LastGenOutput>
+      <LastGenOutput>FuncionarioSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ordemservicoDataSet11.xss">
-      <DependentUpon>ordemservicoDataSet11.xsd</DependentUpon>
+    <None Include="BD\FuncionarioSet.xss">
+      <DependentUpon>FuncionarioSet.xsd</DependentUpon>
     </None>
-    <None Include="ordemservicoDataSet2.xsc">
-      <DependentUpon>ordemservicoDataSet2.xsd</DependentUpon>
+    <None Include="BD\ordemservicoDataSet3.xsc">
+      <DependentUpon>ordemservicoDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="ordemservicoDataSet2.xsd">
+    <None Include="BD\ordemservicoDataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ordemservicoDataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>ordemservicoDataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ordemservicoDataSet2.xss">
-      <DependentUpon>ordemservicoDataSet2.xsd</DependentUpon>
+    <None Include="BD\ordemservicoDataSet3.xss">
+      <DependentUpon>ordemservicoDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BD\ordemservicoDataSet4.xsc">
+      <DependentUpon>ordemservicoDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BD\ordemservicoDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ordemservicoDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD\ordemservicoDataSet4.xss">
+      <DependentUpon>ordemservicoDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BD\OSSet.xsc">
+      <DependentUpon>OSSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\OSSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OSSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD\OSSet.xss">
+      <DependentUpon>OSSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\PrioridadeSet.xsc">
+      <DependentUpon>PrioridadeSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\PrioridadeSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PrioridadeSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD\PrioridadeSet.xss">
+      <DependentUpon>PrioridadeSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\TipoServicoDataSet.xsc">
+      <DependentUpon>TipoServicoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\TipoServicoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TipoServicoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD\TipoServicoDataSet.xss">
+      <DependentUpon>TipoServicoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\TipoServicoset.xsc">
+      <DependentUpon>TipoServicoset.xsd</DependentUpon>
+    </None>
+    <None Include="BD\TipoServicoset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TipoServicoset1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD\TipoServicoset.xss">
+      <DependentUpon>TipoServicoset.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -336,6 +445,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="BD\SistemaSet.xsc">
+      <DependentUpon>SistemaSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\SistemaSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD\SistemaSet.xss">
+      <DependentUpon>SistemaSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\TotalServicoDataSet.xsc">
+      <DependentUpon>TotalServicoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD\TotalServicoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TotalServicoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD\TotalServicoDataSet.xss">
+      <DependentUpon>TotalServicoDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -355,6 +486,36 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
     <Content Include="OS.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,7 +20,7 @@ namespace OS_CodeFirst.View
         private void Consulta_Sistema_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
-            //this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
+            this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
 
         }
 

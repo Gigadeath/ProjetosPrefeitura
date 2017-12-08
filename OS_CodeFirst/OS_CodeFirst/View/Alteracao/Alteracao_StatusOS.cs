@@ -19,7 +19,6 @@ namespace OS_CodeFirst.View
         public Alteracao_StatusOS(int codigo)
         {
             InitializeComponent();
-            //this.statusTableAdapter.Fill(this.statusSet.status);
             statusBindingSource.Filter = "Id <> 1 And Id <> 7";
             var query=statcon.getDados(codigo);
             if (query.Status_Id==1 || query.Status_Id ==7)
@@ -39,7 +38,10 @@ namespace OS_CodeFirst.View
 
         private void Alteracao_StatusOS_Load(object sender, EventArgs e)
         {
-           
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet3.status'. Você pode movê-la ou removê-la conforme necessário.
+            this.statusTableAdapter.Fill(this.ordemservicoDataSet3.status);
+
+
 
         }
 

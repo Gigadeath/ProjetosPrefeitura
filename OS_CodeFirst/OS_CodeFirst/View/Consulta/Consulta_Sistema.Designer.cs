@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Consulta_Sistema
     {
@@ -31,13 +33,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Sistema));
             this.dgvSistema = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero_OS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblSistema = new System.Windows.Forms.Label();
             this.txtSistema = new System.Windows.Forms.TextBox();
+            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
+            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistema)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,39 +52,14 @@
             this.dgvSistema.AutoGenerateColumns = false;
             this.dgvSistema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSistema.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.Numero_OS});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.numeroOSDataGridViewTextBoxColumn});
             this.dgvSistema.DataSource = this.sistemaBindingSource;
             this.dgvSistema.Location = new System.Drawing.Point(12, 101);
             this.dgvSistema.Name = "dgvSistema";
             this.dgvSistema.Size = new System.Drawing.Size(641, 201);
             this.dgvSistema.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // Numero_OS
-            // 
-            this.Numero_OS.DataPropertyName = "Numero_OS";
-            this.Numero_OS.HeaderText = "Numero_OS";
-            this.Numero_OS.Name = "Numero_OS";
-            // 
-            // sistemaBindingSource
-            // 
-            // 
-            // sistemaSet
-            // 
             // 
             // lblSistema
             // 
@@ -98,8 +78,38 @@
             this.txtSistema.TabIndex = 2;
             this.txtSistema.TextChanged += new System.EventHandler(this.txtSistema_TextChanged);
             // 
+            // sistemaSet
+            // 
+            this.sistemaSet.DataSetName = "SistemaSet";
+            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sistemaBindingSource
+            // 
+            this.sistemaBindingSource.DataMember = "sistema";
+            this.sistemaBindingSource.DataSource = this.sistemaSet;
+            // 
             // sistemaTableAdapter
             // 
+            this.sistemaTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // numeroOSDataGridViewTextBoxColumn
+            // 
+            this.numeroOSDataGridViewTextBoxColumn.DataPropertyName = "Numero_OS";
+            this.numeroOSDataGridViewTextBoxColumn.HeaderText = "Numero_OS";
+            this.numeroOSDataGridViewTextBoxColumn.Name = "numeroOSDataGridViewTextBoxColumn";
             // 
             // Consulta_Sistema
             // 
@@ -114,6 +124,7 @@
             this.Text = "Consulta/Alteração Sistema";
             this.Load += new System.EventHandler(this.Consulta_Sistema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistema)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -125,9 +136,13 @@
         private System.Windows.Forms.DataGridView dgvSistema;
         private System.Windows.Forms.Label lblSistema;
         private System.Windows.Forms.TextBox txtSistema;
-        private System.Windows.Forms.BindingSource sistemaBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_OS;
+        private SistemaSet sistemaSet;
+        private System.Windows.Forms.BindingSource sistemaBindingSource;
+        private BD.SistemaSetTableAdapters.sistemaTableAdapter sistemaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroOSDataGridViewTextBoxColumn;
     }
 }

@@ -19,8 +19,8 @@ namespace OS_CodeFirst.View
 
         private void Consulta_StatusOS_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusOS'. Você pode movê-la ou removê-la conforme necessário.
-            //this.statusOSTableAdapter.Fill(this.statusOSSet.statusOS);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet4.statusos'. Você pode movê-la ou removê-la conforme necessário.
+            this.statusosTableAdapter.Fill(this.ordemservicoDataSet4.statusos);
 
         }
 
@@ -50,12 +50,12 @@ namespace OS_CodeFirst.View
             {
 
 
-                statusOSBindingSource.Filter = "";
+                statusosBindingSource.Filter = "";
                 string DE = " ", DP = " ", DEN = " ", OST = "";
                 int count = 0;
                 if (mtxtDataEmis.Text == null && mtxtPrevista.Text == null && mtxtEntregue == null && mtxtOS.Text == null)
                 {
-                    statusOSBindingSource.Filter = "";
+                    statusosBindingSource.Filter = "";
 
                 }
                 else if (mtxtDataEmis.Text != null && mtxtPrevista.Text != null && mtxtEntregue != null && mtxtOS.Text != null)
@@ -65,7 +65,7 @@ namespace OS_CodeFirst.View
                         if (mtxtDataEmis.Text != "")
                         {
                             DE = "DataEmissao ='" + string.Format("{0:yyyy/MM/dd}", mtxtDataEmis.Text) + "'";
-                            statusOSBindingSource.Filter += DE;
+                            statusosBindingSource.Filter += DE;
                             count++;
 
                         }
@@ -79,13 +79,13 @@ namespace OS_CodeFirst.View
                             if (count > 0)
                             {
                                 DP = " And DataPrevista ='" + string.Format("{0:yyyy/MM/dd}", mtxtPrevista.Text) + "'";
-                                statusOSBindingSource.Filter += DP;
+                                statusosBindingSource.Filter += DP;
                                 count++;
                             }
                             else
                             {
                                 DP = "DataPrevista = '" + string.Format("{0:yyyy/MM/dd}", mtxtPrevista.Text) + "'";
-                                statusOSBindingSource.Filter += DP;
+                                statusosBindingSource.Filter += DP;
                                 count++;
                             }
 
@@ -103,13 +103,13 @@ namespace OS_CodeFirst.View
                             if (count > 0)
                             {
                                 DEN = " And DataEntregue='" + string.Format("{0:yyyy-MM-dd}", Convert.ToDateTime(mtxtEntregue.Text)) + "'";
-                                statusOSBindingSource.Filter += DEN;
+                                statusosBindingSource.Filter += DEN;
                                 count++;
                             }
                             else
                             {
                                 DEN = "DataEntregue ='" + string.Format("{0:yyyy-MM-dd}", Convert.ToDateTime(mtxtEntregue.Text)) + "'";
-                                statusOSBindingSource.Filter += DEN;
+                                statusosBindingSource.Filter += DEN;
                                 count++;
                             }
                         }
@@ -121,13 +121,13 @@ namespace OS_CodeFirst.View
                             if (count > 0)
                             {
                                 OST = " And OSN = '" + mtxtOS.Text + "'";
-                                statusOSBindingSource.Filter += OST;
+                                statusosBindingSource.Filter += OST;
                                 count++;
                             }
                             else
                             {
                                 OST = "OSN = '" + mtxtOS.Text + "'";
-                                statusOSBindingSource.Filter += OST;
+                                statusosBindingSource.Filter += OST;
                                 count++;
                             }
                         }
@@ -160,8 +160,6 @@ namespace OS_CodeFirst.View
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'statusOSSet.statusOS'. Você pode movê-la ou removê-la conforme necessário.
-            //this.statusOSTableAdapter.Fill(this.statusOSSet.statusOS);
         }
     }
 }

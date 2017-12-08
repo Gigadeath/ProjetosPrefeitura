@@ -112,6 +112,13 @@ namespace OS_CodeFirst.Controller
             {
                 return "";
             }
-        }   
+        }
+        public Sistema getDados(int codigo)
+        {
+
+            var query = db.Sistema.Where(x => x.Id == codigo).First();
+            return query;
+
+        }
     }
 }

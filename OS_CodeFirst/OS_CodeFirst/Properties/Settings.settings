@@ -13,42 +13,18 @@
     <Setting Name="ordemservicoConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=10.110.103.168;user id=fabio;password=pai231065;persistsecurityinfo=True;database=ordemservico&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;User Id=fabio;Password=pai231065;Host=10.110.103.168;Database=ordemservico;Persist Security Info=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=10.110.103.168;user id=fabio;password=pai231065;persistsecurityinfo=True;database=ordemservico</Value>
+      <Value Profile="(Default)">User Id=fabio;Password=pai231065;Host=10.110.103.168;Database=ordemservico;Persist Security Info=True</Value>
     </Setting>
     <Setting Name="ordemservicoConnectionString2" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=10.110.103.168;user id=fabio;database=ordemservico;password=pai231065;persistsecurityinfo=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=10.110.103.168;user id=fabio;password=pai231065;persistsecurityinfo=True;database=ordemservico&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=10.110.103.168;user id=fabio;database=ordemservico;password=pai231065;persistsecurityinfo=True</Value>
-    </Setting>
-    <Setting Name="ordemservicoConnectionString3" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=10.110.103.168;user id=fabio;password=pai231065;database=ordemservico&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=10.110.103.168;user id=fabio;password=pai231065;database=ordemservico</Value>
-    </Setting>
-    <Setting Name="ControleOS" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Database=ordemservico;DataSource=10.110.103.168;UserId=fabio;Password=pai231065&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Database=ordemservico;DataSource=10.110.103.168;UserId=fabio;Password=pai231065</Value>
-    </Setting>
-    <Setting Name="ordemservicoConnection" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=10.110.103.168;user id=fabio;password=pai231065;database=ordemservico;persistsecurityinfo=True&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=10.110.103.168;user id=fabio;password=pai231065;database=ordemservico;persistsecurityinfo=True</Value>
+      <Value Profile="(Default)">server=10.110.103.168;user id=fabio;password=pai231065;persistsecurityinfo=True;database=ordemservico</Value>
     </Setting>
   </Settings>
 </SettingsFile>

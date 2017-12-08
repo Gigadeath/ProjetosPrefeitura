@@ -45,8 +45,10 @@
             this.statusToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeServiçoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusDaOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreAjudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregaProdamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreAjudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.geraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +57,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroAlteraçãoToolStripMenuItem,
             this.consultaToolStripMenuItem,
+            this.geraçãoToolStripMenuItem,
             this.sobreAjudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -182,6 +185,13 @@
             this.statusDaOSToolStripMenuItem.Text = "Status da OS";
             this.statusDaOSToolStripMenuItem.Click += new System.EventHandler(this.statusDaOSToolStripMenuItem_Click);
             // 
+            // entregaProdamToolStripMenuItem
+            // 
+            this.entregaProdamToolStripMenuItem.Name = "entregaProdamToolStripMenuItem";
+            this.entregaProdamToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.entregaProdamToolStripMenuItem.Text = "Entrega Prodam";
+            this.entregaProdamToolStripMenuItem.Click += new System.EventHandler(this.entregaProdamToolStripMenuItem_Click);
+            // 
             // sobreAjudaToolStripMenuItem
             // 
             this.sobreAjudaToolStripMenuItem.Name = "sobreAjudaToolStripMenuItem";
@@ -189,12 +199,21 @@
             this.sobreAjudaToolStripMenuItem.Text = "Sobre/Ajuda";
             this.sobreAjudaToolStripMenuItem.Click += new System.EventHandler(this.sobreAjudaToolStripMenuItem_Click);
             // 
-            // entregaProdamToolStripMenuItem
+            // geraçãoToolStripMenuItem
             // 
-            this.entregaProdamToolStripMenuItem.Name = "entregaProdamToolStripMenuItem";
-            this.entregaProdamToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.entregaProdamToolStripMenuItem.Text = "Entrega Prodam";
-            this.entregaProdamToolStripMenuItem.Click += new System.EventHandler(this.entregaProdamToolStripMenuItem_Click);
+            this.geraçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oSToolStripMenuItem1});
+            this.geraçãoToolStripMenuItem.Name = "geraçãoToolStripMenuItem";
+            this.geraçãoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.geraçãoToolStripMenuItem.Text = "Geração";
+            this.geraçãoToolStripMenuItem.Click += new System.EventHandler(this.geraçãoToolStripMenuItem_Click);
+            // 
+            // oSToolStripMenuItem1
+            // 
+            this.oSToolStripMenuItem1.Name = "oSToolStripMenuItem1";
+            this.oSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.oSToolStripMenuItem1.Text = "OS";
+            this.oSToolStripMenuItem1.Click += new System.EventHandler(this.oSToolStripMenuItem1_Click);
             // 
             // FrmInicial
             // 
@@ -232,6 +251,8 @@
         private System.Windows.Forms.ToolStripMenuItem tipoDeServiçoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem statusDaOSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entregaProdamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem geraçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oSToolStripMenuItem1;
     }
 }
 

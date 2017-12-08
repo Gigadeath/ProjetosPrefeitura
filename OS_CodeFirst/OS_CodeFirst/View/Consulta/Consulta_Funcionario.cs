@@ -21,8 +21,8 @@ namespace OS_CodeFirst.View
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'funcionarioSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
-            //this.funcionarioTableAdapter.Fill(this.funcionarioSet.funcionario);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
+            this.funcionarioTableAdapter.Fill(this.ordemservicoDataSet.funcionario);
 
         }
 
@@ -114,6 +114,11 @@ namespace OS_CodeFirst.View
         private void txtSetor_TextChanged(object sender, EventArgs e)
         {
             FiltraFunc();
+        }
+
+        private void ordemservicoDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

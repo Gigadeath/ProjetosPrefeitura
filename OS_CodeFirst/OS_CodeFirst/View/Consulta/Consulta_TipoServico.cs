@@ -19,8 +19,8 @@ namespace OS_CodeFirst.View
 
         private void Consulta_TipoServico_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'tipoServicoSet.tiposervico'. Você pode movê-la ou removê-la conforme necessário.
-            //this.tiposervicoTableAdapter.Fill(this.tipoServicoSet.tiposervico);
+            // TODO: esta linha de código carrega dados na tabela 'tipoServicoDataSet.tiposervico'. Você pode movê-la ou removê-la conforme necessário.
+            this.tiposervicoTableAdapter.Fill(this.tipoServicoDataSet.tiposervico);
 
         }
 

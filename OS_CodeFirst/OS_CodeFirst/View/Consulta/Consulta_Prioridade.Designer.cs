@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Consulta_Prioridade
     {
@@ -31,15 +33,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Prioridade));
             this.dgvPrioridade = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prioridadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordemservicoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNivel = new System.Windows.Forms.Label();
             this.txtPrioridade = new System.Windows.Forms.TextBox();
+            this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet1();
+            this.prioridadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prioridadeTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPrioridade
@@ -55,32 +58,6 @@
             this.dgvPrioridade.Name = "dgvPrioridade";
             this.dgvPrioridade.Size = new System.Drawing.Size(641, 209);
             this.dgvPrioridade.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nivelDataGridViewTextBoxColumn
-            // 
-            this.nivelDataGridViewTextBoxColumn.DataPropertyName = "Nivel";
-            this.nivelDataGridViewTextBoxColumn.HeaderText = "Nivel";
-            this.nivelDataGridViewTextBoxColumn.Name = "nivelDataGridViewTextBoxColumn";
-            // 
-            // prioridadeBindingSource
-            // 
-            this.prioridadeBindingSource.DataMember = "prioridade";
-            this.prioridadeBindingSource.DataSource = this.ordemservicoDataSetBindingSource;
-            // 
-            // ordemservicoDataSetBindingSource
-            // 
-            // ordemservicoDataSet
-            // 
-            // 
-            // prioridadeTableAdapter
-            // 
             // 
             // lblNivel
             // 
@@ -99,6 +76,33 @@
             this.txtPrioridade.TabIndex = 2;
             this.txtPrioridade.TextChanged += new System.EventHandler(this.txtPrioridade_TextChanged);
             // 
+            // ordemservicoDataSet1
+            // 
+            this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet1";
+            this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // prioridadeBindingSource
+            // 
+            this.prioridadeBindingSource.DataMember = "prioridade";
+            this.prioridadeBindingSource.DataSource = this.ordemservicoDataSet1;
+            // 
+            // prioridadeTableAdapter
+            // 
+            this.prioridadeTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nivelDataGridViewTextBoxColumn
+            // 
+            this.nivelDataGridViewTextBoxColumn.DataPropertyName = "Nivel";
+            this.nivelDataGridViewTextBoxColumn.HeaderText = "Nivel";
+            this.nivelDataGridViewTextBoxColumn.Name = "nivelDataGridViewTextBoxColumn";
+            // 
             // Consulta_Prioridade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,8 +116,8 @@
             this.Text = "Consulta/Alteração da Prioridade";
             this.Load += new System.EventHandler(this.Consulta_Prioridade_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,11 +126,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPrioridade;
-        private System.Windows.Forms.BindingSource ordemservicoDataSetBindingSource;
-        private System.Windows.Forms.BindingSource prioridadeBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nivelDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblNivel;
         private System.Windows.Forms.TextBox txtPrioridade;
+        private ordemservicoDataSet1 ordemservicoDataSet1;
+        private System.Windows.Forms.BindingSource prioridadeBindingSource;
+        private BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter prioridadeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nivelDataGridViewTextBoxColumn;
     }
 }

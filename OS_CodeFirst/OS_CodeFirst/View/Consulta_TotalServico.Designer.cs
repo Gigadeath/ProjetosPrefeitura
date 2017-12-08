@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Consulta_TotalServico
     {
@@ -32,17 +34,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_TotalServico));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.totalservicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oSidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalHorasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataLimiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalServicoDataSet = new OS_CodeFirst.BD.TotalServicoDataSet();
             this.lblOSN = new System.Windows.Forms.Label();
             this.lblDataLimite = new System.Windows.Forms.Label();
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
             this.mtxtDataLimite = new System.Windows.Forms.MaskedTextBox();
+            this.totalservicoTableAdapter = new OS_CodeFirst.BD.TotalServicoDataSetTableAdapters.totalservicoTableAdapter();
+            this.OSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalservicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalServicoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -52,11 +57,11 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.oSidDataGridViewTextBoxColumn,
             this.OSN,
-            this.totalHorasDataGridViewTextBoxColumn,
-            this.dataLimiteDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
             this.dataGridView1.DataSource = this.totalservicoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 117);
             this.dataGridView1.Name = "dataGridView1";
@@ -67,49 +72,13 @@
             // 
             // totalservicoBindingSource
             // 
+            this.totalservicoBindingSource.DataMember = "totalservico";
+            this.totalservicoBindingSource.DataSource = this.totalServicoDataSet;
             // 
-            // TotalServicoSet
+            // totalServicoDataSet
             // 
-            // 
-            // totalservicoTableAdapter
-            // 
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // oSidDataGridViewTextBoxColumn
-            // 
-            this.oSidDataGridViewTextBoxColumn.DataPropertyName = "OS_id";
-            this.oSidDataGridViewTextBoxColumn.HeaderText = "OS_id";
-            this.oSidDataGridViewTextBoxColumn.Name = "oSidDataGridViewTextBoxColumn";
-            this.oSidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.oSidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // OSN
-            // 
-            this.OSN.DataPropertyName = "OSN";
-            this.OSN.HeaderText = "OSN";
-            this.OSN.Name = "OSN";
-            this.OSN.ReadOnly = true;
-            // 
-            // totalHorasDataGridViewTextBoxColumn
-            // 
-            this.totalHorasDataGridViewTextBoxColumn.DataPropertyName = "totalHoras";
-            this.totalHorasDataGridViewTextBoxColumn.HeaderText = "totalHoras";
-            this.totalHorasDataGridViewTextBoxColumn.Name = "totalHorasDataGridViewTextBoxColumn";
-            this.totalHorasDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataLimiteDataGridViewTextBoxColumn
-            // 
-            this.dataLimiteDataGridViewTextBoxColumn.DataPropertyName = "DataLimite";
-            this.dataLimiteDataGridViewTextBoxColumn.HeaderText = "DataLimite";
-            this.dataLimiteDataGridViewTextBoxColumn.Name = "dataLimiteDataGridViewTextBoxColumn";
-            this.dataLimiteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.totalServicoDataSet.DataSetName = "TotalServicoDataSet";
+            this.totalServicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblOSN
             // 
@@ -147,6 +116,47 @@
             this.mtxtDataLimite.TabIndex = 6;
             this.mtxtDataLimite.TextChanged += new System.EventHandler(this.mtxtDataLimite_TextChanged);
             // 
+            // totalservicoTableAdapter
+            // 
+            this.totalservicoTableAdapter.ClearBeforeFill = true;
+            // 
+            // OSN
+            // 
+            this.OSN.DataPropertyName = "OSN";
+            this.OSN.HeaderText = "OSN";
+            this.OSN.Name = "OSN";
+            this.OSN.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "totalHoras";
+            this.dataGridViewTextBoxColumn2.HeaderText = "totalHoras";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DataLimite";
+            this.dataGridViewTextBoxColumn3.HeaderText = "DataLimite";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "OS_id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "OS_id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
             // Consulta_TotalServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,6 +173,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalservicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.totalServicoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,15 +182,21 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource totalservicoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oSidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OSN;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalHorasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataLimiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblOSN;
         private System.Windows.Forms.Label lblDataLimite;
         private System.Windows.Forms.MaskedTextBox mtxtOS;
         private System.Windows.Forms.MaskedTextBox mtxtDataLimite;
+        private TotalServicoDataSet totalServicoDataSet;
+        private System.Windows.Forms.BindingSource totalservicoBindingSource;
+        private BD.TotalServicoDataSetTableAdapters.totalservicoTableAdapter totalservicoTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OSN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

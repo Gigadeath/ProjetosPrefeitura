@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TotalServicoDataSet" targetNamespace="http://tempuri.org/TotalServicoDataSet.xsd" xmlns:mstns="http://tempuri.org/TotalServicoDataSet.xsd" xmlns="http://tempuri.org/TotalServicoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ordemservicoConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ordemservicoConnectionString1 (Settings)" PropertyReference="ApplicationSettings.OS_CodeFirst.Properties.Settings.GlobalReference.Default.ordemservicoConnectionString1" Provider="Devart.Data.MySql" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="totalservicoTableAdapter" GeneratorDataComponentClassName="totalservicoTableAdapter" Name="totalservico" UserDataComponentName="totalservicoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ordemservicoConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        totalservico.id, totalservico.totalHoras, totalservico.DataLimite, totalservico.OS_id, os.OSN
+FROM            totalservico INNER JOIN
+                         os ON totalservico.OS_id = os.Id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="totalHoras" DataSetColumn="totalHoras" />
+              <Mapping SourceColumn="DataLimite" DataSetColumn="DataLimite" />
+              <Mapping SourceColumn="OS_id" DataSetColumn="OS_id" />
+              <Mapping SourceColumn="OSN" DataSetColumn="OSN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TotalServicoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TotalServicoDataSet" msprop:Generator_UserDSName="TotalServicoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="totalservico" msprop:Generator_TableClassName="totalservicoDataTable" msprop:Generator_TableVarName="tabletotalservico" msprop:Generator_RowChangedName="totalservicoRowChanged" msprop:Generator_TablePropName="totalservico" msprop:Generator_RowDeletingName="totalservicoRowDeleting" msprop:Generator_RowChangingName="totalservicoRowChanging" msprop:Generator_RowEvHandlerName="totalservicoRowChangeEventHandler" msprop:Generator_RowDeletedName="totalservicoRowDeleted" msprop:Generator_RowClassName="totalservicoRow" msprop:Generator_UserTableName="totalservico" msprop:Generator_RowEvArgName="totalservicoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="totalHoras" msprop:Generator_ColumnVarNameInTable="columntotalHoras" msprop:Generator_ColumnPropNameInRow="totalHoras" msprop:Generator_ColumnPropNameInTable="totalHorasColumn" msprop:Generator_UserColumnName="totalHoras" type="xs:int" />
+              <xs:element name="DataLimite" msprop:Generator_ColumnVarNameInTable="columnDataLimite" msprop:Generator_ColumnPropNameInRow="DataLimite" msprop:Generator_ColumnPropNameInTable="DataLimiteColumn" msprop:Generator_UserColumnName="DataLimite" type="xs:dateTime" />
+              <xs:element name="OS_id" msprop:Generator_ColumnVarNameInTable="columnOS_id" msprop:Generator_ColumnPropNameInRow="OS_id" msprop:Generator_ColumnPropNameInTable="OS_idColumn" msprop:Generator_UserColumnName="OS_id" type="xs:int" />
+              <xs:element name="OSN" msprop:Generator_ColumnVarNameInTable="columnOSN" msprop:Generator_ColumnPropNameInRow="OSN" msprop:Generator_ColumnPropNameInTable="OSNColumn" msprop:Generator_UserColumnName="OSN" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:totalservico" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

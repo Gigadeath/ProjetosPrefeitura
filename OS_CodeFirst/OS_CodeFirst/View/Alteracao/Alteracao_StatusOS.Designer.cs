@@ -1,4 +1,6 @@
-﻿namespace OS_CodeFirst.View
+﻿using OS_CodeFirst.BD;
+
+namespace OS_CodeFirst.View
 {
     partial class Alteracao_StatusOS
     {
@@ -32,11 +34,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alteracao_StatusOS));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.ordemservicoDataSet3 = new OS_CodeFirst.BD.ordemservicoDataSet3();
+            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet3TableAdapters.statusTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,12 +64,6 @@
             this.cmbStatus.Size = new System.Drawing.Size(121, 21);
             this.cmbStatus.TabIndex = 1;
             this.cmbStatus.ValueMember = "Id";
-            // 
-            // statusBindingSource
-            // 
-            // 
-            // statusSet
-            // 
             // 
             // label2
             // 
@@ -102,8 +101,19 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // ordemservicoDataSet3
+            // 
+            this.ordemservicoDataSet3.DataSetName = "ordemservicoDataSet3";
+            this.ordemservicoDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // statusBindingSource
+            // 
+            this.statusBindingSource.DataMember = "status";
+            this.statusBindingSource.DataSource = this.ordemservicoDataSet3;
+            // 
             // statusTableAdapter
             // 
+            this.statusTableAdapter.ClearBeforeFill = true;
             // 
             // Alteracao_StatusOS
             // 
@@ -120,6 +130,7 @@
             this.Name = "Alteracao_StatusOS";
             this.Text = "Movimentação do Status da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Alteracao_StatusOS_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,6 +145,8 @@
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCancelar;
+        private ordemservicoDataSet3 ordemservicoDataSet3;
         private System.Windows.Forms.BindingSource statusBindingSource;
+        private BD.ordemservicoDataSet3TableAdapters.statusTableAdapter statusTableAdapter;
     }
 }

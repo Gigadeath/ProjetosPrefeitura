@@ -37,8 +37,8 @@ namespace OS_CodeFirst.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=10.110.103.168;user id=fabio;password=pai231065;persistsecurityinfo=True;d" +
-            "atabase=ordemservico")]
+        [global::System.Configuration.DefaultSettingValueAttribute("User Id=fabio;Password=pai231065;Host=10.110.103.168;Database=ordemservico;Persis" +
+            "t Security Info=True")]
         public string ordemservicoConnectionString1 {
             get {
                 return ((string)(this["ordemservicoConnectionString1"]));
@@ -48,42 +48,11 @@ namespace OS_CodeFirst.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=10.110.103.168;user id=fabio;database=ordemservico;password=pai231065;pers" +
-            "istsecurityinfo=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=10.110.103.168;user id=fabio;password=pai231065;persistsecurityinfo=True;d" +
+            "atabase=ordemservico")]
         public string ordemservicoConnectionString2 {
             get {
                 return ((string)(this["ordemservicoConnectionString2"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=10.110.103.168;user id=fabio;password=pai231065;database=ordemservico")]
-        public string ordemservicoConnectionString3 {
-            get {
-                return ((string)(this["ordemservicoConnectionString3"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Database=ordemservico;DataSource=10.110.103.168;UserId=fabio;Password=pai231065")]
-        public string ControleOS {
-            get {
-                return ((string)(this["ControleOS"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=10.110.103.168;user id=fabio;password=pai231065;database=ordemservico;pers" +
-            "istsecurityinfo=True")]
-        public string ordemservicoConnection {
-            get {
-                return ((string)(this["ordemservicoConnection"]));
             }
         }
     }

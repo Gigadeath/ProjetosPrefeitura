@@ -24,14 +24,6 @@ namespace OS_CodeFirst.View
             try
             {
                 InitializeComponent();
-                // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
-               // this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
-                // TODO: esta linha de código carrega dados na tabela 'tipoServicoSet.tiposervico'. Você pode movê-la ou removê-la conforme necessário.
-                //this.tiposervicoTableAdapter.Fill(this.tipoServicoSet.tiposervico);
-                // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet.prioridade'. Você pode movê-la ou removê-la conforme necessário.
-                //this.prioridadeTableAdapter.Fill(this.ordemservicoDataSet.prioridade);
-                // TODO: esta linha de código carrega dados na tabela 'funcionarioSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
-                //this.funcionarioTableAdapter.Fill(this.funcionarioSet.funcionario);
                 OSController oscon = new OSController();
                 var dados = oscon.getDados(codigo);
                 id = codigo;

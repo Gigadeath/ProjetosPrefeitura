@@ -27,7 +27,7 @@ namespace OS_CodeFirst
 
         private void sobreAjudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ordemDeServicoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +115,17 @@ namespace OS_CodeFirst
         {
             Consulta_TotalServico contToOs = new Consulta_TotalServico();
             contToOs.ShowDialog();
+        }
+
+        private void geraçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void oSToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Geracao_OS genOs = new Geracao_OS();
+            genOs.ShowDialog();
         }
     }
 }

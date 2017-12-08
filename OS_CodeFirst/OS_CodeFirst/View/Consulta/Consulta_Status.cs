@@ -19,8 +19,8 @@ namespace OS_CodeFirst.View
 
         private void Consulta_Status_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'statusSet.status'. Você pode movê-la ou removê-la conforme necessário.
-           // this.statusTableAdapter.Fill(this.statusSet.status);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet3.status'. Você pode movê-la ou removê-la conforme necessário.
+            this.statusTableAdapter.Fill(this.ordemservicoDataSet3.status);
 
         }
 
