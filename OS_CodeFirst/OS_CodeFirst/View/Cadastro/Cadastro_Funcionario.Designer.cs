@@ -32,11 +32,9 @@
             this.lblRF = new System.Windows.Forms.Label();
             this.lblNomeFunc = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.mtxtRF = new System.Windows.Forms.MaskedTextBox();
-            this.txtSetor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblRF
@@ -64,18 +62,9 @@
             this.txtNome.Size = new System.Drawing.Size(230, 20);
             this.txtNome.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Setor:";
-            // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(42, 213);
+            this.btnSalvar.Location = new System.Drawing.Point(42, 183);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 6;
@@ -85,7 +74,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(157, 213);
+            this.btnCancelar.Location = new System.Drawing.Point(197, 183);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
@@ -100,24 +89,14 @@
             this.mtxtRF.Size = new System.Drawing.Size(59, 20);
             this.mtxtRF.TabIndex = 8;
             // 
-            // txtSetor
-            // 
-            this.txtSetor.Location = new System.Drawing.Point(42, 121);
-            this.txtSetor.Name = "txtSetor";
-            this.txtSetor.Size = new System.Drawing.Size(230, 20);
-            this.txtSetor.TabIndex = 5;
-            this.txtSetor.Text = "SME/CODAE/";
-            // 
             // Cadastro_Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(311, 218);
             this.Controls.Add(this.mtxtRF);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.txtSetor);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblNomeFunc);
             this.Controls.Add(this.lblRF);
@@ -134,10 +113,8 @@
         private System.Windows.Forms.Label lblRF;
         private System.Windows.Forms.Label lblNomeFunc;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.MaskedTextBox mtxtRF;
-        private System.Windows.Forms.TextBox txtSetor;
     }
 }

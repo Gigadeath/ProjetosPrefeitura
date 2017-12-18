@@ -56,6 +56,9 @@
             this.consulta_UltimoStatusTableAdapter = new OS_CodeFirst.BD.OS__Ativas_AtrasadasTableAdapters.Consulta_UltimoStatusTableAdapter();
             this.OsAtivasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet();
+            this.departamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vinculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departamentoXFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDaOs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oS__Ativas_Atrasadas)).BeginInit();
@@ -84,7 +87,9 @@
             this.sistemaToolStripMenuItem,
             this.funcionariosToolStripMenuItem,
             this.statusToolStripMenuItem,
-            this.tipoDeServiçoToolStripMenuItem});
+            this.tipoDeServiçoToolStripMenuItem,
+            this.departamentoToolStripMenuItem,
+            this.vinculosToolStripMenuItem});
             this.cadastroAlteraçãoToolStripMenuItem.Name = "cadastroAlteraçãoToolStripMenuItem";
             this.cadastroAlteraçãoToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroAlteraçãoToolStripMenuItem.Text = "Cadastro";
@@ -260,6 +265,28 @@
             this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet";
             this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // departamentoToolStripMenuItem
+            // 
+            this.departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
+            this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.departamentoToolStripMenuItem.Text = "Departamento";
+            this.departamentoToolStripMenuItem.Click += new System.EventHandler(this.departamentoToolStripMenuItem_Click);
+            // 
+            // vinculosToolStripMenuItem
+            // 
+            this.vinculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.departamentoXFuncionarioToolStripMenuItem});
+            this.vinculosToolStripMenuItem.Name = "vinculosToolStripMenuItem";
+            this.vinculosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.vinculosToolStripMenuItem.Text = "Vinculos";
+            // 
+            // departamentoXFuncionarioToolStripMenuItem
+            // 
+            this.departamentoXFuncionarioToolStripMenuItem.Name = "departamentoXFuncionarioToolStripMenuItem";
+            this.departamentoXFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.departamentoXFuncionarioToolStripMenuItem.Text = "Departamento X Funcionario";
+            this.departamentoXFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.departamentoXFuncionarioToolStripMenuItem_Click);
+            // 
             // FrmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +336,9 @@
         private BD.OS__Ativas_AtrasadasTableAdapters.Consulta_UltimoStatusTableAdapter consulta_UltimoStatusTableAdapter;
         private System.Windows.Forms.BindingSource OsAtivasBindingSource;
         private BD.ordemservicoDataSet ordemservicoDataSet1;
+        private System.Windows.Forms.ToolStripMenuItem departamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vinculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departamentoXFuncionarioToolStripMenuItem;
     }
 }
 

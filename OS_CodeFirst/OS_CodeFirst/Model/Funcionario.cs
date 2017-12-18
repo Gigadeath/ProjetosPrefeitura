@@ -15,16 +15,16 @@ namespace OS_CodeFirst.Model
         public string RF { get; set; }
         [Required(ErrorMessage = "O nome do Funcionario é obrigatório", AllowEmptyStrings = false)]
         public string Nome { get; set; }
-        [Required(ErrorMessage = "O Setor do usuário é obrigatório", AllowEmptyStrings = false)]
-        public string Setor { get; set; }
+
 
 
         public virtual ICollection<OS> OS { get; set; }
+        public virtual ICollection<Dep_Func> DepFunc { get; set; }
 
-      /*  public Funcionario()
-        {
-            this.OS = new HashSet<OS>();
-        }*/
+        /*  public Funcionario()
+          {
+              this.OS = new HashSet<OS>();
+          }*/
 
     }
 }

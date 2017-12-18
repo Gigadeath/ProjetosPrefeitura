@@ -86,7 +86,7 @@ namespace OS_CodeFirst.Controller
                 
             }
         }
-        public Prioridade getDados(int codigo)
+        public Prioridade getDados(Int32 codigo)
         {
 
             var query = db.Prioridade.Where(x => x.Id == codigo).First();

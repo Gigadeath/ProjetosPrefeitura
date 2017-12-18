@@ -12,12 +12,15 @@ namespace OS_CodeFirst
     {
         public DbSet<StatusOS> StatusOS { get; set; }
         public DbSet<OS> OS { get; set; }
+        public DbSet<Dep_Func> DepFunc { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
         public DbSet<Prioridade> Prioridade { get; set; }
         public DbSet<Sistema> Sistema { get; set; }
         public DbSet<Status> Status { get; set; }
         public DbSet<TipoServico> TipoServico { get; set; }
         public DbSet<TotalServico> TotalServico { get; set;}
+        public DbSet<Departamento> Departamento { get; set; }
+        
 
         // Your context has been configured to use a 'Model1' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 

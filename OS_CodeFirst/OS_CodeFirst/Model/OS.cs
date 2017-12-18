@@ -36,6 +36,7 @@ namespace OS_CodeFirst.Model
         public Int32 Prioridade_Id { get; set; }
         public Int32 Sistema_Id { get; set; }
         public Int32 TipoServico_Id { get; set; }
+        public Int32 Departamento_Id { get; set; }
 
 
         public virtual ICollection<StatusOS> StatusOS { get; set; }
@@ -51,6 +52,9 @@ namespace OS_CodeFirst.Model
 
         [ForeignKey("TipoServico_Id")]
         public TipoServico TipoServico {get; set;}
+
+        [ForeignKey("Departamento_Id")]
+        public Departamento Departamento { get; set; }
 
     /*  public OS()
         {

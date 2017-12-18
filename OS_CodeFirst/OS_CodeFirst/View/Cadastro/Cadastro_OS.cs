@@ -23,6 +23,7 @@ namespace OS_CodeFirst.View
         StatusOS_Controller statCon = new StatusOS_Controller();
         TotalServico totServ = new TotalServico();
         TotalServicoController totServCon = new TotalServicoController();
+        DepFuncController dfc = new DepFuncController(); 
 
         public Frm_CadastraOS()
         {
@@ -104,6 +105,7 @@ namespace OS_CodeFirst.View
                     osm.ItemContratual = txtItem.Text;
                     osm.Servico = cmbServico.Text;
                     osm.DataPrevista = Convert.ToDateTime(mtxtPrev.Text);
+                    osm.Departamento_Id = dfc.LastDepartamento(osm.Funcionario_Id).Departamento_Id;
                     if (mtxtEntregue.Text.Replace("/", "").Trim().Length == 8)
                     {
                         osm.DataEntregue = Convert.ToDateTime(mtxtEntregue.Text);

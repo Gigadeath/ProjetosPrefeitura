@@ -31,12 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alteracao_OS));
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.prioridadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
-            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbServico = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSolicitacao = new System.Windows.Forms.TextBox();
@@ -61,13 +56,28 @@
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
             this.lblPA = new System.Windows.Forms.Label();
             this.lblOS = new System.Windows.Forms.Label();
-            this.cmbSistema = new System.Windows.Forms.ComboBox();
             this.lblSistema = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
+            this.cmbSistema = new System.Windows.Forms.ComboBox();
+            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
+            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
+            this.ordemservicoDataSet = new OS_CodeFirst.BD.ordemservicoDataSet();
+            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
+            this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet1();
+            this.prioridadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.prioridadeTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter();
+            this.tipoServicoDataSet = new OS_CodeFirst.BD.TipoServicoDataSet();
+            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tiposervicoTableAdapter = new OS_CodeFirst.BD.TipoServicoDataSetTableAdapters.tiposervicoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvar
@@ -80,10 +90,6 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // prioridadeBindingSource
-            // 
-            this.prioridadeBindingSource.DataMember = "prioridade";
-            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(558, 285);
@@ -92,11 +98,6 @@
             this.btnCancel.TabIndex = 33;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // sistemaBindingSource
-            // 
-            this.sistemaBindingSource.DataMember = "sistema";
-            this.sistemaBindingSource.DataSource = this.sistemaSetBindingSource;
             // 
             // cmbServico
             // 
@@ -322,9 +323,17 @@
             this.lblOS.TabIndex = 61;
             this.lblOS.Text = "OS N°:";
             // 
+            // lblSistema
+            // 
+            this.lblSistema.AutoSize = true;
+            this.lblSistema.Location = new System.Drawing.Point(216, 37);
+            this.lblSistema.Name = "lblSistema";
+            this.lblSistema.Size = new System.Drawing.Size(47, 13);
+            this.lblSistema.TabIndex = 59;
+            this.lblSistema.Text = "Sistema:";
+            // 
             // cmbSistema
             // 
-            this.cmbSistema.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.sistemaBindingSource, "Id", true));
             this.cmbSistema.DataSource = this.sistemaBindingSource;
             this.cmbSistema.DisplayMember = "Nome";
             this.cmbSistema.Enabled = false;
@@ -335,14 +344,61 @@
             this.cmbSistema.TabIndex = 60;
             this.cmbSistema.ValueMember = "Id";
             // 
-            // lblSistema
+            // sistemaSet
             // 
-            this.lblSistema.AutoSize = true;
-            this.lblSistema.Location = new System.Drawing.Point(216, 37);
-            this.lblSistema.Name = "lblSistema";
-            this.lblSistema.Size = new System.Drawing.Size(47, 13);
-            this.lblSistema.TabIndex = 59;
-            this.lblSistema.Text = "Sistema:";
+            this.sistemaSet.DataSetName = "SistemaSet";
+            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sistemaBindingSource
+            // 
+            this.sistemaBindingSource.DataMember = "sistema";
+            this.sistemaBindingSource.DataSource = this.sistemaSet;
+            // 
+            // sistemaTableAdapter
+            // 
+            this.sistemaTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordemservicoDataSet
+            // 
+            this.ordemservicoDataSet.DataSetName = "ordemservicoDataSet";
+            this.ordemservicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // funcionarioBindingSource
+            // 
+            this.funcionarioBindingSource.DataMember = "funcionario";
+            this.funcionarioBindingSource.DataSource = this.ordemservicoDataSet;
+            // 
+            // funcionarioTableAdapter
+            // 
+            this.funcionarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // ordemservicoDataSet1
+            // 
+            this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet1";
+            this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // prioridadeBindingSource
+            // 
+            this.prioridadeBindingSource.DataMember = "prioridade";
+            this.prioridadeBindingSource.DataSource = this.ordemservicoDataSet1;
+            // 
+            // prioridadeTableAdapter
+            // 
+            this.prioridadeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tipoServicoDataSet
+            // 
+            this.tipoServicoDataSet.DataSetName = "TipoServicoDataSet";
+            this.tipoServicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tiposervicoBindingSource
+            // 
+            this.tiposervicoBindingSource.DataMember = "tiposervico";
+            this.tiposervicoBindingSource.DataSource = this.tipoServicoDataSet;
+            // 
+            // tiposervicoTableAdapter
+            // 
+            this.tiposervicoTableAdapter.ClearBeforeFill = true;
             // 
             // Alteracao_OS
             // 
@@ -381,11 +437,14 @@
             this.Name = "Alteracao_OS";
             this.Text = "Alteração da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Alteracao_OS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,11 +453,6 @@
         #endregion
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.BindingSource funcionarioBindingSource;
-        private System.Windows.Forms.BindingSource prioridadeBindingSource;
-        private System.Windows.Forms.BindingSource tiposervicoBindingSource;
-        private System.Windows.Forms.BindingSource sistemaSetBindingSource;
-        private System.Windows.Forms.BindingSource sistemaBindingSource;
         private System.Windows.Forms.ComboBox cmbServico;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSolicitacao;
@@ -423,7 +477,19 @@
         private System.Windows.Forms.MaskedTextBox mtxtOS;
         private System.Windows.Forms.Label lblPA;
         private System.Windows.Forms.Label lblOS;
-        private System.Windows.Forms.ComboBox cmbSistema;
         private System.Windows.Forms.Label lblSistema;
+        private System.Windows.Forms.ComboBox cmbSistema;
+        private BD.SistemaSet sistemaSet;
+        private System.Windows.Forms.BindingSource sistemaBindingSource;
+        private BD.SistemaSetTableAdapters.sistemaTableAdapter sistemaTableAdapter;
+        private BD.ordemservicoDataSet ordemservicoDataSet;
+        private System.Windows.Forms.BindingSource funcionarioBindingSource;
+        private BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter funcionarioTableAdapter;
+        private BD.ordemservicoDataSet1 ordemservicoDataSet1;
+        private System.Windows.Forms.BindingSource prioridadeBindingSource;
+        private BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter prioridadeTableAdapter;
+        private BD.TipoServicoDataSet tipoServicoDataSet;
+        private System.Windows.Forms.BindingSource tiposervicoBindingSource;
+        private BD.TipoServicoDataSetTableAdapters.tiposervicoTableAdapter tiposervicoTableAdapter;
     }
 }

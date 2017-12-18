@@ -115,6 +115,8 @@ namespace OS_CodeFirst.Controller
             PrioridadeController pri = new PrioridadeController();
             TipoServicoController tipc = new TipoServicoController();
             SistemaController sisc = new SistemaController();
+            DepartamentoController depc = new DepartamentoController();
+            
             try
             {
                 var OS = osc.getDados(codigo);
@@ -122,6 +124,7 @@ namespace OS_CodeFirst.Controller
                 var PRIO = pri.getDados(OS.Prioridade_Id);
                 var TIPS = tipc.getDados(OS.TipoServico_Id);
                 var SIST = sisc.getDados(OS.Sistema_Id);
+                var DEP = depc.getDados(OS.Departamento_Id);
 
 
 
@@ -137,7 +140,7 @@ namespace OS_CodeFirst.Controller
                 doc.ReplaceText("«PA»", OS.PA);
                 doc.ReplaceText("«TC»", OS.TC);
                 doc.ReplaceText("«Data_Emissao»", string.Format("{0:dd/MM/yyyy}", OS.DataEmissao));
-                doc.ReplaceText("«Area_Demandante»", FUNC.Setor);
+                doc.ReplaceText("«Area_Demandante»", DEP.Setor);
                 doc.ReplaceText("«Responsável»", FUNC.Nome);
                 doc.ReplaceText("«Prioridade»", PRIO.Nivel);
                 doc.ReplaceText("«Tipo»", TIPS.Nome);

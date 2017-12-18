@@ -78,6 +78,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\FuncionarioSet.cs">
+      <DependentUpon>FuncionarioSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BD\OS_ Ativas_Atrasadas.cs">
       <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
     </Compile>
@@ -86,6 +89,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Controller\DepartamentoController.cs" />
+    <Compile Include="Controller\DepFuncController.cs" />
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\OSController.cs" />
     <Compile Include="Controller\PrioridadeController.cs" />
@@ -95,30 +100,17 @@
     <Compile Include="Controller\TipoServicoController.cs" />
     <Compile Include="Controller\TotalServicoController.cs" />
     <Compile Include="Controller\Validacao.cs" />
-    <Compile Include="Migrations\201711221322300_Initial.cs" />
-    <Compile Include="Migrations\201711221322300_Initial.Designer.cs">
-      <DependentUpon>201711221322300_Initial.cs</DependentUpon>
+    <Compile Include="DepartamentoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DepartamentoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711221410052_Initialv2.cs" />
-    <Compile Include="Migrations\201711221410052_Initialv2.Designer.cs">
-      <DependentUpon>201711221410052_Initialv2.cs</DependentUpon>
+    <Compile Include="Migrations\201801151602108_Initial.cs" />
+    <Compile Include="Migrations\201801151602108_Initial.Designer.cs">
+      <DependentUpon>201801151602108_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711241522382_Initialv3.cs" />
-    <Compile Include="Migrations\201711241522382_Initialv3.Designer.cs">
-      <DependentUpon>201711241522382_Initialv3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711241626373_Initialv4.cs" />
-    <Compile Include="Migrations\201711241626373_Initialv4.Designer.cs">
-      <DependentUpon>201711241626373_Initialv4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711241635270_Initialv5.cs" />
-    <Compile Include="Migrations\201711241635270_Initialv5.Designer.cs">
-      <DependentUpon>201711241635270_Initialv5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711241843102_Initialv6.cs" />
-    <Compile Include="Migrations\201711241843102_Initialv6.Designer.cs">
-      <DependentUpon>201711241843102_Initialv6.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Model\Departamento.cs" />
+    <Compile Include="Model\Dep_Func.cs" />
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\TipoServico.cs" />
     <Compile Include="Model\TotalServico.cs" />
@@ -179,6 +171,12 @@
     <Compile Include="View\Alteracao\Alteracao_StatusOS.Designer.cs">
       <DependentUpon>Alteracao_StatusOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Departamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_Departamento.Designer.cs">
+      <DependentUpon>Cadastro_Departamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Cadastro\Cadastro_Prioridade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +212,12 @@
     </Compile>
     <Compile Include="View\Cadastro\Cadastro_TipoServico.Designer.cs">
       <DependentUpon>Cadastro_TipoServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_DepxFun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro\Cadastro_DepxFun.Designer.cs">
+      <DependentUpon>Cadastro_DepxFun.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Consulta\Consulta_Status.cs">
       <SubType>Form</SubType>
@@ -284,23 +288,8 @@
     <Compile Include="Model\StatusOS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\201711221322300_Initial.resx">
-      <DependentUpon>201711221322300_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711221410052_Initialv2.resx">
-      <DependentUpon>201711221410052_Initialv2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711241522382_Initialv3.resx">
-      <DependentUpon>201711241522382_Initialv3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711241626373_Initialv4.resx">
-      <DependentUpon>201711241626373_Initialv4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711241635270_Initialv5.resx">
-      <DependentUpon>201711241635270_Initialv5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711241843102_Initialv6.resx">
-      <DependentUpon>201711241843102_Initialv6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801151602108_Initial.resx">
+      <DependentUpon>201801151602108_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -316,6 +305,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Alteracao\Alteracao_StatusOS.resx">
       <DependentUpon>Alteracao_StatusOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_Departamento.resx">
+      <DependentUpon>Cadastro_Departamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cadastro\Cadastro_DepxFun.resx">
+      <DependentUpon>Cadastro_DepxFun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastro\Cadastro_Funcionario.resx">
       <DependentUpon>Cadastro_Funcionario.cs</DependentUpon>
@@ -375,6 +370,17 @@
     </None>
     <None Include="BD\OS_ Ativas_Atrasadas.xss">
       <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
+    </None>
+    <None Include="DepartamentoDataSet.xsc">
+      <DependentUpon>DepartamentoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DepartamentoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DepartamentoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DepartamentoDataSet.xss">
+      <DependentUpon>DepartamentoDataSet.xsd</DependentUpon>
     </None>
     <None Include="Documentos\Ordem de Serviço PAPA.docx" />
     <None Include="BD\FuncionarioSet.xsc">

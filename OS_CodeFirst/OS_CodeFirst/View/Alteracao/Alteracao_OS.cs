@@ -86,6 +86,14 @@ namespace OS_CodeFirst.View
 
         private void Alteracao_OS_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'tipoServicoDataSet.tiposervico'. Você pode movê-la ou removê-la conforme necessário.
+            this.tiposervicoTableAdapter.Fill(this.tipoServicoDataSet.tiposervico);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet1.prioridade'. Você pode movê-la ou removê-la conforme necessário.
+            this.prioridadeTableAdapter.Fill(this.ordemservicoDataSet1.prioridade);
+            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
+            this.funcionarioTableAdapter.Fill(this.ordemservicoDataSet.funcionario);
+            // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
+            this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
 
         }
     }
