@@ -42,34 +42,34 @@ namespace OS_CodeFirst.View
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgvOS = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sistema_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.osBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oSSet = new OS_CodeFirst.BD.OSSet();
             this.lblSistema = new System.Windows.Forms.Label();
             this.cmbSistema = new System.Windows.Forms.ComboBox();
+            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnGerar = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
-            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
-            this.oSSet = new OS_CodeFirst.BD.OSSet();
-            this.osBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.osTableAdapter = new OS_CodeFirst.BD.OSSetTableAdapters.osTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oSSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oSSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOS
             // 
             this.lblOS.AutoSize = true;
-            this.lblOS.Location = new System.Drawing.Point(29, 19);
+            this.lblOS.Location = new System.Drawing.Point(24, 79);
             this.lblOS.Name = "lblOS";
             this.lblOS.Size = new System.Drawing.Size(25, 13);
             this.lblOS.TabIndex = 2;
@@ -78,7 +78,7 @@ namespace OS_CodeFirst.View
             // lblDataemis
             // 
             this.lblDataemis.AutoSize = true;
-            this.lblDataemis.Location = new System.Drawing.Point(237, 19);
+            this.lblDataemis.Location = new System.Drawing.Point(232, 79);
             this.lblDataemis.Name = "lblDataemis";
             this.lblDataemis.Size = new System.Drawing.Size(75, 13);
             this.lblDataemis.TabIndex = 4;
@@ -86,7 +86,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtDataEmis
             // 
-            this.mtxtDataEmis.Location = new System.Drawing.Point(318, 16);
+            this.mtxtDataEmis.Location = new System.Drawing.Point(313, 76);
             this.mtxtDataEmis.Mask = "00/00/0000";
             this.mtxtDataEmis.Name = "mtxtDataEmis";
             this.mtxtDataEmis.Size = new System.Drawing.Size(100, 20);
@@ -95,7 +95,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtPrevista
             // 
-            this.mtxtPrevista.Location = new System.Drawing.Point(540, 16);
+            this.mtxtPrevista.Location = new System.Drawing.Point(535, 76);
             this.mtxtPrevista.Mask = "00/00/0000";
             this.mtxtPrevista.Name = "mtxtPrevista";
             this.mtxtPrevista.Size = new System.Drawing.Size(100, 20);
@@ -105,7 +105,7 @@ namespace OS_CodeFirst.View
             // lblDataPrev
             // 
             this.lblDataPrev.AutoSize = true;
-            this.lblDataPrev.Location = new System.Drawing.Point(459, 19);
+            this.lblDataPrev.Location = new System.Drawing.Point(454, 79);
             this.lblDataPrev.Name = "lblDataPrev";
             this.lblDataPrev.Size = new System.Drawing.Size(74, 13);
             this.lblDataPrev.TabIndex = 6;
@@ -113,7 +113,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtEntregue
             // 
-            this.mtxtEntregue.Location = new System.Drawing.Point(318, 59);
+            this.mtxtEntregue.Location = new System.Drawing.Point(313, 119);
             this.mtxtEntregue.Mask = "00/00/0000";
             this.mtxtEntregue.Name = "mtxtEntregue";
             this.mtxtEntregue.Size = new System.Drawing.Size(100, 20);
@@ -123,7 +123,7 @@ namespace OS_CodeFirst.View
             // lblEntregue
             // 
             this.lblEntregue.AutoSize = true;
-            this.lblEntregue.Location = new System.Drawing.Point(237, 62);
+            this.lblEntregue.Location = new System.Drawing.Point(232, 122);
             this.lblEntregue.Name = "lblEntregue";
             this.lblEntregue.Size = new System.Drawing.Size(79, 13);
             this.lblEntregue.TabIndex = 8;
@@ -159,13 +159,21 @@ namespace OS_CodeFirst.View
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.dgvOS.DataSource = this.osBindingSource;
-            this.dgvOS.Location = new System.Drawing.Point(12, 110);
+            this.dgvOS.Location = new System.Drawing.Point(7, 170);
             this.dgvOS.Name = "dgvOS";
             this.dgvOS.ReadOnly = true;
             this.dgvOS.Size = new System.Drawing.Size(641, 192);
             this.dgvOS.TabIndex = 11;
             this.dgvOS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOS_CellContentClick);
             this.dgvOS.DoubleClick += new System.EventHandler(this.dgvOS_DoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // Sistema_Id
             // 
@@ -175,10 +183,48 @@ namespace OS_CodeFirst.View
             this.Sistema_Id.ReadOnly = true;
             this.Sistema_Id.Visible = false;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OSN";
+            this.dataGridViewTextBoxColumn3.HeaderText = "OSN";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataEmissao";
+            this.dataGridViewTextBoxColumn4.HeaderText = "DataEmissao";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DataPrevista";
+            this.dataGridViewTextBoxColumn5.HeaderText = "DataPrevista";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DataEntregue";
+            this.dataGridViewTextBoxColumn6.HeaderText = "DataEntregue";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // osBindingSource
+            // 
+            this.osBindingSource.DataMember = "os";
+            this.osBindingSource.DataSource = this.oSSet;
+            // 
+            // oSSet
+            // 
+            this.oSSet.DataSetName = "OSSet";
+            this.oSSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lblSistema
             // 
             this.lblSistema.AutoSize = true;
-            this.lblSistema.Location = new System.Drawing.Point(7, 62);
+            this.lblSistema.Location = new System.Drawing.Point(2, 122);
             this.lblSistema.Name = "lblSistema";
             this.lblSistema.Size = new System.Drawing.Size(47, 13);
             this.lblSistema.TabIndex = 12;
@@ -189,16 +235,26 @@ namespace OS_CodeFirst.View
             this.cmbSistema.DataSource = this.sistemaBindingSource;
             this.cmbSistema.DisplayMember = "Nome";
             this.cmbSistema.FormattingEnabled = true;
-            this.cmbSistema.Location = new System.Drawing.Point(60, 54);
+            this.cmbSistema.Location = new System.Drawing.Point(55, 114);
             this.cmbSistema.Name = "cmbSistema";
             this.cmbSistema.Size = new System.Drawing.Size(100, 21);
             this.cmbSistema.TabIndex = 13;
             this.cmbSistema.ValueMember = "Id";
             this.cmbSistema.TextChanged += new System.EventHandler(this.cmbSistema_TextChanged);
             // 
+            // sistemaBindingSource
+            // 
+            this.sistemaBindingSource.DataMember = "sistema";
+            this.sistemaBindingSource.DataSource = this.sistemaSet;
+            // 
+            // sistemaSet
+            // 
+            this.sistemaSet.DataSetName = "SistemaSet";
+            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // mtxtOS
             // 
-            this.mtxtOS.Location = new System.Drawing.Point(60, 12);
+            this.mtxtOS.Location = new System.Drawing.Point(55, 72);
             this.mtxtOS.Mask = "000-0000/0000";
             this.mtxtOS.Name = "mtxtOS";
             this.mtxtOS.Size = new System.Drawing.Size(100, 20);
@@ -207,7 +263,7 @@ namespace OS_CodeFirst.View
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(554, 81);
+            this.btnAtualizar.Location = new System.Drawing.Point(549, 141);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 15;
@@ -217,7 +273,7 @@ namespace OS_CodeFirst.View
             // 
             // btnGerar
             // 
-            this.btnGerar.Location = new System.Drawing.Point(458, 81);
+            this.btnGerar.Location = new System.Drawing.Point(453, 141);
             this.btnGerar.Name = "btnGerar";
             this.btnGerar.Size = new System.Drawing.Size(75, 23);
             this.btnGerar.TabIndex = 16;
@@ -225,65 +281,9 @@ namespace OS_CodeFirst.View
             this.btnGerar.UseVisualStyleBackColor = true;
             this.btnGerar.Click += new System.EventHandler(this.btnGerar_Click);
             // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DataEntregue";
-            this.dataGridViewTextBoxColumn6.HeaderText = "DataEntregue";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "DataPrevista";
-            this.dataGridViewTextBoxColumn5.HeaderText = "DataPrevista";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataEmissao";
-            this.dataGridViewTextBoxColumn4.HeaderText = "DataEmissao";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "OSN";
-            this.dataGridViewTextBoxColumn3.HeaderText = "OSN";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sistemaSet
-            // 
-            this.sistemaSet.DataSetName = "SistemaSet";
-            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sistemaBindingSource
-            // 
-            this.sistemaBindingSource.DataMember = "sistema";
-            this.sistemaBindingSource.DataSource = this.sistemaSet;
-            // 
             // sistemaTableAdapter
             // 
             this.sistemaTableAdapter.ClearBeforeFill = true;
-            // 
-            // oSSet
-            // 
-            this.oSSet.DataSetName = "OSSet";
-            this.oSSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // osBindingSource
-            // 
-            this.osBindingSource.DataMember = "os";
-            this.osBindingSource.DataSource = this.oSSet;
             // 
             // osTableAdapter
             // 
@@ -293,7 +293,7 @@ namespace OS_CodeFirst.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 314);
+            this.ClientSize = new System.Drawing.Size(665, 374);
             this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.mtxtOS);
@@ -312,10 +312,10 @@ namespace OS_CodeFirst.View
             this.Text = "Consulta/Alteração da OS";
             this.Load += new System.EventHandler(this.Consulta_StatusOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oSSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oSSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

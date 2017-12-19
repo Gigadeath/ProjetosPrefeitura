@@ -33,17 +33,17 @@ namespace OS_CodeFirst.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Sistema));
             this.dgvSistema = new System.Windows.Forms.DataGridView();
-            this.lblSistema = new System.Windows.Forms.Label();
-            this.txtSistema = new System.Windows.Forms.TextBox();
-            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
-            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
+            this.lblSistema = new System.Windows.Forms.Label();
+            this.txtSistema = new System.Windows.Forms.TextBox();
+            this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistema)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSistema
@@ -56,41 +56,10 @@ namespace OS_CodeFirst.View
             this.dataGridViewTextBoxColumn2,
             this.numeroOSDataGridViewTextBoxColumn});
             this.dgvSistema.DataSource = this.sistemaBindingSource;
-            this.dgvSistema.Location = new System.Drawing.Point(12, 101);
+            this.dgvSistema.Location = new System.Drawing.Point(8, 152);
             this.dgvSistema.Name = "dgvSistema";
             this.dgvSistema.Size = new System.Drawing.Size(641, 201);
             this.dgvSistema.TabIndex = 0;
-            // 
-            // lblSistema
-            // 
-            this.lblSistema.AutoSize = true;
-            this.lblSistema.Location = new System.Drawing.Point(41, 40);
-            this.lblSistema.Name = "lblSistema";
-            this.lblSistema.Size = new System.Drawing.Size(47, 13);
-            this.lblSistema.TabIndex = 1;
-            this.lblSistema.Text = "Sistema:";
-            // 
-            // txtSistema
-            // 
-            this.txtSistema.Location = new System.Drawing.Point(110, 37);
-            this.txtSistema.Name = "txtSistema";
-            this.txtSistema.Size = new System.Drawing.Size(496, 20);
-            this.txtSistema.TabIndex = 2;
-            this.txtSistema.TextChanged += new System.EventHandler(this.txtSistema_TextChanged);
-            // 
-            // sistemaSet
-            // 
-            this.sistemaSet.DataSetName = "SistemaSet";
-            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sistemaBindingSource
-            // 
-            this.sistemaBindingSource.DataMember = "sistema";
-            this.sistemaBindingSource.DataSource = this.sistemaSet;
-            // 
-            // sistemaTableAdapter
-            // 
-            this.sistemaTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -111,11 +80,42 @@ namespace OS_CodeFirst.View
             this.numeroOSDataGridViewTextBoxColumn.HeaderText = "Numero_OS";
             this.numeroOSDataGridViewTextBoxColumn.Name = "numeroOSDataGridViewTextBoxColumn";
             // 
+            // sistemaBindingSource
+            // 
+            this.sistemaBindingSource.DataMember = "sistema";
+            this.sistemaBindingSource.DataSource = this.sistemaSet;
+            // 
+            // sistemaSet
+            // 
+            this.sistemaSet.DataSetName = "SistemaSet";
+            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblSistema
+            // 
+            this.lblSistema.AutoSize = true;
+            this.lblSistema.Location = new System.Drawing.Point(37, 91);
+            this.lblSistema.Name = "lblSistema";
+            this.lblSistema.Size = new System.Drawing.Size(47, 13);
+            this.lblSistema.TabIndex = 1;
+            this.lblSistema.Text = "Sistema:";
+            // 
+            // txtSistema
+            // 
+            this.txtSistema.Location = new System.Drawing.Point(106, 88);
+            this.txtSistema.Name = "txtSistema";
+            this.txtSistema.Size = new System.Drawing.Size(496, 20);
+            this.txtSistema.TabIndex = 2;
+            this.txtSistema.TextChanged += new System.EventHandler(this.txtSistema_TextChanged);
+            // 
+            // sistemaTableAdapter
+            // 
+            this.sistemaTableAdapter.ClearBeforeFill = true;
+            // 
             // Consulta_Sistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 314);
+            this.ClientSize = new System.Drawing.Size(665, 376);
             this.Controls.Add(this.txtSistema);
             this.Controls.Add(this.lblSistema);
             this.Controls.Add(this.dgvSistema);
@@ -124,8 +124,8 @@ namespace OS_CodeFirst.View
             this.Text = "Consulta/Alteração Sistema";
             this.Load += new System.EventHandler(this.Consulta_Sistema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistema)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

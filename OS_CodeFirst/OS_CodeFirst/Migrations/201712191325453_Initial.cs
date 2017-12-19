@@ -53,7 +53,7 @@ namespace OS_CodeFirst.Migrations
                         DataPrevista = c.DateTime(nullable: false, precision: 0),
                         DataEntregue = c.DateTime(nullable: false, precision: 0),
                         Solicitacao = c.String(nullable: false, unicode: false),
-                        Servico = c.String(nullable: false, unicode: false),
+                        Servico = c.String(unicode: false),
                         Funcionario_Id = c.Int(nullable: false),
                         Prioridade_Id = c.Int(nullable: false),
                         Sistema_Id = c.Int(nullable: false),

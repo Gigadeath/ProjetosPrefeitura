@@ -33,16 +33,16 @@ namespace OS_CodeFirst.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Status));
             this.dgvStatus = new System.Windows.Forms.DataGridView();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.ordemservicoDataSet3 = new OS_CodeFirst.BD.ordemservicoDataSet3();
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.statusTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet3TableAdapters.statusTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet3 = new OS_CodeFirst.BD.ordemservicoDataSet3();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.statusTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet3TableAdapters.statusTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvStatus
@@ -54,42 +54,11 @@ namespace OS_CodeFirst.View
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvStatus.DataSource = this.statusBindingSource;
-            this.dgvStatus.Location = new System.Drawing.Point(25, 63);
+            this.dgvStatus.Location = new System.Drawing.Point(15, 128);
             this.dgvStatus.Name = "dgvStatus";
             this.dgvStatus.Size = new System.Drawing.Size(613, 225);
             this.dgvStatus.TabIndex = 0;
             this.dgvStatus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(106, 15);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(40, 13);
-            this.lblStatus.TabIndex = 1;
-            this.lblStatus.Text = "Status:";
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(182, 12);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(338, 20);
-            this.txtStatus.TabIndex = 2;
-            this.txtStatus.TextChanged += new System.EventHandler(this.txtStatus_TextChanged);
-            // 
-            // ordemservicoDataSet3
-            // 
-            this.ordemservicoDataSet3.DataSetName = "ordemservicoDataSet3";
-            this.ordemservicoDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // statusBindingSource
-            // 
-            this.statusBindingSource.DataMember = "status";
-            this.statusBindingSource.DataSource = this.ordemservicoDataSet3;
-            // 
-            // statusTableAdapter
-            // 
-            this.statusTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -104,11 +73,42 @@ namespace OS_CodeFirst.View
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // statusBindingSource
+            // 
+            this.statusBindingSource.DataMember = "status";
+            this.statusBindingSource.DataSource = this.ordemservicoDataSet3;
+            // 
+            // ordemservicoDataSet3
+            // 
+            this.ordemservicoDataSet3.DataSetName = "ordemservicoDataSet3";
+            this.ordemservicoDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(96, 80);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(40, 13);
+            this.lblStatus.TabIndex = 1;
+            this.lblStatus.Text = "Status:";
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(172, 77);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(338, 20);
+            this.txtStatus.TabIndex = 2;
+            this.txtStatus.TextChanged += new System.EventHandler(this.txtStatus_TextChanged);
+            // 
+            // statusTableAdapter
+            // 
+            this.statusTableAdapter.ClearBeforeFill = true;
+            // 
             // Consulta_Status
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 314);
+            this.ClientSize = new System.Drawing.Size(665, 368);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.dgvStatus);
@@ -117,8 +117,8 @@ namespace OS_CodeFirst.View
             this.Text = "Consulta/Alteração de Status";
             this.Load += new System.EventHandler(this.Consulta_Status_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

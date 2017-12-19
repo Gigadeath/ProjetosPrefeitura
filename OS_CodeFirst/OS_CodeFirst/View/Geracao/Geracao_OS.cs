@@ -11,9 +11,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xceed.Words.NET;
 using Word = Microsoft.Office.Interop.Word;
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 namespace OS_CodeFirst.View
 {
-    public partial class Geracao_OS : Form
+    public partial class Geracao_OS : MaterialForm
     {
         public Geracao_OS()
         {
@@ -31,6 +34,12 @@ namespace OS_CodeFirst.View
         {
             OSController osc = new OSController();
             osc.MontaOS(Convert.ToInt32(cmbOS.SelectedValue));
+            this.Close();
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

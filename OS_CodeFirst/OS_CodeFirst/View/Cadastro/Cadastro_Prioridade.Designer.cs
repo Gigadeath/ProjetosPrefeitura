@@ -37,7 +37,7 @@
             // 
             // txtNivel
             // 
-            this.txtNivel.Location = new System.Drawing.Point(95, 34);
+            this.txtNivel.Location = new System.Drawing.Point(97, 70);
             this.txtNivel.Name = "txtNivel";
             this.txtNivel.Size = new System.Drawing.Size(109, 20);
             this.txtNivel.TabIndex = 0;
@@ -45,7 +45,7 @@
             // lblNivel
             // 
             this.lblNivel.AutoSize = true;
-            this.lblNivel.Location = new System.Drawing.Point(25, 37);
+            this.lblNivel.Location = new System.Drawing.Point(27, 73);
             this.lblNivel.Name = "lblNivel";
             this.lblNivel.Size = new System.Drawing.Size(34, 13);
             this.lblNivel.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(15, 77);
+            this.btnSalvar.Location = new System.Drawing.Point(17, 113);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(141, 76);
+            this.btnCancelar.Location = new System.Drawing.Point(143, 112);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 112);
+            this.ClientSize = new System.Drawing.Size(240, 142);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblNivel);

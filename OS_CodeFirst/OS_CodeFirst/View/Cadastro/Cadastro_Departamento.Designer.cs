@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro_Departamento));
             this.txtDepartamento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.mbtnCadastrar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.mbtnCancel = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // txtDepartamento
             // 
-            this.txtDepartamento.Location = new System.Drawing.Point(100, 48);
+            this.txtDepartamento.Location = new System.Drawing.Point(99, 83);
             this.txtDepartamento.Name = "txtDepartamento";
             this.txtDepartamento.Size = new System.Drawing.Size(157, 20);
             this.txtDepartamento.TabIndex = 0;
@@ -46,44 +46,59 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 51);
+            this.label1.Location = new System.Drawing.Point(11, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Departamento:";
             // 
-            // btnCadastrar
+            // mbtnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(28, 92);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 2;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.mbtnCadastrar.AutoSize = true;
+            this.mbtnCadastrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtnCadastrar.Depth = 0;
+            this.mbtnCadastrar.Icon = null;
+            this.mbtnCadastrar.Location = new System.Drawing.Point(14, 127);
+            this.mbtnCadastrar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtnCadastrar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtnCadastrar.Name = "mbtnCadastrar";
+            this.mbtnCadastrar.Primary = false;
+            this.mbtnCadastrar.Size = new System.Drawing.Size(100, 36);
+            this.mbtnCadastrar.TabIndex = 4;
+            this.mbtnCadastrar.Text = "Cadastrar";
+            this.mbtnCadastrar.UseVisualStyleBackColor = true;
+            this.mbtnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnCancelar
+            // mbtnCancel
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(182, 92);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 3;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.mbtnCancel.AutoSize = true;
+            this.mbtnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mbtnCancel.Depth = 0;
+            this.mbtnCancel.Icon = null;
+            this.mbtnCancel.Location = new System.Drawing.Point(177, 127);
+            this.mbtnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.mbtnCancel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mbtnCancel.Name = "mbtnCancel";
+            this.mbtnCancel.Primary = false;
+            this.mbtnCancel.Size = new System.Drawing.Size(91, 36);
+            this.mbtnCancel.TabIndex = 5;
+            this.mbtnCancel.Text = "Cancelar";
+            this.mbtnCancel.UseVisualStyleBackColor = true;
+            this.mbtnCancel.Click += new System.EventHandler(this.mbtnCancel_Click);
             // 
             // Cadastro_Departamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(284, 127);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnCadastrar);
+            this.ClientSize = new System.Drawing.Size(291, 175);
+            this.Controls.Add(this.mbtnCancel);
+            this.Controls.Add(this.mbtnCadastrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDepartamento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cadastro_Departamento";
-            this.Text = " ";
+            this.Text = " Cadastro de Setor";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,7 +108,7 @@
 
         private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnCancelar;
+        private MaterialSkin.Controls.MaterialFlatButton mbtnCadastrar;
+        private MaterialSkin.Controls.MaterialFlatButton mbtnCancel;
     }
 }

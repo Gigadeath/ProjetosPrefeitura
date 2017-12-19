@@ -9,10 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace OS_CodeFirst.View.Cadastro
 {
-    public partial class Cadastro_Departamento : Form
+    public partial class Cadastro_Departamento : MaterialForm
     {
         public Cadastro_Departamento()
         {
@@ -25,7 +27,13 @@ namespace OS_CodeFirst.View.Cadastro
             DepartamentoController depc = new DepartamentoController();
 
             dep.Setor = txtDepartamento.Text;
-            depc.trataRequisicao(btnCadastrar.Text, dep);
+            depc.trataRequisicao(mbtnCadastrar.Text, dep);
+            this.Close();
+        }
+
+        private void mbtnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -9,21 +9,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace OS_CodeFirst.View
 {
-    public partial class Alteracao_OS : Form
+    public partial class Alteracao_OS : MaterialForm
     {
         OS osm = new OS();
         OSController osc = new OSController();
         StatusOS statOS = new StatusOS();
         StatusOS_Controller statcon = new StatusOS_Controller();
-        int id = 0;
+        int id = 0,departamento=0;
         public Alteracao_OS(int codigo)
         {
             try
             {
                 InitializeComponent();
+                // TODO: esta linha de código carrega dados na tabela 'tipoServicoDataSet.tiposervico'. Você pode movê-la ou removê-la conforme necessário.
+                this.tiposervicoTableAdapter.Fill(this.tipoServicoDataSet.tiposervico);
+                // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet1.prioridade'. Você pode movê-la ou removê-la conforme necessário.
+                this.prioridadeTableAdapter.Fill(this.ordemservicoDataSet1.prioridade);
+                // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
+                this.funcionarioTableAdapter.Fill(this.ordemservicoDataSet.funcionario);
+                // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
+                this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
                 OSController oscon = new OSController();
                 var dados = oscon.getDados(codigo);
                 id = codigo;
@@ -32,14 +42,14 @@ namespace OS_CodeFirst.View
                 mtxtPA.Text = dados.PA;
                 mtxtTC.Text = dados.TC;
                 mtxtDataEmissao.Text = string.Format("{0:dd/MM/yyyy}", dados.DataEmissao);
-                cmbResp.SelectedValue= dados.Funcionario_Id;
-                MessageBox.Show("Funcionario id:"+dados.Funcionario_Id + " Selecionado:" +cmbResp.SelectedValue+ ":"+ cmbResp.SelectedItem+":"+cmbResp.SelectedIndex);
+                cmbResp.SelectedValue = dados.Funcionario_Id;
                 cmbPrioridade.SelectedValue = dados.Prioridade_Id;
                 cmbTipo.SelectedValue = dados.TipoServico_Id;
                 txtItem.Text = dados.ItemContratual;
                 cmbServico.Text = dados.Servico;
                 mtxtPrev.Text = string.Format("{0:dd/MM/yyyy}", dados.DataPrevista);
                 mtxtEntregue.Text = string.Format("{0:dd/MM/yyyy}", dados.DataEntregue);
+                departamento = dados.Departamento_Id;
                 txtSolicitacao.Text = dados.Solicitacao;
             }catch(Exception ex)
             {
@@ -67,6 +77,7 @@ namespace OS_CodeFirst.View
                 osm.DataPrevista = Convert.ToDateTime(mtxtPrev.Text);
                 osm.DataEntregue = Convert.ToDateTime(mtxtEntregue.Text);
                 osm.Solicitacao = txtSolicitacao.Text;
+                osm.Departamento_Id = departamento;
                 osc.trataRequisicao(btnSalvar.Text, osm);
                 if (mtxtEntregue.Text != "01/01/0001")
                 {
@@ -76,24 +87,22 @@ namespace OS_CodeFirst.View
                     statOS.dataAlteracao = DateTime.Now;
                     statcon.trataRequisicao("Cadastrar", statOS);
                 }
-                   
-                
+
+                this.Close();
                 
               
             }
 
         }
 
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Alteracao_OS_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'tipoServicoDataSet.tiposervico'. Você pode movê-la ou removê-la conforme necessário.
-            this.tiposervicoTableAdapter.Fill(this.tipoServicoDataSet.tiposervico);
-            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet1.prioridade'. Você pode movê-la ou removê-la conforme necessário.
-            this.prioridadeTableAdapter.Fill(this.ordemservicoDataSet1.prioridade);
-            // TODO: esta linha de código carrega dados na tabela 'ordemservicoDataSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
-            this.funcionarioTableAdapter.Fill(this.ordemservicoDataSet.funcionario);
-            // TODO: esta linha de código carrega dados na tabela 'sistemaSet.sistema'. Você pode movê-la ou removê-la conforme necessário.
-            this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
+            
 
         }
     }

@@ -55,6 +55,8 @@ namespace OS_CodeFirst.View
             this.prioridadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet1();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet2 = new OS_CodeFirst.BD.ordemservicoDataSet2();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@ namespace OS_CodeFirst.View
             this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
             this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
             this.prioridadeTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter();
-            this.ordemservicoDataSet2 = new OS_CodeFirst.BD.ordemservicoDataSet2();
-            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiposervicoTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet2TableAdapters.tiposervicoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
@@ -78,14 +78,14 @@ namespace OS_CodeFirst.View
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSistema
             // 
             this.lblSistema.AutoSize = true;
-            this.lblSistema.Location = new System.Drawing.Point(215, 37);
+            this.lblSistema.Location = new System.Drawing.Point(214, 94);
             this.lblSistema.Name = "lblSistema";
             this.lblSistema.Size = new System.Drawing.Size(47, 13);
             this.lblSistema.TabIndex = 0;
@@ -97,7 +97,7 @@ namespace OS_CodeFirst.View
             this.cmbSistema.DataSource = this.sistemaBindingSource;
             this.cmbSistema.DisplayMember = "Nome";
             this.cmbSistema.FormattingEnabled = true;
-            this.cmbSistema.Location = new System.Drawing.Point(280, 34);
+            this.cmbSistema.Location = new System.Drawing.Point(279, 91);
             this.cmbSistema.Name = "cmbSistema";
             this.cmbSistema.Size = new System.Drawing.Size(121, 21);
             this.cmbSistema.TabIndex = 1;
@@ -118,7 +118,7 @@ namespace OS_CodeFirst.View
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(558, 296);
+            this.btnCancel.Location = new System.Drawing.Point(558, 329);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -129,7 +129,7 @@ namespace OS_CodeFirst.View
             // lblOS
             // 
             this.lblOS.AutoSize = true;
-            this.lblOS.Location = new System.Drawing.Point(14, 37);
+            this.lblOS.Location = new System.Drawing.Point(13, 94);
             this.lblOS.Name = "lblOS";
             this.lblOS.Size = new System.Drawing.Size(40, 13);
             this.lblOS.TabIndex = 3;
@@ -139,7 +139,7 @@ namespace OS_CodeFirst.View
             // lblPA
             // 
             this.lblPA.AutoSize = true;
-            this.lblPA.Location = new System.Drawing.Point(450, 37);
+            this.lblPA.Location = new System.Drawing.Point(449, 94);
             this.lblPA.Name = "lblPA";
             this.lblPA.Size = new System.Drawing.Size(30, 13);
             this.lblPA.TabIndex = 5;
@@ -148,7 +148,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtOS
             // 
-            this.mtxtOS.Location = new System.Drawing.Point(71, 35);
+            this.mtxtOS.Location = new System.Drawing.Point(70, 92);
             this.mtxtOS.Mask = "000-0000/0000";
             this.mtxtOS.Name = "mtxtOS";
             this.mtxtOS.ReadOnly = true;
@@ -158,7 +158,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtPA
             // 
-            this.mtxtPA.Location = new System.Drawing.Point(486, 34);
+            this.mtxtPA.Location = new System.Drawing.Point(485, 91);
             this.mtxtPA.Mask = "0000,0000/0000000-0";
             this.mtxtPA.Name = "mtxtPA";
             this.mtxtPA.ReadOnly = true;
@@ -169,7 +169,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtTC
             // 
-            this.mtxtTC.Location = new System.Drawing.Point(71, 95);
+            this.mtxtTC.Location = new System.Drawing.Point(71, 142);
             this.mtxtTC.Mask = "000/SME/0000";
             this.mtxtTC.Name = "mtxtTC";
             this.mtxtTC.ReadOnly = true;
@@ -180,7 +180,7 @@ namespace OS_CodeFirst.View
             // lblTC
             // 
             this.lblTC.AutoSize = true;
-            this.lblTC.Location = new System.Drawing.Point(24, 95);
+            this.lblTC.Location = new System.Drawing.Point(24, 142);
             this.lblTC.Name = "lblTC";
             this.lblTC.Size = new System.Drawing.Size(30, 13);
             this.lblTC.TabIndex = 9;
@@ -188,7 +188,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtDataEmissao
             // 
-            this.mtxtDataEmissao.Location = new System.Drawing.Point(280, 92);
+            this.mtxtDataEmissao.Location = new System.Drawing.Point(280, 139);
             this.mtxtDataEmissao.Mask = "00/00/0000";
             this.mtxtDataEmissao.Name = "mtxtDataEmissao";
             this.mtxtDataEmissao.Size = new System.Drawing.Size(121, 20);
@@ -198,7 +198,7 @@ namespace OS_CodeFirst.View
             // lblDataEmissao
             // 
             this.lblDataEmissao.AutoSize = true;
-            this.lblDataEmissao.Location = new System.Drawing.Point(187, 95);
+            this.lblDataEmissao.Location = new System.Drawing.Point(187, 142);
             this.lblDataEmissao.Name = "lblDataEmissao";
             this.lblDataEmissao.Size = new System.Drawing.Size(75, 13);
             this.lblDataEmissao.TabIndex = 11;
@@ -209,7 +209,7 @@ namespace OS_CodeFirst.View
             this.cmbResp.DataSource = this.funcionarioBindingSource;
             this.cmbResp.DisplayMember = "Nome";
             this.cmbResp.FormattingEnabled = true;
-            this.cmbResp.Location = new System.Drawing.Point(486, 90);
+            this.cmbResp.Location = new System.Drawing.Point(486, 137);
             this.cmbResp.Name = "cmbResp";
             this.cmbResp.Size = new System.Drawing.Size(121, 21);
             this.cmbResp.TabIndex = 13;
@@ -228,7 +228,7 @@ namespace OS_CodeFirst.View
             // lblResp
             // 
             this.lblResp.AutoSize = true;
-            this.lblResp.Location = new System.Drawing.Point(442, 95);
+            this.lblResp.Location = new System.Drawing.Point(442, 142);
             this.lblResp.Name = "lblResp";
             this.lblResp.Size = new System.Drawing.Size(38, 13);
             this.lblResp.TabIndex = 14;
@@ -237,7 +237,7 @@ namespace OS_CodeFirst.View
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 138);
+            this.label1.Location = new System.Drawing.Point(226, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 15;
@@ -246,7 +246,7 @@ namespace OS_CodeFirst.View
             // lblPrioridade
             // 
             this.lblPrioridade.AutoSize = true;
-            this.lblPrioridade.Location = new System.Drawing.Point(12, 138);
+            this.lblPrioridade.Location = new System.Drawing.Point(11, 181);
             this.lblPrioridade.Name = "lblPrioridade";
             this.lblPrioridade.Size = new System.Drawing.Size(57, 13);
             this.lblPrioridade.TabIndex = 16;
@@ -257,7 +257,7 @@ namespace OS_CodeFirst.View
             this.cmbPrioridade.DataSource = this.prioridadeBindingSource;
             this.cmbPrioridade.DisplayMember = "Nivel";
             this.cmbPrioridade.FormattingEnabled = true;
-            this.cmbPrioridade.Location = new System.Drawing.Point(71, 135);
+            this.cmbPrioridade.Location = new System.Drawing.Point(70, 178);
             this.cmbPrioridade.Name = "cmbPrioridade";
             this.cmbPrioridade.Size = new System.Drawing.Size(100, 21);
             this.cmbPrioridade.TabIndex = 17;
@@ -278,15 +278,25 @@ namespace OS_CodeFirst.View
             this.cmbTipo.DataSource = this.tiposervicoBindingSource;
             this.cmbTipo.DisplayMember = "Nome";
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(280, 135);
+            this.cmbTipo.Location = new System.Drawing.Point(279, 178);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 18;
             this.cmbTipo.ValueMember = "Id";
             // 
+            // tiposervicoBindingSource
+            // 
+            this.tiposervicoBindingSource.DataMember = "tiposervico";
+            this.tiposervicoBindingSource.DataSource = this.ordemservicoDataSet2;
+            // 
+            // ordemservicoDataSet2
+            // 
+            this.ordemservicoDataSet2.DataSetName = "ordemservicoDataSet2";
+            this.ordemservicoDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(486, 135);
+            this.txtItem.Location = new System.Drawing.Point(485, 178);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(121, 20);
             this.txtItem.TabIndex = 19;
@@ -294,7 +304,7 @@ namespace OS_CodeFirst.View
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(422, 138);
+            this.label2.Location = new System.Drawing.Point(421, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 20;
@@ -303,7 +313,7 @@ namespace OS_CodeFirst.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 189);
+            this.label3.Location = new System.Drawing.Point(11, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 21;
@@ -311,7 +321,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtPrev
             // 
-            this.mtxtPrev.Location = new System.Drawing.Point(280, 186);
+            this.mtxtPrev.Location = new System.Drawing.Point(279, 229);
             this.mtxtPrev.Mask = "00/00/0000";
             this.mtxtPrev.Name = "mtxtPrev";
             this.mtxtPrev.Size = new System.Drawing.Size(121, 20);
@@ -321,7 +331,7 @@ namespace OS_CodeFirst.View
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 189);
+            this.label4.Location = new System.Drawing.Point(186, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 23;
@@ -329,7 +339,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtEntregue
             // 
-            this.mtxtEntregue.Location = new System.Drawing.Point(486, 182);
+            this.mtxtEntregue.Location = new System.Drawing.Point(485, 229);
             this.mtxtEntregue.Mask = "00/00/0000";
             this.mtxtEntregue.Name = "mtxtEntregue";
             this.mtxtEntregue.Size = new System.Drawing.Size(121, 20);
@@ -339,7 +349,7 @@ namespace OS_CodeFirst.View
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(425, 185);
+            this.label5.Location = new System.Drawing.Point(424, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 25;
@@ -348,7 +358,7 @@ namespace OS_CodeFirst.View
             // 
             // txtSolicitacao
             // 
-            this.txtSolicitacao.Location = new System.Drawing.Point(12, 238);
+            this.txtSolicitacao.Location = new System.Drawing.Point(12, 288);
             this.txtSolicitacao.Multiline = true;
             this.txtSolicitacao.Name = "txtSolicitacao";
             this.txtSolicitacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -358,7 +368,7 @@ namespace OS_CodeFirst.View
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 222);
+            this.label6.Location = new System.Drawing.Point(9, 265);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 28;
@@ -366,7 +376,7 @@ namespace OS_CodeFirst.View
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(558, 255);
+            this.btnSalvar.Location = new System.Drawing.Point(558, 288);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 29;
@@ -380,7 +390,7 @@ namespace OS_CodeFirst.View
             this.cmbServico.Items.AddRange(new object[] {
             "Garantia",
             "Manutenção em Sistema já Existente"});
-            this.cmbServico.Location = new System.Drawing.Point(71, 186);
+            this.cmbServico.Location = new System.Drawing.Point(70, 229);
             this.cmbServico.Name = "cmbServico";
             this.cmbServico.Size = new System.Drawing.Size(100, 21);
             this.cmbServico.TabIndex = 30;
@@ -397,16 +407,6 @@ namespace OS_CodeFirst.View
             // 
             this.prioridadeTableAdapter.ClearBeforeFill = true;
             // 
-            // ordemservicoDataSet2
-            // 
-            this.ordemservicoDataSet2.DataSetName = "ordemservicoDataSet2";
-            this.ordemservicoDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tiposervicoBindingSource
-            // 
-            this.tiposervicoBindingSource.DataMember = "tiposervico";
-            this.tiposervicoBindingSource.DataSource = this.ordemservicoDataSet2;
-            // 
             // tiposervicoTableAdapter
             // 
             this.tiposervicoTableAdapter.ClearBeforeFill = true;
@@ -415,7 +415,7 @@ namespace OS_CodeFirst.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 331);
+            this.ClientSize = new System.Drawing.Size(645, 381);
             this.Controls.Add(this.cmbServico);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label6);
@@ -454,8 +454,8 @@ namespace OS_CodeFirst.View
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

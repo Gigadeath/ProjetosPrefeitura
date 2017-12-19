@@ -38,7 +38,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 47);
+            this.label1.Location = new System.Drawing.Point(20, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
@@ -46,14 +46,14 @@
             // 
             // txtServico
             // 
-            this.txtServico.Location = new System.Drawing.Point(90, 44);
+            this.txtServico.Location = new System.Drawing.Point(97, 87);
             this.txtServico.Name = "txtServico";
             this.txtServico.Size = new System.Drawing.Size(100, 20);
             this.txtServico.TabIndex = 1;
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(16, 101);
+            this.btnSalvar.Location = new System.Drawing.Point(23, 144);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(162, 101);
+            this.btnCancelar.Location = new System.Drawing.Point(169, 144);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 136);
+            this.ClientSize = new System.Drawing.Size(284, 190);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtServico);

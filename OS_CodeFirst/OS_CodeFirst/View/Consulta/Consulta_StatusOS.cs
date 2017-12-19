@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace OS_CodeFirst.View
 {
-    public partial class Consulta_StatusOS : Form
+    public partial class Consulta_StatusOS : MaterialForm
     {
         public Consulta_StatusOS(string os)
         {

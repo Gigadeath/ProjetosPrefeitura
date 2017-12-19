@@ -9,10 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace OS_CodeFirst.View
 {
-    public partial class Frm_CadastraOS : Form
+    public partial class Frm_CadastraOS : MaterialForm
     {
         OS osm = new OS();
         Sistema sis = new Sistema();
@@ -90,7 +92,7 @@ namespace OS_CodeFirst.View
             if (mtxtPrev.Text.Replace("/", "").Trim().Length == 8 && mtxtDataEmissao.Text.Replace("/", "").Trim().Length == 8 && txtSolicitacao.Text !="") 
             {
                 OS osm = new OS();
-                MessageBox.Show(mtxtEntregue.Text);
+               // MessageBox.Show(mtxtEntregue.Text);
                 OSController osc = new OSController();
                 try
                 {
@@ -180,13 +182,22 @@ namespace OS_CodeFirst.View
 
         private void cmbSistema_SelectedValueChanged(object sender, EventArgs e)
         {
+
+            GeraOS();
+            
+        }
+
+        private void GeraOS()
+        {
             OS osm = new OS();
             string Nsis = siscon.getNumero_OS(Convert.ToInt32(cmbSistema.SelectedValue), sis, osm);
-           if (Nsis.Equals(""))
+            
+            //MessageBox.Show(Convert.ToString(cmbSistema.SelectedValue));
+            if (Nsis.Equals(""))
             {
 
-                string Numero=siscon.getNumeroSistema(Convert.ToInt32(cmbSistema.SelectedValue), sis);
-                mtxtOS.Text = Numero + "-" + "0001/"+DateTime.Now.Year;
+                string Numero = siscon.getNumeroSistema(Convert.ToInt32(cmbSistema.SelectedValue));
+                mtxtOS.Text = Numero + "-" + "0001/" + DateTime.Now.Year;
             }
             else
             {
@@ -200,12 +211,10 @@ namespace OS_CodeFirst.View
                 }
                 else
                 {
-                    string Numero = siscon.getNumeroSistema(Convert.ToInt32(cmbSistema.SelectedValue), sis);
+                    string Numero = siscon.getNumeroSistema(Convert.ToInt32(cmbSistema.SelectedValue));
                     mtxtOS.Text = Numero + "-" + "0001/" + DateTime.Now.Year;
                 }
             }
-           
-            
         }
     }
 }

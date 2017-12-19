@@ -43,6 +43,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.4.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
@@ -105,9 +108,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DepartamentoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801151602108_Initial.cs" />
-    <Compile Include="Migrations\201801151602108_Initial.Designer.cs">
-      <DependentUpon>201801151602108_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201712191325453_Initial.cs" />
+    <Compile Include="Migrations\201712191325453_Initial.Designer.cs">
+      <DependentUpon>201712191325453_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Departamento.cs" />
     <Compile Include="Model\Dep_Func.cs" />
@@ -288,8 +291,8 @@
     <Compile Include="Model\StatusOS.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\201801151602108_Initial.resx">
-      <DependentUpon>201801151602108_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712191325453_Initial.resx">
+      <DependentUpon>201712191325453_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

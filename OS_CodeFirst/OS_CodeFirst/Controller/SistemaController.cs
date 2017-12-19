@@ -91,21 +91,21 @@ namespace OS_CodeFirst.Controller
            try
             {
               osm.Sistema_Id = valor;
-              var OSN =db.OS.Where(x=> x.Sistema_Id == osm.Sistema_Id).OrderByDescending(x=>x.Id);
-              return Convert.ToString(OSN.FirstOrDefault().OSN);
+              var OSN =db.OS.Where(x=> x.Sistema_Id == valor).OrderByDescending(x=>x.Id).First();
+              return Convert.ToString(OSN.OSN);
            }
             catch (Exception exception)
             {
                 return "";
+                
             }
         }
 
-        public string getNumeroSistema(int valor,Sistema fun)
+        public string getNumeroSistema(int valor)
         {
             try
             {
-                fun.Id = valor;
-                var Nsis = db.Sistema.Where(x => x.Id == fun.Id).First();
+                var Nsis = db.Sistema.Where(x => x.Id == valor).First();
                 return Nsis.Numero_OS;
             }
             catch (Exception exception)

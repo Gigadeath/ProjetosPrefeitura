@@ -27,7 +27,6 @@ namespace OS_CodeFirst.Model
         public DateTime DataEntregue { get; set; }
         [Required(ErrorMessage = "A descrição é obrigatória", AllowEmptyStrings = false)]
         public string Solicitacao { get; set; }
-        [Required(ErrorMessage = "O tipo de Serviço é Obrigatório", AllowEmptyStrings = false)]
         public string Servico { get; set; }
 
 

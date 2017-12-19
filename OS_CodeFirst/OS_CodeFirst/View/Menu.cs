@@ -12,10 +12,12 @@ using OS_CodeFirst.BD;
 using OS_CodeFirst.Model;
 using OS_CodeFirst.Controller;
 using OS_CodeFirst.View.Cadastro;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace OS_CodeFirst
 {
-    public partial class FrmInicial : Form
+    public partial class FrmInicial : MaterialForm
     {
         public FrmInicial()
         {

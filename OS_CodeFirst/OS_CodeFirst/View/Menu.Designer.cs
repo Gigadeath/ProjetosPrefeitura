@@ -38,6 +38,9 @@
             this.funcionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vinculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departamentoXFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prioridadeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,9 +59,6 @@
             this.consulta_UltimoStatusTableAdapter = new OS_CodeFirst.BD.OS__Ativas_AtrasadasTableAdapters.Consulta_UltimoStatusTableAdapter();
             this.OsAtivasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet();
-            this.departamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vinculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.departamentoXFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDaOs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oS__Ativas_Atrasadas)).BeginInit();
@@ -136,6 +136,28 @@
             this.tipoDeServiçoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.tipoDeServiçoToolStripMenuItem.Text = "Tipo de Serviço";
             this.tipoDeServiçoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeServiçoToolStripMenuItem_Click);
+            // 
+            // departamentoToolStripMenuItem
+            // 
+            this.departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
+            this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.departamentoToolStripMenuItem.Text = "Departamento";
+            this.departamentoToolStripMenuItem.Click += new System.EventHandler(this.departamentoToolStripMenuItem_Click);
+            // 
+            // vinculosToolStripMenuItem
+            // 
+            this.vinculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.departamentoXFuncionarioToolStripMenuItem});
+            this.vinculosToolStripMenuItem.Name = "vinculosToolStripMenuItem";
+            this.vinculosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.vinculosToolStripMenuItem.Text = "Vinculos";
+            // 
+            // departamentoXFuncionarioToolStripMenuItem
+            // 
+            this.departamentoXFuncionarioToolStripMenuItem.Name = "departamentoXFuncionarioToolStripMenuItem";
+            this.departamentoXFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.departamentoXFuncionarioToolStripMenuItem.Text = "Departamento X Funcionario";
+            this.departamentoXFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.departamentoXFuncionarioToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
@@ -235,9 +257,9 @@
             // 
             this.pnlOS.AutoScroll = true;
             this.pnlOS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlOS.Location = new System.Drawing.Point(548, 27);
+            this.pnlOS.Location = new System.Drawing.Point(548, 62);
             this.pnlOS.Name = "pnlOS";
-            this.pnlOS.Size = new System.Drawing.Size(200, 359);
+            this.pnlOS.Size = new System.Drawing.Size(200, 324);
             this.pnlOS.TabIndex = 1;
             this.pnlOS.AutoSizeChanged += new System.EventHandler(this.pnlOS_AutoSizeChanged);
             // 
@@ -264,28 +286,6 @@
             // 
             this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet";
             this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departamentoToolStripMenuItem
-            // 
-            this.departamentoToolStripMenuItem.Name = "departamentoToolStripMenuItem";
-            this.departamentoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.departamentoToolStripMenuItem.Text = "Departamento";
-            this.departamentoToolStripMenuItem.Click += new System.EventHandler(this.departamentoToolStripMenuItem_Click);
-            // 
-            // vinculosToolStripMenuItem
-            // 
-            this.vinculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.departamentoXFuncionarioToolStripMenuItem});
-            this.vinculosToolStripMenuItem.Name = "vinculosToolStripMenuItem";
-            this.vinculosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.vinculosToolStripMenuItem.Text = "Vinculos";
-            // 
-            // departamentoXFuncionarioToolStripMenuItem
-            // 
-            this.departamentoXFuncionarioToolStripMenuItem.Name = "departamentoXFuncionarioToolStripMenuItem";
-            this.departamentoXFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.departamentoXFuncionarioToolStripMenuItem.Text = "Departamento X Funcionario";
-            this.departamentoXFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.departamentoXFuncionarioToolStripMenuItem_Click);
             // 
             // FrmInicial
             // 

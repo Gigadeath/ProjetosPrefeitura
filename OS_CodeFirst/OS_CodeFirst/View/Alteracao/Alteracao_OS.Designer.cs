@@ -43,11 +43,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtItem = new System.Windows.Forms.TextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoServicoDataSet = new OS_CodeFirst.BD.TipoServicoDataSet();
             this.cmbPrioridade = new System.Windows.Forms.ComboBox();
+            this.prioridadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet1();
             this.lblPrioridade = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblResp = new System.Windows.Forms.Label();
             this.cmbResp = new System.Windows.Forms.ComboBox();
+            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet = new OS_CodeFirst.BD.ordemservicoDataSet();
             this.mtxtDataEmissao = new System.Windows.Forms.MaskedTextBox();
             this.lblDataEmissao = new System.Windows.Forms.Label();
             this.mtxtTC = new System.Windows.Forms.MaskedTextBox();
@@ -58,31 +64,25 @@
             this.lblOS = new System.Windows.Forms.Label();
             this.lblSistema = new System.Windows.Forms.Label();
             this.cmbSistema = new System.Windows.Forms.ComboBox();
-            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
             this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
             this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
-            this.ordemservicoDataSet = new OS_CodeFirst.BD.ordemservicoDataSet();
-            this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
-            this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet1();
-            this.prioridadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.prioridadeTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter();
-            this.tipoServicoDataSet = new OS_CodeFirst.BD.TipoServicoDataSet();
-            this.tiposervicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tiposervicoTableAdapter = new OS_CodeFirst.BD.TipoServicoDataSetTableAdapters.tiposervicoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(558, 244);
+            this.btnSalvar.Location = new System.Drawing.Point(559, 295);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 57;
@@ -92,7 +92,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(558, 285);
+            this.btnCancel.Location = new System.Drawing.Point(559, 336);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 33;
@@ -105,7 +105,7 @@
             this.cmbServico.Items.AddRange(new object[] {
             "Garantia",
             "Manutenção em Sistema já Existente"});
-            this.cmbServico.Location = new System.Drawing.Point(72, 186);
+            this.cmbServico.Location = new System.Drawing.Point(73, 237);
             this.cmbServico.Name = "cmbServico";
             this.cmbServico.Size = new System.Drawing.Size(100, 21);
             this.cmbServico.TabIndex = 84;
@@ -113,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 222);
+            this.label6.Location = new System.Drawing.Point(16, 268);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 83;
@@ -121,7 +121,7 @@
             // 
             // txtSolicitacao
             // 
-            this.txtSolicitacao.Location = new System.Drawing.Point(13, 238);
+            this.txtSolicitacao.Location = new System.Drawing.Point(14, 289);
             this.txtSolicitacao.Multiline = true;
             this.txtSolicitacao.Name = "txtSolicitacao";
             this.txtSolicitacao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -130,7 +130,7 @@
             // 
             // mtxtEntregue
             // 
-            this.mtxtEntregue.Location = new System.Drawing.Point(487, 182);
+            this.mtxtEntregue.Location = new System.Drawing.Point(488, 233);
             this.mtxtEntregue.Mask = "00/00/0000";
             this.mtxtEntregue.Name = "mtxtEntregue";
             this.mtxtEntregue.Size = new System.Drawing.Size(121, 20);
@@ -140,7 +140,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(426, 185);
+            this.label5.Location = new System.Drawing.Point(427, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 80;
@@ -148,7 +148,7 @@
             // 
             // mtxtPrev
             // 
-            this.mtxtPrev.Location = new System.Drawing.Point(281, 186);
+            this.mtxtPrev.Location = new System.Drawing.Point(282, 237);
             this.mtxtPrev.Mask = "00/00/0000";
             this.mtxtPrev.Name = "mtxtPrev";
             this.mtxtPrev.Size = new System.Drawing.Size(121, 20);
@@ -158,7 +158,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 189);
+            this.label4.Location = new System.Drawing.Point(189, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 78;
@@ -167,7 +167,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 189);
+            this.label3.Location = new System.Drawing.Point(14, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 77;
@@ -176,7 +176,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(423, 138);
+            this.label2.Location = new System.Drawing.Point(424, 189);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 76;
@@ -184,7 +184,7 @@
             // 
             // txtItem
             // 
-            this.txtItem.Location = new System.Drawing.Point(487, 135);
+            this.txtItem.Location = new System.Drawing.Point(488, 186);
             this.txtItem.Name = "txtItem";
             this.txtItem.Size = new System.Drawing.Size(121, 20);
             this.txtItem.TabIndex = 75;
@@ -194,27 +194,47 @@
             this.cmbTipo.DataSource = this.tiposervicoBindingSource;
             this.cmbTipo.DisplayMember = "Nome";
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(281, 135);
+            this.cmbTipo.Location = new System.Drawing.Point(282, 186);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 74;
             this.cmbTipo.ValueMember = "Id";
+            // 
+            // tiposervicoBindingSource
+            // 
+            this.tiposervicoBindingSource.DataMember = "tiposervico";
+            this.tiposervicoBindingSource.DataSource = this.tipoServicoDataSet;
+            // 
+            // tipoServicoDataSet
+            // 
+            this.tipoServicoDataSet.DataSetName = "TipoServicoDataSet";
+            this.tipoServicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbPrioridade
             // 
             this.cmbPrioridade.DataSource = this.prioridadeBindingSource;
             this.cmbPrioridade.DisplayMember = "Nivel";
             this.cmbPrioridade.FormattingEnabled = true;
-            this.cmbPrioridade.Location = new System.Drawing.Point(72, 135);
+            this.cmbPrioridade.Location = new System.Drawing.Point(73, 186);
             this.cmbPrioridade.Name = "cmbPrioridade";
             this.cmbPrioridade.Size = new System.Drawing.Size(100, 21);
             this.cmbPrioridade.TabIndex = 73;
             this.cmbPrioridade.ValueMember = "Id";
             // 
+            // prioridadeBindingSource
+            // 
+            this.prioridadeBindingSource.DataMember = "prioridade";
+            this.prioridadeBindingSource.DataSource = this.ordemservicoDataSet1;
+            // 
+            // ordemservicoDataSet1
+            // 
+            this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet1";
+            this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lblPrioridade
             // 
             this.lblPrioridade.AutoSize = true;
-            this.lblPrioridade.Location = new System.Drawing.Point(13, 138);
+            this.lblPrioridade.Location = new System.Drawing.Point(14, 189);
             this.lblPrioridade.Name = "lblPrioridade";
             this.lblPrioridade.Size = new System.Drawing.Size(57, 13);
             this.lblPrioridade.TabIndex = 72;
@@ -223,7 +243,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(228, 138);
+            this.label1.Location = new System.Drawing.Point(229, 189);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 71;
@@ -232,7 +252,7 @@
             // lblResp
             // 
             this.lblResp.AutoSize = true;
-            this.lblResp.Location = new System.Drawing.Point(443, 95);
+            this.lblResp.Location = new System.Drawing.Point(444, 146);
             this.lblResp.Name = "lblResp";
             this.lblResp.Size = new System.Drawing.Size(38, 13);
             this.lblResp.TabIndex = 70;
@@ -243,15 +263,25 @@
             this.cmbResp.DataSource = this.funcionarioBindingSource;
             this.cmbResp.DisplayMember = "Nome";
             this.cmbResp.FormattingEnabled = true;
-            this.cmbResp.Location = new System.Drawing.Point(487, 90);
+            this.cmbResp.Location = new System.Drawing.Point(488, 141);
             this.cmbResp.Name = "cmbResp";
             this.cmbResp.Size = new System.Drawing.Size(121, 21);
             this.cmbResp.TabIndex = 69;
             this.cmbResp.ValueMember = "Id";
             // 
+            // funcionarioBindingSource
+            // 
+            this.funcionarioBindingSource.DataMember = "funcionario";
+            this.funcionarioBindingSource.DataSource = this.ordemservicoDataSet;
+            // 
+            // ordemservicoDataSet
+            // 
+            this.ordemservicoDataSet.DataSetName = "ordemservicoDataSet";
+            this.ordemservicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // mtxtDataEmissao
             // 
-            this.mtxtDataEmissao.Location = new System.Drawing.Point(281, 92);
+            this.mtxtDataEmissao.Location = new System.Drawing.Point(282, 143);
             this.mtxtDataEmissao.Mask = "00/00/0000";
             this.mtxtDataEmissao.Name = "mtxtDataEmissao";
             this.mtxtDataEmissao.Size = new System.Drawing.Size(121, 20);
@@ -261,7 +291,7 @@
             // lblDataEmissao
             // 
             this.lblDataEmissao.AutoSize = true;
-            this.lblDataEmissao.Location = new System.Drawing.Point(188, 95);
+            this.lblDataEmissao.Location = new System.Drawing.Point(189, 146);
             this.lblDataEmissao.Name = "lblDataEmissao";
             this.lblDataEmissao.Size = new System.Drawing.Size(75, 13);
             this.lblDataEmissao.TabIndex = 67;
@@ -269,7 +299,7 @@
             // 
             // mtxtTC
             // 
-            this.mtxtTC.Location = new System.Drawing.Point(72, 95);
+            this.mtxtTC.Location = new System.Drawing.Point(73, 146);
             this.mtxtTC.Mask = "000/SME/0000";
             this.mtxtTC.Name = "mtxtTC";
             this.mtxtTC.ReadOnly = true;
@@ -280,7 +310,7 @@
             // lblTC
             // 
             this.lblTC.AutoSize = true;
-            this.lblTC.Location = new System.Drawing.Point(25, 95);
+            this.lblTC.Location = new System.Drawing.Point(26, 146);
             this.lblTC.Name = "lblTC";
             this.lblTC.Size = new System.Drawing.Size(30, 13);
             this.lblTC.TabIndex = 65;
@@ -288,7 +318,7 @@
             // 
             // mtxtPA
             // 
-            this.mtxtPA.Location = new System.Drawing.Point(487, 34);
+            this.mtxtPA.Location = new System.Drawing.Point(488, 85);
             this.mtxtPA.Mask = "0000,0000/0000000-0";
             this.mtxtPA.Name = "mtxtPA";
             this.mtxtPA.ReadOnly = true;
@@ -298,7 +328,7 @@
             // 
             // mtxtOS
             // 
-            this.mtxtOS.Location = new System.Drawing.Point(72, 35);
+            this.mtxtOS.Location = new System.Drawing.Point(73, 86);
             this.mtxtOS.Mask = "000-0000/0000";
             this.mtxtOS.Name = "mtxtOS";
             this.mtxtOS.ReadOnly = true;
@@ -308,7 +338,7 @@
             // lblPA
             // 
             this.lblPA.AutoSize = true;
-            this.lblPA.Location = new System.Drawing.Point(451, 37);
+            this.lblPA.Location = new System.Drawing.Point(452, 88);
             this.lblPA.Name = "lblPA";
             this.lblPA.Size = new System.Drawing.Size(30, 13);
             this.lblPA.TabIndex = 62;
@@ -317,7 +347,7 @@
             // lblOS
             // 
             this.lblOS.AutoSize = true;
-            this.lblOS.Location = new System.Drawing.Point(15, 37);
+            this.lblOS.Location = new System.Drawing.Point(16, 88);
             this.lblOS.Name = "lblOS";
             this.lblOS.Size = new System.Drawing.Size(40, 13);
             this.lblOS.TabIndex = 61;
@@ -326,7 +356,7 @@
             // lblSistema
             // 
             this.lblSistema.AutoSize = true;
-            this.lblSistema.Location = new System.Drawing.Point(216, 37);
+            this.lblSistema.Location = new System.Drawing.Point(217, 88);
             this.lblSistema.Name = "lblSistema";
             this.lblSistema.Size = new System.Drawing.Size(47, 13);
             this.lblSistema.TabIndex = 59;
@@ -338,63 +368,33 @@
             this.cmbSistema.DisplayMember = "Nome";
             this.cmbSistema.Enabled = false;
             this.cmbSistema.FormattingEnabled = true;
-            this.cmbSistema.Location = new System.Drawing.Point(281, 34);
+            this.cmbSistema.Location = new System.Drawing.Point(282, 85);
             this.cmbSistema.Name = "cmbSistema";
             this.cmbSistema.Size = new System.Drawing.Size(121, 21);
             this.cmbSistema.TabIndex = 60;
             this.cmbSistema.ValueMember = "Id";
-            // 
-            // sistemaSet
-            // 
-            this.sistemaSet.DataSetName = "SistemaSet";
-            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sistemaBindingSource
             // 
             this.sistemaBindingSource.DataMember = "sistema";
             this.sistemaBindingSource.DataSource = this.sistemaSet;
             // 
+            // sistemaSet
+            // 
+            this.sistemaSet.DataSetName = "SistemaSet";
+            this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // sistemaTableAdapter
             // 
             this.sistemaTableAdapter.ClearBeforeFill = true;
-            // 
-            // ordemservicoDataSet
-            // 
-            this.ordemservicoDataSet.DataSetName = "ordemservicoDataSet";
-            this.ordemservicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // funcionarioBindingSource
-            // 
-            this.funcionarioBindingSource.DataMember = "funcionario";
-            this.funcionarioBindingSource.DataSource = this.ordemservicoDataSet;
             // 
             // funcionarioTableAdapter
             // 
             this.funcionarioTableAdapter.ClearBeforeFill = true;
             // 
-            // ordemservicoDataSet1
-            // 
-            this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet1";
-            this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // prioridadeBindingSource
-            // 
-            this.prioridadeBindingSource.DataMember = "prioridade";
-            this.prioridadeBindingSource.DataSource = this.ordemservicoDataSet1;
-            // 
             // prioridadeTableAdapter
             // 
             this.prioridadeTableAdapter.ClearBeforeFill = true;
-            // 
-            // tipoServicoDataSet
-            // 
-            this.tipoServicoDataSet.DataSetName = "TipoServicoDataSet";
-            this.tipoServicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tiposervicoBindingSource
-            // 
-            this.tiposervicoBindingSource.DataMember = "tiposervico";
-            this.tiposervicoBindingSource.DataSource = this.tipoServicoDataSet;
             // 
             // tiposervicoTableAdapter
             // 
@@ -404,7 +404,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 331);
+            this.ClientSize = new System.Drawing.Size(645, 409);
             this.Controls.Add(this.cmbServico);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSolicitacao);
@@ -437,14 +437,14 @@
             this.Name = "Alteracao_OS";
             this.Text = "Alteração da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Alteracao_OS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

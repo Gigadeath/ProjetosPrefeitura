@@ -33,6 +33,11 @@ namespace OS_CodeFirst.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_TotalServico));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.OSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalservicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.totalServicoDataSet = new OS_CodeFirst.BD.TotalServicoDataSet();
             this.lblOSN = new System.Windows.Forms.Label();
@@ -40,11 +45,6 @@ namespace OS_CodeFirst.View
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
             this.mtxtDataLimite = new System.Windows.Forms.MaskedTextBox();
             this.totalservicoTableAdapter = new OS_CodeFirst.BD.TotalServicoDataSetTableAdapters.totalservicoTableAdapter();
-            this.OSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalservicoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalServicoDataSet)).BeginInit();
@@ -69,56 +69,6 @@ namespace OS_CodeFirst.View
             this.dataGridView1.Size = new System.Drawing.Size(641, 185);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // totalservicoBindingSource
-            // 
-            this.totalservicoBindingSource.DataMember = "totalservico";
-            this.totalservicoBindingSource.DataSource = this.totalServicoDataSet;
-            // 
-            // totalServicoDataSet
-            // 
-            this.totalServicoDataSet.DataSetName = "TotalServicoDataSet";
-            this.totalServicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblOSN
-            // 
-            this.lblOSN.AutoSize = true;
-            this.lblOSN.Location = new System.Drawing.Point(82, 43);
-            this.lblOSN.Name = "lblOSN";
-            this.lblOSN.Size = new System.Drawing.Size(25, 13);
-            this.lblOSN.TabIndex = 2;
-            this.lblOSN.Text = "OS:";
-            // 
-            // lblDataLimite
-            // 
-            this.lblDataLimite.AutoSize = true;
-            this.lblDataLimite.Location = new System.Drawing.Point(348, 43);
-            this.lblDataLimite.Name = "lblDataLimite";
-            this.lblDataLimite.Size = new System.Drawing.Size(63, 13);
-            this.lblDataLimite.TabIndex = 4;
-            this.lblDataLimite.Text = "Data Limite:";
-            // 
-            // mtxtOS
-            // 
-            this.mtxtOS.Location = new System.Drawing.Point(113, 40);
-            this.mtxtOS.Mask = "000-0000/0000";
-            this.mtxtOS.Name = "mtxtOS";
-            this.mtxtOS.Size = new System.Drawing.Size(92, 20);
-            this.mtxtOS.TabIndex = 5;
-            this.mtxtOS.TextChanged += new System.EventHandler(this.mtxtOS_TextChanged);
-            // 
-            // mtxtDataLimite
-            // 
-            this.mtxtDataLimite.Location = new System.Drawing.Point(438, 36);
-            this.mtxtDataLimite.Mask = "00/00/0000";
-            this.mtxtDataLimite.Name = "mtxtDataLimite";
-            this.mtxtDataLimite.Size = new System.Drawing.Size(119, 20);
-            this.mtxtDataLimite.TabIndex = 6;
-            this.mtxtDataLimite.TextChanged += new System.EventHandler(this.mtxtDataLimite_TextChanged);
-            // 
-            // totalservicoTableAdapter
-            // 
-            this.totalservicoTableAdapter.ClearBeforeFill = true;
             // 
             // OSN
             // 
@@ -156,6 +106,56 @@ namespace OS_CodeFirst.View
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // totalservicoBindingSource
+            // 
+            this.totalservicoBindingSource.DataMember = "totalservico";
+            this.totalservicoBindingSource.DataSource = this.totalServicoDataSet;
+            // 
+            // totalServicoDataSet
+            // 
+            this.totalServicoDataSet.DataSetName = "TotalServicoDataSet";
+            this.totalServicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblOSN
+            // 
+            this.lblOSN.AutoSize = true;
+            this.lblOSN.Location = new System.Drawing.Point(80, 88);
+            this.lblOSN.Name = "lblOSN";
+            this.lblOSN.Size = new System.Drawing.Size(25, 13);
+            this.lblOSN.TabIndex = 2;
+            this.lblOSN.Text = "OS:";
+            // 
+            // lblDataLimite
+            // 
+            this.lblDataLimite.AutoSize = true;
+            this.lblDataLimite.Location = new System.Drawing.Point(346, 88);
+            this.lblDataLimite.Name = "lblDataLimite";
+            this.lblDataLimite.Size = new System.Drawing.Size(63, 13);
+            this.lblDataLimite.TabIndex = 4;
+            this.lblDataLimite.Text = "Data Limite:";
+            // 
+            // mtxtOS
+            // 
+            this.mtxtOS.Location = new System.Drawing.Point(111, 85);
+            this.mtxtOS.Mask = "000-0000/0000";
+            this.mtxtOS.Name = "mtxtOS";
+            this.mtxtOS.Size = new System.Drawing.Size(92, 20);
+            this.mtxtOS.TabIndex = 5;
+            this.mtxtOS.TextChanged += new System.EventHandler(this.mtxtOS_TextChanged);
+            // 
+            // mtxtDataLimite
+            // 
+            this.mtxtDataLimite.Location = new System.Drawing.Point(436, 81);
+            this.mtxtDataLimite.Mask = "00/00/0000";
+            this.mtxtDataLimite.Name = "mtxtDataLimite";
+            this.mtxtDataLimite.Size = new System.Drawing.Size(119, 20);
+            this.mtxtDataLimite.TabIndex = 6;
+            this.mtxtDataLimite.TextChanged += new System.EventHandler(this.mtxtDataLimite_TextChanged);
+            // 
+            // totalservicoTableAdapter
+            // 
+            this.totalservicoTableAdapter.ClearBeforeFill = true;
             // 
             // Consulta_TotalServico
             // 

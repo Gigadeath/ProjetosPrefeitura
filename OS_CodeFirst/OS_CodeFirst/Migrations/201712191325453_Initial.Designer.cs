@@ -13,7 +13,7 @@ namespace OS_CodeFirst.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201801151602108_Initial"; }
+            get { return "201712191325453_Initial"; }
         }
         
         string IMigrationMetadata.Source

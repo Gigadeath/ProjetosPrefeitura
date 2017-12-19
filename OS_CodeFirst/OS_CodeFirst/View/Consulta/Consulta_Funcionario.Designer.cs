@@ -33,20 +33,20 @@ namespace OS_CodeFirst.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta_Funcionario));
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.funcionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet = new OS_CodeFirst.BD.ordemservicoDataSet();
             this.lblRF = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtSetor = new System.Windows.Forms.TextBox();
             this.lblSetor = new System.Windows.Forms.Label();
             this.mtxtRF = new System.Windows.Forms.MaskedTextBox();
-            this.ordemservicoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordemservicoDataSet = new OS_CodeFirst.BD.ordemservicoDataSet();
             this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSetBindingSource)).BeginInit();
@@ -65,84 +65,11 @@ namespace OS_CodeFirst.View
             this.dataGridViewTextBoxColumn3,
             this.Setor});
             this.dgvFuncionario.DataSource = this.funcionarioBindingSource;
-            this.dgvFuncionario.Location = new System.Drawing.Point(12, 77);
+            this.dgvFuncionario.Location = new System.Drawing.Point(15, 149);
             this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.Size = new System.Drawing.Size(641, 225);
+            this.dgvFuncionario.Size = new System.Drawing.Size(641, 217);
             this.dgvFuncionario.TabIndex = 0;
             this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // funcionarioBindingSource
-            // 
-            this.funcionarioBindingSource.DataMember = "funcionario";
-            this.funcionarioBindingSource.DataSource = this.ordemservicoDataSetBindingSource;
-            // 
-            // lblRF
-            // 
-            this.lblRF.AutoSize = true;
-            this.lblRF.Location = new System.Drawing.Point(19, 33);
-            this.lblRF.Name = "lblRF";
-            this.lblRF.Size = new System.Drawing.Size(30, 13);
-            this.lblRF.TabIndex = 2;
-            this.lblRF.Text = "R.F.:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(297, 30);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
-            this.txtNome.TabIndex = 3;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(245, 33);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 4;
-            this.lblNome.Text = "Nome:";
-            // 
-            // txtSetor
-            // 
-            this.txtSetor.Location = new System.Drawing.Point(522, 30);
-            this.txtSetor.Name = "txtSetor";
-            this.txtSetor.Size = new System.Drawing.Size(100, 20);
-            this.txtSetor.TabIndex = 5;
-            this.txtSetor.Text = "SME/CODAE/";
-            this.txtSetor.TextChanged += new System.EventHandler(this.txtSetor_TextChanged);
-            // 
-            // lblSetor
-            // 
-            this.lblSetor.AutoSize = true;
-            this.lblSetor.Location = new System.Drawing.Point(466, 33);
-            this.lblSetor.Name = "lblSetor";
-            this.lblSetor.Size = new System.Drawing.Size(35, 13);
-            this.lblSetor.TabIndex = 6;
-            this.lblSetor.Text = "Setor:";
-            // 
-            // mtxtRF
-            // 
-            this.mtxtRF.Location = new System.Drawing.Point(55, 30);
-            this.mtxtRF.Mask = "000,000-0";
-            this.mtxtRF.Name = "mtxtRF";
-            this.mtxtRF.Size = new System.Drawing.Size(100, 20);
-            this.mtxtRF.TabIndex = 7;
-            this.mtxtRF.TextChanged += new System.EventHandler(this.mtxtRF_TextChanged);
-            // 
-            // ordemservicoDataSetBindingSource
-            // 
-            this.ordemservicoDataSetBindingSource.DataSource = this.ordemservicoDataSet;
-            this.ordemservicoDataSetBindingSource.Position = 0;
-            this.ordemservicoDataSetBindingSource.CurrentChanged += new System.EventHandler(this.ordemservicoDataSetBindingSource_CurrentChanged);
-            // 
-            // ordemservicoDataSet
-            // 
-            this.ordemservicoDataSet.DataSetName = "ordemservicoDataSet";
-            this.ordemservicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // funcionarioTableAdapter
-            // 
-            this.funcionarioTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -169,11 +96,84 @@ namespace OS_CodeFirst.View
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             // 
+            // funcionarioBindingSource
+            // 
+            this.funcionarioBindingSource.DataMember = "funcionario";
+            this.funcionarioBindingSource.DataSource = this.ordemservicoDataSetBindingSource;
+            // 
+            // ordemservicoDataSetBindingSource
+            // 
+            this.ordemservicoDataSetBindingSource.DataSource = this.ordemservicoDataSet;
+            this.ordemservicoDataSetBindingSource.Position = 0;
+            this.ordemservicoDataSetBindingSource.CurrentChanged += new System.EventHandler(this.ordemservicoDataSetBindingSource_CurrentChanged);
+            // 
+            // ordemservicoDataSet
+            // 
+            this.ordemservicoDataSet.DataSetName = "ordemservicoDataSet";
+            this.ordemservicoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblRF
+            // 
+            this.lblRF.AutoSize = true;
+            this.lblRF.Location = new System.Drawing.Point(22, 97);
+            this.lblRF.Name = "lblRF";
+            this.lblRF.Size = new System.Drawing.Size(30, 13);
+            this.lblRF.TabIndex = 2;
+            this.lblRF.Text = "R.F.:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(300, 94);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.TabIndex = 3;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(248, 97);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 4;
+            this.lblNome.Text = "Nome:";
+            // 
+            // txtSetor
+            // 
+            this.txtSetor.Location = new System.Drawing.Point(525, 94);
+            this.txtSetor.Name = "txtSetor";
+            this.txtSetor.Size = new System.Drawing.Size(100, 20);
+            this.txtSetor.TabIndex = 5;
+            this.txtSetor.Text = "SME/CODAE/";
+            this.txtSetor.TextChanged += new System.EventHandler(this.txtSetor_TextChanged);
+            // 
+            // lblSetor
+            // 
+            this.lblSetor.AutoSize = true;
+            this.lblSetor.Location = new System.Drawing.Point(469, 97);
+            this.lblSetor.Name = "lblSetor";
+            this.lblSetor.Size = new System.Drawing.Size(35, 13);
+            this.lblSetor.TabIndex = 6;
+            this.lblSetor.Text = "Setor:";
+            // 
+            // mtxtRF
+            // 
+            this.mtxtRF.Location = new System.Drawing.Point(58, 94);
+            this.mtxtRF.Mask = "000,000-0";
+            this.mtxtRF.Name = "mtxtRF";
+            this.mtxtRF.Size = new System.Drawing.Size(100, 20);
+            this.mtxtRF.TabIndex = 7;
+            this.mtxtRF.TextChanged += new System.EventHandler(this.mtxtRF_TextChanged);
+            // 
+            // funcionarioTableAdapter
+            // 
+            this.funcionarioTableAdapter.ClearBeforeFill = true;
+            // 
             // Consulta_Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 314);
+            this.ClientSize = new System.Drawing.Size(665, 384);
             this.Controls.Add(this.mtxtRF);
             this.Controls.Add(this.lblSetor);
             this.Controls.Add(this.txtSetor);

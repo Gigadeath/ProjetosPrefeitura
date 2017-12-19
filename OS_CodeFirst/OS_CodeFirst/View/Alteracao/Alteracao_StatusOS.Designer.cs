@@ -34,21 +34,21 @@ namespace OS_CodeFirst.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alteracao_StatusOS));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet3 = new OS_CodeFirst.BD.ordemservicoDataSet3();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.ordemservicoDataSet3 = new OS_CodeFirst.BD.ordemservicoDataSet3();
-            this.statusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet3TableAdapters.statusTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 48);
+            this.label1.Location = new System.Drawing.Point(51, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
@@ -59,16 +59,26 @@ namespace OS_CodeFirst.View
             this.cmbStatus.DataSource = this.statusBindingSource;
             this.cmbStatus.DisplayMember = "Nome";
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(144, 45);
+            this.cmbStatus.Location = new System.Drawing.Point(110, 88);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(121, 21);
             this.cmbStatus.TabIndex = 1;
             this.cmbStatus.ValueMember = "Id";
             // 
+            // statusBindingSource
+            // 
+            this.statusBindingSource.DataMember = "status";
+            this.statusBindingSource.DataSource = this.ordemservicoDataSet3;
+            // 
+            // ordemservicoDataSet3
+            // 
+            this.ordemservicoDataSet3.DataSetName = "ordemservicoDataSet3";
+            this.ordemservicoDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 97);
+            this.label2.Location = new System.Drawing.Point(51, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 2;
@@ -76,7 +86,7 @@ namespace OS_CodeFirst.View
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(73, 94);
+            this.txtDescricao.Location = new System.Drawing.Point(50, 159);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(282, 96);
@@ -84,7 +94,7 @@ namespace OS_CodeFirst.View
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(73, 212);
+            this.btnAlterar.Location = new System.Drawing.Point(54, 278);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 4;
@@ -94,22 +104,12 @@ namespace OS_CodeFirst.View
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(280, 212);
+            this.btnCancelar.Location = new System.Drawing.Point(257, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // ordemservicoDataSet3
-            // 
-            this.ordemservicoDataSet3.DataSetName = "ordemservicoDataSet3";
-            this.ordemservicoDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // statusBindingSource
-            // 
-            this.statusBindingSource.DataMember = "status";
-            this.statusBindingSource.DataSource = this.ordemservicoDataSet3;
             // 
             // statusTableAdapter
             // 
@@ -119,7 +119,7 @@ namespace OS_CodeFirst.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 247);
+            this.ClientSize = new System.Drawing.Size(380, 319);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.txtDescricao);
@@ -130,8 +130,8 @@ namespace OS_CodeFirst.View
             this.Name = "Alteracao_StatusOS";
             this.Text = "Movimentação do Status da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Alteracao_StatusOS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

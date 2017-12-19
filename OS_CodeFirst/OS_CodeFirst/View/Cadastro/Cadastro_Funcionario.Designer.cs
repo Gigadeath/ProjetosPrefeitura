@@ -40,7 +40,7 @@
             // lblRF
             // 
             this.lblRF.AutoSize = true;
-            this.lblRF.Location = new System.Drawing.Point(12, 40);
+            this.lblRF.Location = new System.Drawing.Point(28, 91);
             this.lblRF.Name = "lblRF";
             this.lblRF.Size = new System.Drawing.Size(24, 13);
             this.lblRF.TabIndex = 1;
@@ -49,7 +49,7 @@
             // lblNomeFunc
             // 
             this.lblNomeFunc.AutoSize = true;
-            this.lblNomeFunc.Location = new System.Drawing.Point(-2, 80);
+            this.lblNomeFunc.Location = new System.Drawing.Point(14, 131);
             this.lblNomeFunc.Name = "lblNomeFunc";
             this.lblNomeFunc.Size = new System.Drawing.Size(38, 13);
             this.lblNomeFunc.TabIndex = 2;
@@ -57,7 +57,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(42, 77);
+            this.txtNome.Location = new System.Drawing.Point(58, 128);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(230, 20);
             this.txtNome.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // mtxtRF
             // 
-            this.mtxtRF.Location = new System.Drawing.Point(42, 40);
+            this.mtxtRF.Location = new System.Drawing.Point(58, 91);
             this.mtxtRF.Mask = "000,000-0";
             this.mtxtRF.Name = "mtxtRF";
             this.mtxtRF.Size = new System.Drawing.Size(59, 20);
