@@ -36,7 +36,6 @@ namespace OS_CodeFirst.View
             this.cmbSistema = new System.Windows.Forms.ComboBox();
             this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.lblOS = new System.Windows.Forms.Label();
             this.lblPA = new System.Windows.Forms.Label();
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
@@ -66,12 +65,13 @@ namespace OS_CodeFirst.View
             this.label5 = new System.Windows.Forms.Label();
             this.txtSolicitacao = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.cmbServico = new System.Windows.Forms.ComboBox();
             this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
             this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
             this.prioridadeTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter();
             this.tiposervicoTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet2TableAdapters.tiposervicoTableAdapter();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCancel = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
@@ -110,21 +110,12 @@ namespace OS_CodeFirst.View
             // 
             this.sistemaBindingSource.DataMember = "sistema";
             this.sistemaBindingSource.DataSource = this.sistemaSet;
+            this.sistemaBindingSource.Filter = "status=1";
             // 
             // sistemaSet
             // 
             this.sistemaSet.DataSetName = "SistemaSet";
             this.sistemaSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(558, 329);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblOS
             // 
@@ -219,6 +210,7 @@ namespace OS_CodeFirst.View
             // 
             this.funcionarioBindingSource.DataMember = "funcionario";
             this.funcionarioBindingSource.DataSource = this.ordemservicoDataSet;
+            this.funcionarioBindingSource.Filter = "status=1";
             // 
             // ordemservicoDataSet
             // 
@@ -267,6 +259,7 @@ namespace OS_CodeFirst.View
             // 
             this.prioridadeBindingSource.DataMember = "prioridade";
             this.prioridadeBindingSource.DataSource = this.ordemservicoDataSet1;
+            this.prioridadeBindingSource.Filter = "status=1";
             // 
             // ordemservicoDataSet1
             // 
@@ -288,6 +281,7 @@ namespace OS_CodeFirst.View
             // 
             this.tiposervicoBindingSource.DataMember = "tiposervico";
             this.tiposervicoBindingSource.DataSource = this.ordemservicoDataSet2;
+            this.tiposervicoBindingSource.Filter = "status=1";
             // 
             // ordemservicoDataSet2
             // 
@@ -374,16 +368,6 @@ namespace OS_CodeFirst.View
             this.label6.TabIndex = 28;
             this.label6.Text = "Descrição:";
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(558, 288);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 29;
-            this.btnSalvar.Text = "Cadastrar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
             // cmbServico
             // 
             this.cmbServico.FormattingEnabled = true;
@@ -411,13 +395,47 @@ namespace OS_CodeFirst.View
             // 
             this.tiposervicoTableAdapter.ClearBeforeFill = true;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.AutoSize = true;
+            this.btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.Icon = null;
+            this.btnSalvar.Location = new System.Drawing.Point(551, 279);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Primary = false;
+            this.btnSalvar.Size = new System.Drawing.Size(100, 36);
+            this.btnSalvar.TabIndex = 31;
+            this.btnSalvar.Text = "Cadastrar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancel.Depth = 0;
+            this.btnCancel.Icon = null;
+            this.btnCancel.Location = new System.Drawing.Point(552, 327);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Primary = false;
+            this.btnCancel.Size = new System.Drawing.Size(91, 36);
+            this.btnCancel.TabIndex = 32;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // Frm_CadastraOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 381);
-            this.Controls.Add(this.cmbServico);
+            this.ClientSize = new System.Drawing.Size(656, 381);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.cmbServico);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSolicitacao);
             this.Controls.Add(this.mtxtEntregue);
@@ -441,11 +459,12 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.mtxtOS);
             this.Controls.Add(this.lblPA);
             this.Controls.Add(this.lblOS);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cmbSistema);
             this.Controls.Add(this.lblSistema);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_CadastraOS";
+            this.Sizable = false;
             this.Text = "Cadastro de Ordem de Serviço";
             this.Load += new System.EventHandler(this.Cadastro_OS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).EndInit();
@@ -465,7 +484,6 @@ namespace OS_CodeFirst.View
 
         private System.Windows.Forms.Label lblSistema;
         private System.Windows.Forms.ComboBox cmbSistema;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblOS;
         private System.Windows.Forms.Label lblPA;
         private System.Windows.Forms.MaskedTextBox mtxtOS;
@@ -489,7 +507,6 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSolicitacao;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.ComboBox cmbServico;
         private SistemaSet sistemaSet;
         private System.Windows.Forms.BindingSource sistemaBindingSource;
@@ -503,5 +520,7 @@ namespace OS_CodeFirst.View
         private ordemservicoDataSet2 ordemservicoDataSet2;
         private System.Windows.Forms.BindingSource tiposervicoBindingSource;
         private BD.ordemservicoDataSet2TableAdapters.tiposervicoTableAdapter tiposervicoTableAdapter;
+        private MaterialSkin.Controls.MaterialFlatButton btnSalvar;
+        private MaterialSkin.Controls.MaterialFlatButton btnCancel;
     }
 }

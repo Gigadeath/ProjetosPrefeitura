@@ -283,6 +283,8 @@ namespace OS_CodeFirst.BD {
             
             private global::System.Data.DataColumn columnNome;
             
+            private global::System.Data.DataColumn columnstatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tiposervicoDataTable() {
@@ -334,6 +336,14 @@ namespace OS_CodeFirst.BD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -369,11 +379,12 @@ namespace OS_CodeFirst.BD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tiposervicoRow AddtiposervicoRow(string Nome) {
+            public tiposervicoRow AddtiposervicoRow(string Nome, short status) {
                 tiposervicoRow rowtiposervicoRow = ((tiposervicoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Nome};
+                        Nome,
+                        status};
                 rowtiposervicoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtiposervicoRow);
                 return rowtiposervicoRow;
@@ -405,6 +416,7 @@ namespace OS_CodeFirst.BD {
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
                 this.columnNome = base.Columns["Nome"];
+                this.columnstatus = base.Columns["status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +426,8 @@ namespace OS_CodeFirst.BD {
                 base.Columns.Add(this.columnId);
                 this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNome);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -422,6 +436,7 @@ namespace OS_CodeFirst.BD {
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNome.AllowDBNull = false;
+                this.columnstatus.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -581,6 +596,17 @@ namespace OS_CodeFirst.BD {
                 }
                 set {
                     this[this.tabletiposervico.NomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public short status {
+                get {
+                    return ((short)(this[this.tabletiposervico.statusColumn]));
+                }
+                set {
+                    this[this.tabletiposervico.statusColumn] = value;
                 }
             }
         }
@@ -746,10 +772,12 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
             tableMapping.DataSetTable = "tiposervico";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Nome", "Nome");
+            tableMapping.ColumnMappings.Add("status", "status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Devart.Data.MySql.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `ordemservico`.`tiposervico` WHERE ((`Id` = :Original_Id))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `ordemservico`.`tiposervico` WHERE ((`Id` = :Original_Id) AND (`statu" +
+                "s` = :Original_status))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Devart.Data.MySql.MySqlParameter param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "Original_Id";
@@ -759,9 +787,18 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
             param.SourceColumn = "Id";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.TinyInt;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Devart.Data.MySql.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `ordemservico`.`tiposervico` (`Nome`) VALUES (:Nome)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `ordemservico`.`tiposervico` (`Nome`, `status`) VALUES (:Nome, :statu" +
+                "s)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "Nome";
@@ -770,10 +807,17 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "Nome";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.TinyInt;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Devart.Data.MySql.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `ordemservico`.`tiposervico` SET `Nome` = :Nome WHERE ((`Id` = :Original_I" +
-                "d))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `ordemservico`.`tiposervico` SET `Nome` = :Nome, `status` = :status WHERE " +
+                "((`Id` = :Original_Id) AND (`status` = :Original_status))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "Nome";
@@ -783,11 +827,26 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
             param.SourceColumn = "Nome";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.TinyInt;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
             param.ParameterName = "Original_Id";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlType = global::Devart.Data.MySql.MySqlType.Int;
             param.IsNullable = true;
             param.SourceColumn = "Id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Devart.Data.MySql.MySqlParameter();
+            param.ParameterName = "Original_status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.MySqlType = global::Devart.Data.MySql.MySqlType.TinyInt;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -805,7 +864,7 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
             this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[1];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nome FROM ordemservico.tiposervico";
+            this._commandCollection[0].CommandText = "SELECT        Id, Nome, status\r\nFROM            tiposervico";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -866,8 +925,9 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id) {
+        public virtual int Delete(int Original_Id, short Original_status) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_status));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -888,13 +948,14 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nome) {
+        public virtual int Insert(string Nome, short status) {
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nome));
             }
+            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(status));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -915,14 +976,16 @@ namespace OS_CodeFirst.BD.TipoServicoDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome, int Original_Id) {
+        public virtual int Update(string Nome, short status, int Original_Id, short Original_status) {
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nome));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(status));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(Original_status));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

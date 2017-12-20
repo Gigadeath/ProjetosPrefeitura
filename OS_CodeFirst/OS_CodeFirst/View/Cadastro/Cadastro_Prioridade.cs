@@ -26,6 +26,7 @@ namespace OS_CodeFirst.View
             Prioridade pri = new Prioridade();
             PrioridadeController pcon = new PrioridadeController();
             pri.Nivel = txtNivel.Text;
+            pri.status = true;
             pcon.trataRequisicao(btnSalvar.Text,pri);
         }
     }

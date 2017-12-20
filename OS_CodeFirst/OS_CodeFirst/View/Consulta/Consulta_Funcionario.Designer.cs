@@ -70,6 +70,7 @@ namespace OS_CodeFirst.View
             this.dgvFuncionario.Size = new System.Drawing.Size(641, 217);
             this.dgvFuncionario.TabIndex = 0;
             this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvFuncionario.DoubleClick += new System.EventHandler(this.dgvFuncionario_DoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -182,7 +183,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.lblRF);
             this.Controls.Add(this.dgvFuncionario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Consulta_Funcionario";
+            this.Sizable = false;
             this.Text = "Consulta/Alteração de Funcionarios";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();

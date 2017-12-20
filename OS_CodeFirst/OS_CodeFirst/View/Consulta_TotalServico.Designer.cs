@@ -168,7 +168,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.lblOSN);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Consulta_TotalServico";
+            this.Sizable = false;
             this.Text = "Total Tipo de Serviço";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

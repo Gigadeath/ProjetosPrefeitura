@@ -15,6 +15,8 @@ namespace OS_CodeFirst.Model
         public string RF { get; set; }
         [Required(ErrorMessage = "O nome do Funcionario é obrigatório", AllowEmptyStrings = false)]
         public string Nome { get; set; }
+        [Required(ErrorMessage = "Status do Funcionario é obrigatório", AllowEmptyStrings = false)]
+        public bool status { get; set; }
 
 
 

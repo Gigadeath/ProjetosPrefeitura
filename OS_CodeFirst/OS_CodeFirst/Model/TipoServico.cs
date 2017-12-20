@@ -13,6 +13,8 @@ namespace OS_CodeFirst.Model
         public int Id { get; set; }
         [Required(ErrorMessage = "O nome do tipo de Serviço é obrigatório", AllowEmptyStrings = false)]
         public string Nome { get; set; }
+        [Required(ErrorMessage = "Status do Serviço é obrigatório", AllowEmptyStrings = false)]
+        public bool status { get; set; }
 
         public virtual ICollection<OS> Ordens { get; set; }
 

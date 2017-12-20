@@ -112,7 +112,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.cmbOS);
             this.Controls.Add(this.lblOS);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Geracao_OS";
+            this.Sizable = false;
             this.Text = "Geracao_OS";
             this.Load += new System.EventHandler(this.Geracao_OS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).EndInit();

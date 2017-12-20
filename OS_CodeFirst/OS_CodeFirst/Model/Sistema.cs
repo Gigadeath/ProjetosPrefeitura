@@ -16,6 +16,8 @@ namespace OS_CodeFirst.Model
         [Required(ErrorMessage = "O numero da OS é obrigatório", AllowEmptyStrings = false)]
         [StringLength(3, MinimumLength = 3)]
         public string Numero_OS { get; set; }
+        [Required(ErrorMessage = "Status do Sistema é obrigatório", AllowEmptyStrings = false)]
+        public bool status { get; set; }
 
 
 

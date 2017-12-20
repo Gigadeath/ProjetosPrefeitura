@@ -60,6 +60,7 @@ namespace OS_CodeFirst.View
             this.dgvSistema.Name = "dgvSistema";
             this.dgvSistema.Size = new System.Drawing.Size(641, 201);
             this.dgvSistema.TabIndex = 0;
+            this.dgvSistema.DoubleClick += new System.EventHandler(this.dgvSistema_DoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -120,7 +121,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.lblSistema);
             this.Controls.Add(this.dgvSistema);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "Consulta_Sistema";
+            this.Sizable = false;
             this.Text = "Consulta/Alteração Sistema";
             this.Load += new System.EventHandler(this.Consulta_Sistema_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSistema)).EndInit();

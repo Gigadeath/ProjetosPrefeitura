@@ -55,10 +55,10 @@ namespace OS_CodeFirst.View
             this.sistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sistemaSet = new OS_CodeFirst.BD.SistemaSet();
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
-            this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnGerar = new System.Windows.Forms.Button();
             this.sistemaTableAdapter = new OS_CodeFirst.BD.SistemaSetTableAdapters.sistemaTableAdapter();
             this.osTableAdapter = new OS_CodeFirst.BD.OSSetTableAdapters.osTableAdapter();
+            this.btnGerar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnAtualizar = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oSSet)).BeginInit();
@@ -261,26 +261,6 @@ namespace OS_CodeFirst.View
             this.mtxtOS.TabIndex = 14;
             this.mtxtOS.TextChanged += new System.EventHandler(this.mtxtOS_TextChanged);
             // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Location = new System.Drawing.Point(549, 141);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizar.TabIndex = 15;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // btnGerar
-            // 
-            this.btnGerar.Location = new System.Drawing.Point(453, 141);
-            this.btnGerar.Name = "btnGerar";
-            this.btnGerar.Size = new System.Drawing.Size(75, 23);
-            this.btnGerar.TabIndex = 16;
-            this.btnGerar.Text = "Gerar";
-            this.btnGerar.UseVisualStyleBackColor = true;
-            this.btnGerar.Click += new System.EventHandler(this.btnGerar_Click);
-            // 
             // sistemaTableAdapter
             // 
             this.sistemaTableAdapter.ClearBeforeFill = true;
@@ -289,13 +269,47 @@ namespace OS_CodeFirst.View
             // 
             this.osTableAdapter.ClearBeforeFill = true;
             // 
+            // btnGerar
+            // 
+            this.btnGerar.AutoSize = true;
+            this.btnGerar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnGerar.Depth = 0;
+            this.btnGerar.Icon = null;
+            this.btnGerar.Location = new System.Drawing.Point(464, 128);
+            this.btnGerar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnGerar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnGerar.Name = "btnGerar";
+            this.btnGerar.Primary = false;
+            this.btnGerar.Size = new System.Drawing.Size(64, 36);
+            this.btnGerar.TabIndex = 17;
+            this.btnGerar.Text = "Gerar";
+            this.btnGerar.UseVisualStyleBackColor = true;
+            this.btnGerar.Click += new System.EventHandler(this.btnGerar_Click);
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.AutoSize = true;
+            this.btnAtualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAtualizar.Depth = 0;
+            this.btnAtualizar.Icon = null;
+            this.btnAtualizar.Location = new System.Drawing.Point(554, 128);
+            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAtualizar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Primary = false;
+            this.btnAtualizar.Size = new System.Drawing.Size(94, 36);
+            this.btnAtualizar.TabIndex = 18;
+            this.btnAtualizar.Text = "atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // Consulta_OS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 374);
-            this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.btnAtualizar);
+            this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.mtxtOS);
             this.Controls.Add(this.cmbSistema);
             this.Controls.Add(this.lblSistema);
@@ -308,7 +322,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.lblDataemis);
             this.Controls.Add(this.lblOS);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Consulta_OS";
+            this.Sizable = false;
             this.Text = "Consulta/Alteração da OS";
             this.Load += new System.EventHandler(this.Consulta_StatusOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOS)).EndInit();
@@ -343,9 +359,7 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEntregueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEmissaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn solicitacaoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sistema_Id;
-        private System.Windows.Forms.Button btnGerar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
@@ -357,5 +371,7 @@ namespace OS_CodeFirst.View
         private OSSet oSSet;
         private System.Windows.Forms.BindingSource osBindingSource;
         private BD.OSSetTableAdapters.osTableAdapter osTableAdapter;
+        private MaterialSkin.Controls.MaterialFlatButton btnGerar;
+        private MaterialSkin.Controls.MaterialFlatButton btnAtualizar;
     }
 }

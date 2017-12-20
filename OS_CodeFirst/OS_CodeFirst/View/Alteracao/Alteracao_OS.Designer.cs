@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alteracao_OS));
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.cmbServico = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtSolicitacao = new System.Windows.Forms.TextBox();
@@ -70,6 +68,8 @@
             this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
             this.prioridadeTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet1TableAdapters.prioridadeTableAdapter();
             this.tiposervicoTableAdapter = new OS_CodeFirst.BD.TipoServicoDataSetTableAdapters.tiposervicoTableAdapter();
+            this.btnCancel = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoServicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prioridadeBindingSource)).BeginInit();
@@ -79,25 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(559, 295);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 57;
-            this.btnSalvar.Text = "Alterar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(559, 336);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 33;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // cmbServico
             // 
@@ -204,6 +185,7 @@
             // 
             this.tiposervicoBindingSource.DataMember = "tiposervico";
             this.tiposervicoBindingSource.DataSource = this.tipoServicoDataSet;
+            this.tiposervicoBindingSource.Filter = "status=1";
             // 
             // tipoServicoDataSet
             // 
@@ -225,6 +207,7 @@
             // 
             this.prioridadeBindingSource.DataMember = "prioridade";
             this.prioridadeBindingSource.DataSource = this.ordemservicoDataSet1;
+            this.prioridadeBindingSource.Filter = "status=1";
             // 
             // ordemservicoDataSet1
             // 
@@ -273,6 +256,7 @@
             // 
             this.funcionarioBindingSource.DataMember = "funcionario";
             this.funcionarioBindingSource.DataSource = this.ordemservicoDataSet;
+            this.funcionarioBindingSource.Filter = "status=1";
             // 
             // ordemservicoDataSet
             // 
@@ -400,11 +384,48 @@
             // 
             this.tiposervicoTableAdapter.ClearBeforeFill = true;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancel.Depth = 0;
+            this.btnCancel.Icon = null;
+            this.btnCancel.Location = new System.Drawing.Point(547, 337);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Primary = false;
+            this.btnCancel.Size = new System.Drawing.Size(91, 36);
+            this.btnCancel.TabIndex = 86;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.AutoSize = true;
+            this.btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSalvar.Icon = null;
+            this.btnSalvar.Location = new System.Drawing.Point(552, 289);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Primary = false;
+            this.btnSalvar.Size = new System.Drawing.Size(80, 36);
+            this.btnSalvar.TabIndex = 87;
+            this.btnSalvar.Text = "Alterar";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // Alteracao_OS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 409);
+            this.ClientSize = new System.Drawing.Size(658, 409);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cmbServico);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtSolicitacao);
@@ -431,10 +452,10 @@
             this.Controls.Add(this.lblOS);
             this.Controls.Add(this.cmbSistema);
             this.Controls.Add(this.lblSistema);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnCancel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Alteracao_OS";
+            this.Sizable = false;
             this.Text = "Alteração da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Alteracao_OS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tiposervicoBindingSource)).EndInit();
@@ -451,8 +472,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cmbServico;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSolicitacao;
@@ -491,5 +510,7 @@
         private BD.TipoServicoDataSet tipoServicoDataSet;
         private System.Windows.Forms.BindingSource tiposervicoBindingSource;
         private BD.TipoServicoDataSetTableAdapters.tiposervicoTableAdapter tiposervicoTableAdapter;
+        private MaterialSkin.Controls.MaterialFlatButton btnCancel;
+        private MaterialSkin.Controls.MaterialFlatButton btnSalvar;
     }
 }

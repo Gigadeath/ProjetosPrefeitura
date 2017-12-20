@@ -28,6 +28,7 @@ namespace OS_CodeFirst.View
 
             sis.Nome = txtSistema.Text;
             sis.Numero_OS = mtxtNumero.Text;
+            sis.status = true;
 
             siscon.trataRequisicao(btnSalvar.Text, sis);
         }

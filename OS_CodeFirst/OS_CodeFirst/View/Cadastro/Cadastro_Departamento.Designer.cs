@@ -97,7 +97,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDepartamento);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Cadastro_Departamento";
+            this.Sizable = false;
             this.Text = " Cadastro de Setor";
             this.ResumeLayout(false);
             this.PerformLayout();

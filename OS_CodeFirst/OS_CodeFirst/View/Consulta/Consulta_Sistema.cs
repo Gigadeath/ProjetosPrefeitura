@@ -40,5 +40,19 @@ namespace OS_CodeFirst.View
                 sistemaBindingSource.Filter = "Nome Like '%" + txtSistema.Text + "%'";
             }
         }
+
+        private void dgvSistema_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int codigo = Convert.ToInt32(dgvSistema.SelectedRows[0].Cells[0].Value.ToString());
+                Alteracao_Sistema sis = new Alteracao_Sistema(codigo);
+                sis.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

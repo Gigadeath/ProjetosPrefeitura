@@ -39,5 +39,19 @@ namespace OS_CodeFirst.View
                 tiposervicoBindingSource.Filter = "Nome Like '%" + txtTipoServico.Text + "%'";
             }
         }
+
+        private void dgvTipoServ_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int codigo = Convert.ToInt32(dgvTipoServ.SelectedRows[0].Cells[0].Value.ToString());
+                Alteracao_TipoServico tp = new Alteracao_TipoServico(codigo);
+                tp.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -287,6 +287,8 @@ namespace OS_CodeFirst.BD {
             
             private global::System.Data.DataColumn columnSetor;
             
+            private global::System.Data.DataColumn columnstatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public funcionarioDataTable() {
@@ -354,6 +356,14 @@ namespace OS_CodeFirst.BD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +399,14 @@ namespace OS_CodeFirst.BD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public funcionarioRow AddfuncionarioRow(string RF, string Nome, string Setor) {
+            public funcionarioRow AddfuncionarioRow(string RF, string Nome, string Setor, bool status) {
                 funcionarioRow rowfuncionarioRow = ((funcionarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         RF,
                         Nome,
-                        Setor};
+                        Setor,
+                        status};
                 rowfuncionarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfuncionarioRow);
                 return rowfuncionarioRow;
@@ -429,6 +440,7 @@ namespace OS_CodeFirst.BD {
                 this.columnRF = base.Columns["RF"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnSetor = base.Columns["Setor"];
+                this.columnstatus = base.Columns["status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,6 +454,8 @@ namespace OS_CodeFirst.BD {
                 base.Columns.Add(this.columnNome);
                 this.columnSetor = new global::System.Data.DataColumn("Setor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSetor);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -642,6 +656,22 @@ namespace OS_CodeFirst.BD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool status {
+                get {
+                    try {
+                        return ((bool)(this[this.tablefuncionario.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'status\' na tabela \'funcionario\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefuncionario.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSetorNull() {
                 return this.IsNull(this.tablefuncionario.SetorColumn);
             }
@@ -650,6 +680,18 @@ namespace OS_CodeFirst.BD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSetorNull() {
                 this[this.tablefuncionario.SetorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tablefuncionario.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tablefuncionario.statusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -815,6 +857,7 @@ namespace OS_CodeFirst.BD.ordemservicoDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("RF", "RF");
             tableMapping.ColumnMappings.Add("Nome", "Nome");
+            tableMapping.ColumnMappings.Add("status", "status");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -832,13 +875,12 @@ namespace OS_CodeFirst.BD.ordemservicoDataSetTableAdapters {
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        *
-FROM            (SELECT        departamento.Setor, funcionario.RF, funcionario.Nome, dep_func.Id
+FROM            (SELECT        departamento.Setor, funcionario.RF, funcionario.Nome, dep_func.Id,status
                           FROM            funcionario INNER JOIN
                                                     dep_func ON funcionario.Id = dep_func.Id INNER JOIN
                                                     departamento ON funcionario.Id = departamento.Id
                           ORDER BY departamento.Id DESC) agrupa
-Group by agrupa.RF
-";
+GROUP BY agrupa.RF";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -285,6 +285,8 @@ namespace OS_CodeFirst.BD {
             
             private global::System.Data.DataColumn columnNumero_OS;
             
+            private global::System.Data.DataColumn columnstatus;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public sistemaDataTable() {
@@ -344,6 +346,14 @@ namespace OS_CodeFirst.BD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -379,12 +389,13 @@ namespace OS_CodeFirst.BD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public sistemaRow AddsistemaRow(string Nome, string Numero_OS) {
+            public sistemaRow AddsistemaRow(string Nome, string Numero_OS, short status) {
                 sistemaRow rowsistemaRow = ((sistemaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nome,
-                        Numero_OS};
+                        Numero_OS,
+                        status};
                 rowsistemaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowsistemaRow);
                 return rowsistemaRow;
@@ -417,6 +428,7 @@ namespace OS_CodeFirst.BD {
                 this.columnId = base.Columns["Id"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnNumero_OS = base.Columns["Numero_OS"];
+                this.columnstatus = base.Columns["status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,6 +440,8 @@ namespace OS_CodeFirst.BD {
                 base.Columns.Add(this.columnNome);
                 this.columnNumero_OS = new global::System.Data.DataColumn("Numero_OS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumero_OS);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -438,6 +452,7 @@ namespace OS_CodeFirst.BD {
                 this.columnNome.AllowDBNull = false;
                 this.columnNumero_OS.AllowDBNull = false;
                 this.columnNumero_OS.MaxLength = 3;
+                this.columnstatus.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,6 +625,17 @@ namespace OS_CodeFirst.BD {
                     this[this.tablesistema.Numero_OSColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public short status {
+                get {
+                    return ((short)(this[this.tablesistema.statusColumn]));
+                }
+                set {
+                    this[this.tablesistema.statusColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -774,11 +800,12 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Nome", "Nome");
             tableMapping.ColumnMappings.Add("Numero_OS", "Numero_OS");
+            tableMapping.ColumnMappings.Add("status", "status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `ordemservico`.`sistema` WHERE ((`Id` = :Original_Id) AND (`Numero_OS" +
-                "` = :Original_Numero_OS))";
+                "` = :Original_Numero_OS) AND (`status` = :Original_status))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "Original_Id";
@@ -794,10 +821,17 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             param.SourceColumn = "Numero_OS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "Original_status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `ordemservico`.`sistema` (`Nome`, `Numero_OS`) VALUES (:Nome, :Numero" +
-                "_OS)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `ordemservico`.`sistema` (`Nome`, `Numero_OS`, `status`) VALUES (:Nom" +
+                "e, :Numero_OS, :status)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "Nome";
@@ -812,10 +846,17 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "Numero_OS";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `ordemservico`.`sistema` SET `Nome` = :Nome, `Numero_OS` = :Numero_OS WHER" +
-                "E ((`Id` = :Original_Id) AND (`Numero_OS` = :Original_Numero_OS))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `ordemservico`.`sistema` SET `Nome` = :Nome, `Numero_OS` = :Numero_OS, `st" +
+                "atus` = :status WHERE ((`Id` = :Original_Id) AND (`Numero_OS` = :Original_Numero" +
+                "_OS) AND (`status` = :Original_status))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "Nome";
@@ -831,6 +872,12 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             param.SourceColumn = "Numero_OS";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "Original_Id";
             param.DbType = global::System.Data.DbType.Int32;
             param.IsNullable = true;
@@ -842,6 +889,13 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Numero_OS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "Original_status";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.IsNullable = true;
+            param.SourceColumn = "status";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -859,7 +913,7 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Id, Nome, Numero_OS\r\nFROM            sistema";
+            this._commandCollection[0].CommandText = "SELECT        Id, Nome, Numero_OS, status\r\nFROM            sistema";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -920,7 +974,7 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Numero_OS) {
+        public virtual int Delete(int Original_Id, string Original_Numero_OS, short Original_status) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Numero_OS == null)) {
                 throw new global::System.ArgumentNullException("Original_Numero_OS");
@@ -928,6 +982,7 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Numero_OS));
             }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((short)(Original_status));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -948,7 +1003,7 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nome, string Numero_OS) {
+        public virtual int Insert(string Nome, string Numero_OS, short status) {
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
@@ -961,6 +1016,7 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Numero_OS));
             }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(status));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -981,7 +1037,7 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome, string Numero_OS, int Original_Id, string Original_Numero_OS) {
+        public virtual int Update(string Nome, string Numero_OS, short status, int Original_Id, string Original_Numero_OS, short Original_status) {
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
@@ -994,13 +1050,15 @@ namespace OS_CodeFirst.BD.SistemaSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Numero_OS));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(status));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
             if ((Original_Numero_OS == null)) {
                 throw new global::System.ArgumentNullException("Original_Numero_OS");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Numero_OS));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Numero_OS));
             }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Original_status));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

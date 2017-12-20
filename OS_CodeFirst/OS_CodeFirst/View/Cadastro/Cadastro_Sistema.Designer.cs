@@ -33,8 +33,8 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.mtxtNumero = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             this.SuspendLayout();
             // 
             // txtSistema
@@ -72,27 +72,41 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(17, 159);
+            this.btnSalvar.AutoSize = true;
+            this.btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.Icon = null;
+            this.btnSalvar.Location = new System.Drawing.Point(13, 146);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 4;
+            this.btnSalvar.Primary = false;
+            this.btnSalvar.Size = new System.Drawing.Size(100, 36);
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Cadastrar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(173, 159);
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Icon = null;
+            this.btnCancelar.Location = new System.Drawing.Point(153, 146);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Primary = false;
+            this.btnCancelar.Size = new System.Drawing.Size(91, 36);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // Cadastro_Sistema
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(284, 202);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
@@ -101,7 +115,9 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtSistema);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Cadastro_Sistema";
+            this.Sizable = false;
             this.Text = "Cadastro de Sistema";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -114,7 +130,7 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.MaskedTextBox mtxtNumero;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnCancelar;
+        private MaterialSkin.Controls.MaterialFlatButton btnSalvar;
+        private MaterialSkin.Controls.MaterialFlatButton btnCancelar;
     }
 }

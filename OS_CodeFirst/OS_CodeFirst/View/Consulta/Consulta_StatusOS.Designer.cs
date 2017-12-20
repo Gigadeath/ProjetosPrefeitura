@@ -52,8 +52,8 @@ namespace OS_CodeFirst.View
             this.lblEntregue = new System.Windows.Forms.Label();
             this.mtxtOS = new System.Windows.Forms.MaskedTextBox();
             this.lblOS = new System.Windows.Forms.Label();
-            this.btnAtualizar = new System.Windows.Forms.Button();
             this.statusosTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet4TableAdapters.statusosTableAdapter();
+            this.btnAtualizar = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatusOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet4)).BeginInit();
@@ -233,19 +233,26 @@ namespace OS_CodeFirst.View
             this.lblOS.TabIndex = 8;
             this.lblOS.Text = "OS:";
             // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Location = new System.Drawing.Point(550, 85);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
-            this.btnAtualizar.TabIndex = 9;
-            this.btnAtualizar.Text = "Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
             // statusosTableAdapter
             // 
             this.statusosTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.AutoSize = true;
+            this.btnAtualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAtualizar.Depth = 0;
+            this.btnAtualizar.Icon = null;
+            this.btnAtualizar.Location = new System.Drawing.Point(548, 117);
+            this.btnAtualizar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAtualizar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Primary = false;
+            this.btnAtualizar.Size = new System.Drawing.Size(94, 36);
+            this.btnAtualizar.TabIndex = 10;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // Consulta_StatusOS
             // 
@@ -263,7 +270,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.mtxtDataEmis);
             this.Controls.Add(this.dgvStatusOS);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Consulta_StatusOS";
+            this.Sizable = false;
             this.Text = "Consulta / alteração do Status da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Consulta_StatusOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatusOS)).EndInit();
@@ -292,7 +301,6 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEmissaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPrevistaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEntregueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnAtualizar;
         private ordemservicoDataSet4 ordemservicoDataSet4;
         private System.Windows.Forms.BindingSource statusosBindingSource;
         private BD.ordemservicoDataSet4TableAdapters.statusosTableAdapter statusosTableAdapter;
@@ -305,5 +313,6 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.DataGridViewTextBoxColumn DataPrevista;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataEntregue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private MaterialSkin.Controls.MaterialFlatButton btnAtualizar;
     }
 }

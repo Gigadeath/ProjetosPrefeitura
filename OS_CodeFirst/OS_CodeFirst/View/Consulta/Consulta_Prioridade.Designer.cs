@@ -58,6 +58,7 @@ namespace OS_CodeFirst.View
             this.dgvPrioridade.Name = "dgvPrioridade";
             this.dgvPrioridade.Size = new System.Drawing.Size(641, 209);
             this.dgvPrioridade.TabIndex = 0;
+            this.dgvPrioridade.DoubleClick += new System.EventHandler(this.dgvPrioridade_DoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -112,7 +113,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.lblNivel);
             this.Controls.Add(this.dgvPrioridade);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Consulta_Prioridade";
+            this.Sizable = false;
             this.Text = "Consulta/Alteração da Prioridade";
             this.Load += new System.EventHandler(this.Consulta_Prioridade_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrioridade)).EndInit();

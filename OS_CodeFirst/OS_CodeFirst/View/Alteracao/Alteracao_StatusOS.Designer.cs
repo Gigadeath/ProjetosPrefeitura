@@ -38,9 +38,9 @@ namespace OS_CodeFirst.View
             this.ordemservicoDataSet3 = new OS_CodeFirst.BD.ordemservicoDataSet3();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.statusTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSet3TableAdapters.statusTableAdapter();
+            this.btnAlterar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet3)).BeginInit();
             this.SuspendLayout();
@@ -92,28 +92,42 @@ namespace OS_CodeFirst.View
             this.txtDescricao.Size = new System.Drawing.Size(282, 96);
             this.txtDescricao.TabIndex = 3;
             // 
+            // statusTableAdapter
+            // 
+            this.statusTableAdapter.ClearBeforeFill = true;
+            // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(54, 278);
+            this.btnAlterar.AutoSize = true;
+            this.btnAlterar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAlterar.Depth = 0;
+            this.btnAlterar.Icon = null;
+            this.btnAlterar.Location = new System.Drawing.Point(50, 271);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAlterar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
-            this.btnAlterar.TabIndex = 4;
+            this.btnAlterar.Primary = false;
+            this.btnAlterar.Size = new System.Drawing.Size(100, 36);
+            this.btnAlterar.TabIndex = 6;
             this.btnAlterar.Text = "Cadastrar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(257, 278);
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Icon = null;
+            this.btnCancelar.Location = new System.Drawing.Point(241, 271);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Primary = false;
+            this.btnCancelar.Size = new System.Drawing.Size(91, 36);
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // statusTableAdapter
-            // 
-            this.statusTableAdapter.ClearBeforeFill = true;
             // 
             // Alteracao_StatusOS
             // 
@@ -127,7 +141,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Alteracao_StatusOS";
+            this.Sizable = false;
             this.Text = "Movimentação do Status da Ordem de Serviço";
             this.Load += new System.EventHandler(this.Alteracao_StatusOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.statusBindingSource)).EndInit();
@@ -143,10 +159,10 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnCancelar;
         private ordemservicoDataSet3 ordemservicoDataSet3;
         private System.Windows.Forms.BindingSource statusBindingSource;
         private BD.ordemservicoDataSet3TableAdapters.statusTableAdapter statusTableAdapter;
+        private MaterialSkin.Controls.MaterialFlatButton btnAlterar;
+        private MaterialSkin.Controls.MaterialFlatButton btnCancelar;
     }
 }

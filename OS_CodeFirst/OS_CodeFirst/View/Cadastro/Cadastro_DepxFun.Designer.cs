@@ -37,10 +37,10 @@
             this.cmbSetor = new System.Windows.Forms.ComboBox();
             this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departamentoDataSet = new OS_CodeFirst.DepartamentoDataSet();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.funcionarioTableAdapter = new OS_CodeFirst.BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter();
             this.departamentoTableAdapter = new OS_CodeFirst.DepartamentoDataSetTableAdapters.departamentoTableAdapter();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
@@ -107,25 +107,6 @@
             this.departamentoDataSet.DataSetName = "DepartamentoDataSet";
             this.departamentoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Location = new System.Drawing.Point(27, 208);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 4;
-            this.btnSalvar.Text = "Cadastrar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(157, 208);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // funcionarioTableAdapter
             // 
             this.funcionarioTableAdapter.ClearBeforeFill = true;
@@ -133,6 +114,39 @@
             // departamentoTableAdapter
             // 
             this.departamentoTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.AutoSize = true;
+            this.btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.Icon = null;
+            this.btnSalvar.Location = new System.Drawing.Point(27, 201);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Primary = false;
+            this.btnSalvar.Size = new System.Drawing.Size(100, 36);
+            this.btnSalvar.TabIndex = 6;
+            this.btnSalvar.Text = "Cadastrar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Icon = null;
+            this.btnCancelar.Location = new System.Drawing.Point(147, 201);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Primary = false;
+            this.btnCancelar.Size = new System.Drawing.Size(91, 36);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // Cadastro_DepxFun
             // 
@@ -145,7 +159,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFuncionario);
             this.Controls.Add(this.cmbFuncionario);
+            this.MaximizeBox = false;
             this.Name = "Cadastro_DepxFun";
+            this.Sizable = false;
             this.Text = "Vinculo de Seto e Funcionario";
             this.Load += new System.EventHandler(this.Cadastro_DepxFun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.funcionarioBindingSource)).EndInit();
@@ -163,13 +179,13 @@
         private System.Windows.Forms.Label lblFuncionario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbSetor;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnCancelar;
         private BD.ordemservicoDataSet ordemservicoDataSet;
         private System.Windows.Forms.BindingSource funcionarioBindingSource;
         private BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter funcionarioTableAdapter;
         private DepartamentoDataSet departamentoDataSet;
         private System.Windows.Forms.BindingSource departamentoBindingSource;
         private DepartamentoDataSetTableAdapters.departamentoTableAdapter departamentoTableAdapter;
+        private MaterialSkin.Controls.MaterialFlatButton btnSalvar;
+        private MaterialSkin.Controls.MaterialFlatButton btnCancelar;
     }
 }

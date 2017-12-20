@@ -123,6 +123,20 @@ namespace OS_CodeFirst.View
         {
 
         }
+
+        private void dgvFuncionario_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int codigo = Convert.ToInt32(dgvFuncionario.SelectedRows[0].Cells[0].Value.ToString());
+                Alteracao_Funcionario func = new Alteracao_Funcionario(codigo);
+                func.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
 

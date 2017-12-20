@@ -58,6 +58,7 @@ namespace OS_CodeFirst.View
             this.dgvTipoServ.Name = "dgvTipoServ";
             this.dgvTipoServ.Size = new System.Drawing.Size(641, 194);
             this.dgvTipoServ.TabIndex = 0;
+            this.dgvTipoServ.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTipoServ_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -112,7 +113,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.lblTipoServico);
             this.Controls.Add(this.dgvTipoServ);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Consulta_TipoServico";
+            this.Sizable = false;
             this.Text = "Consulta/Alteração do Tipo de Serviço";
             this.Load += new System.EventHandler(this.Consulta_TipoServico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoServ)).EndInit();

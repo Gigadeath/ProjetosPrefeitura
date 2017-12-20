@@ -39,5 +39,19 @@ namespace OS_CodeFirst.View
                 prioridadeBindingSource.Filter = "Nivel Like '%"+txtPrioridade.Text+"%'";
             }
         }
+
+        private void dgvPrioridade_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                int codigo = Convert.ToInt32(dgvPrioridade.SelectedRows[0].Cells[0].Value.ToString());
+                Alteracao_Prioridade pri = new Alteracao_Prioridade(codigo);
+                pri.ShowDialog(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace OS_CodeFirst.Model
         public int Id { get; set; }
         [Required(ErrorMessage = "O nome da Prioridade e obrigatório", AllowEmptyStrings = false)]
         public string Nivel { get; set; }
+        [Required(ErrorMessage = "Status da Prioridade é obrigatório", AllowEmptyStrings = false)]
+        public bool status { get; set; }
 
 
         public virtual ICollection<OS> OS{ get; set;}

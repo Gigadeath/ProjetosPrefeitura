@@ -26,6 +26,7 @@ namespace OS_CodeFirst.View
             TipoServico tis = new TipoServico();
             TipoServicoController tsc = new TipoServicoController();
             tis.Nome = txtServico.Text;
+            tis.status = true;
             tsc.trataRequisicao(btnSalvar.Text,tis);
         }
     }

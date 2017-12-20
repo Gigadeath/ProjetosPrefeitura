@@ -100,6 +100,19 @@ namespace OS_CodeFirst.View
 
         }
 
+        private void ativoToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.sistemaTableAdapter.Fill(this.sistemaSet.sistema);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
         private void Alteracao_OS_Load(object sender, EventArgs e)
         {
             

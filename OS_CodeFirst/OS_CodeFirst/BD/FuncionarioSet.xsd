@@ -13,13 +13,12 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        *
-FROM            (SELECT        departamento.Setor, funcionario.RF, funcionario.Nome, dep_func.Id
+FROM            (SELECT        departamento.Setor, funcionario.RF, funcionario.Nome, dep_func.Id,status
                           FROM            funcionario INNER JOIN
                                                     dep_func ON funcionario.Id = dep_func.Id INNER JOIN
                                                     departamento ON funcionario.Id = departamento.Id
                           ORDER BY departamento.Id DESC) agrupa
-Group by agrupa.RF
-</CommandText>
+GROUP BY agrupa.RF</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -29,6 +28,7 @@ Group by agrupa.RF
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="RF" DataSetColumn="RF" />
               <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -40,13 +40,14 @@ Group by agrupa.RF
   <xs:element name="ordemservicoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ordemservicoDataSet" msprop:Generator_UserDSName="ordemservicoDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="funcionario" msprop:Generator_TableClassName="funcionarioDataTable" msprop:Generator_TableVarName="tablefuncionario" msprop:Generator_TablePropName="funcionario" msprop:Generator_RowDeletingName="funcionarioRowDeleting" msprop:Generator_RowChangingName="funcionarioRowChanging" msprop:Generator_RowEvHandlerName="funcionarioRowChangeEventHandler" msprop:Generator_RowDeletedName="funcionarioRowDeleted" msprop:Generator_UserTableName="funcionario" msprop:Generator_RowChangedName="funcionarioRowChanged" msprop:Generator_RowEvArgName="funcionarioRowChangeEvent" msprop:Generator_RowClassName="funcionarioRow">
+        <xs:element name="funcionario" msprop:Generator_TableClassName="funcionarioDataTable" msprop:Generator_TableVarName="tablefuncionario" msprop:Generator_RowChangedName="funcionarioRowChanged" msprop:Generator_TablePropName="funcionario" msprop:Generator_RowDeletingName="funcionarioRowDeleting" msprop:Generator_RowChangingName="funcionarioRowChanging" msprop:Generator_RowEvHandlerName="funcionarioRowChangeEventHandler" msprop:Generator_RowDeletedName="funcionarioRowDeleted" msprop:Generator_RowClassName="funcionarioRow" msprop:Generator_UserTableName="funcionario" msprop:Generator_RowEvArgName="funcionarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
               <xs:element name="RF" msprop:Generator_ColumnVarNameInTable="columnRF" msprop:Generator_ColumnPropNameInRow="RF" msprop:Generator_ColumnPropNameInTable="RFColumn" msprop:Generator_UserColumnName="RF" type="xs:string" />
               <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" type="xs:string" />
               <xs:element name="Setor" msprop:Generator_ColumnVarNameInTable="columnSetor" msprop:Generator_ColumnPropNameInRow="Setor" msprop:Generator_ColumnPropNameInTable="SetorColumn" msprop:Generator_UserColumnName="Setor" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

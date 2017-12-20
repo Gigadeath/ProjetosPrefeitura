@@ -27,6 +27,7 @@ namespace OS_CodeFirst.View
             Funcionario fun = new Funcionario(); 
             fun.RF = mtxtRF.Text.Replace(".", "").Replace("-", ""); 
             fun.Nome = txtNome.Text;
+            fun.status = true;
             //fun.Setor = txtSetor.Text;
 
             func.trataRequisicao(btnSalvar.Text, fun);

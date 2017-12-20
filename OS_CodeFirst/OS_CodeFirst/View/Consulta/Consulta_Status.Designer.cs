@@ -113,7 +113,9 @@ namespace OS_CodeFirst.View
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.dgvStatus);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Consulta_Status";
+            this.Sizable = false;
             this.Text = "Consulta/Alteração de Status";
             this.Load += new System.EventHandler(this.Consulta_Status_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).EndInit();

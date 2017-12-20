@@ -88,3 +88,8 @@ C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeF
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Cadastro.Cadastro_DepxFun.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.Migrations.Initial.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\bin\Debug\MaterialSkin.dll
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.Migrations.Initialv2.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_Funcionario.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_Prioridade.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_Sistema.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_TipoServico.resources
