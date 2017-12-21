@@ -367,5 +367,11 @@ namespace OS_CodeFirst
             Cadastro_DepxFun cadDep = new Cadastro_DepxFun();
             cadDep.ShowDialog();
         }
+
+        private void aCEITEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Geracao_Aceite gea = new Geracao_Aceite();
+            gea.ShowDialog();
+        }
     }
 }

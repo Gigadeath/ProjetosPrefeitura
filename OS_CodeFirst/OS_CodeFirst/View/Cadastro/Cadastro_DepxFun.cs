@@ -39,6 +39,12 @@ namespace OS_CodeFirst.View.Cadastro
             df.Departamento_Id = Convert.ToInt32(cmbSetor.SelectedValue);
 
             dfc.trataRequisicao(btnSalvar.Text, df);
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

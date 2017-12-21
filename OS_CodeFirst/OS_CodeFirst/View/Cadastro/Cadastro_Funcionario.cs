@@ -31,6 +31,12 @@ namespace OS_CodeFirst.View
             //fun.Setor = txtSetor.Text;
 
             func.trataRequisicao(btnSalvar.Text, fun);
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

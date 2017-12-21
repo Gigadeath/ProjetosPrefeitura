@@ -28,6 +28,12 @@ namespace OS_CodeFirst.View
             tis.Nome = txtServico.Text;
             tis.status = true;
             tsc.trataRequisicao(btnSalvar.Text,tis);
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

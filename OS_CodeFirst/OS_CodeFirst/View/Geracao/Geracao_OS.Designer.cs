@@ -39,8 +39,13 @@ namespace OS_CodeFirst.View
             this.osTableAdapter = new OS_CodeFirst.BD.OSSetTableAdapters.osTableAdapter();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.MbtnGerar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.consulta_Aceite = new OS_CodeFirst.BD.Consulta_Aceite();
+            this.aceiteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aceiteTableAdapter = new OS_CodeFirst.BD.Consulta_AceiteTableAdapters.AceiteTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oSSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consulta_Aceite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aceiteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOS
@@ -103,6 +108,20 @@ namespace OS_CodeFirst.View
             this.MbtnGerar.UseVisualStyleBackColor = true;
             this.MbtnGerar.Click += new System.EventHandler(this.btn_Gerar_Click);
             // 
+            // consulta_Aceite
+            // 
+            this.consulta_Aceite.DataSetName = "Consulta_Aceite";
+            this.consulta_Aceite.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aceiteBindingSource
+            // 
+            this.aceiteBindingSource.DataMember = "Aceite";
+            this.aceiteBindingSource.DataSource = this.consulta_Aceite;
+            // 
+            // aceiteTableAdapter
+            // 
+            this.aceiteTableAdapter.ClearBeforeFill = true;
+            // 
             // Geracao_OS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,10 +134,12 @@ namespace OS_CodeFirst.View
             this.MaximizeBox = false;
             this.Name = "Geracao_OS";
             this.Sizable = false;
-            this.Text = "Geracao_OS";
+            this.Text = "Geracao de OS";
             this.Load += new System.EventHandler(this.Geracao_OS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.osBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oSSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consulta_Aceite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aceiteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +154,8 @@ namespace OS_CodeFirst.View
         private BD.OSSetTableAdapters.osTableAdapter osTableAdapter;
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
         private MaterialSkin.Controls.MaterialFlatButton MbtnGerar;
+        private Consulta_Aceite consulta_Aceite;
+        private System.Windows.Forms.BindingSource aceiteBindingSource;
+        private BD.Consulta_AceiteTableAdapters.AceiteTableAdapter aceiteTableAdapter;
     }
 }

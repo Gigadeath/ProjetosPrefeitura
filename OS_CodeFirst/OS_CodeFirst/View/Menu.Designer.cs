@@ -59,6 +59,7 @@
             this.consulta_UltimoStatusTableAdapter = new OS_CodeFirst.BD.OS__Ativas_AtrasadasTableAdapters.Consulta_UltimoStatusTableAdapter();
             this.OsAtivasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet();
+            this.aCEITEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDaOs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oS__Ativas_Atrasadas)).BeginInit();
@@ -76,7 +77,7 @@
             this.sobreAjudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(342, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(434, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -234,7 +235,8 @@
             // geraçãoToolStripMenuItem
             // 
             this.geraçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oSToolStripMenuItem1});
+            this.oSToolStripMenuItem1,
+            this.aCEITEToolStripMenuItem});
             this.geraçãoToolStripMenuItem.Name = "geraçãoToolStripMenuItem";
             this.geraçãoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.geraçãoToolStripMenuItem.Text = "Geração";
@@ -243,7 +245,7 @@
             // oSToolStripMenuItem1
             // 
             this.oSToolStripMenuItem1.Name = "oSToolStripMenuItem1";
-            this.oSToolStripMenuItem1.Size = new System.Drawing.Size(89, 22);
+            this.oSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.oSToolStripMenuItem1.Text = "OS";
             this.oSToolStripMenuItem1.Click += new System.EventHandler(this.oSToolStripMenuItem1_Click);
             // 
@@ -287,6 +289,13 @@
             // 
             this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet";
             this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aCEITEToolStripMenuItem
+            // 
+            this.aCEITEToolStripMenuItem.Name = "aCEITEToolStripMenuItem";
+            this.aCEITEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aCEITEToolStripMenuItem.Text = "Aceite";
+            this.aCEITEToolStripMenuItem.Click += new System.EventHandler(this.aCEITEToolStripMenuItem_Click);
             // 
             // FrmInicial
             // 
@@ -342,6 +351,7 @@
         private System.Windows.Forms.ToolStripMenuItem departamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vinculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departamentoXFuncionarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aCEITEToolStripMenuItem;
     }
 }
 

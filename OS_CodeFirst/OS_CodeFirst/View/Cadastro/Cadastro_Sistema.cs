@@ -31,6 +31,12 @@ namespace OS_CodeFirst.View
             sis.status = true;
 
             siscon.trataRequisicao(btnSalvar.Text, sis);
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

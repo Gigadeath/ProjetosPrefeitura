@@ -47,6 +47,11 @@ namespace OS_CodeFirst.View
 
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             if (statcon.verificaInsercao(Id) == true)
@@ -59,6 +64,8 @@ namespace OS_CodeFirst.View
                 stat.dataAlteracao = DateTime.Now;
                 statcon.trataRequisicao(btnAlterar.Text, stat);
             }
+
+            this.Close();
 
         }
     }

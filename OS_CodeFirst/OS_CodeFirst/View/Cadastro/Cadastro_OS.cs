@@ -171,6 +171,7 @@ namespace OS_CodeFirst.View
 
                 MessageBox.Show("Verifique a data de Emissão e a data de Previsão", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            this.Close();
 
         }
 
@@ -215,6 +216,11 @@ namespace OS_CodeFirst.View
                     mtxtOS.Text = Numero + "-" + "0001/" + DateTime.Now.Year;
                 }
             }
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

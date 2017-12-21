@@ -81,6 +81,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\Consulta_Aceite.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Consulta_Aceite.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BD\FuncionarioSet.cs">
       <DependentUpon>FuncionarioSet.xsd</DependentUpon>
     </Compile>
@@ -190,17 +195,23 @@
     <Compile Include="View\Alteracao\Alteracao_Prioridade.Designer.cs">
       <DependentUpon>Alteracao_Prioridade.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Alteracao_Sistema.cs">
+    <Compile Include="View\Alteracao\Alteracao_Sistema.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Alteracao_Sistema.Designer.cs">
+    <Compile Include="View\Alteracao\Alteracao_Sistema.Designer.cs">
       <DependentUpon>Alteracao_Sistema.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Alteracao_TipoServico.cs">
+    <Compile Include="View\Alteracao\Alteracao_TipoServico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Alteracao_TipoServico.Designer.cs">
+    <Compile Include="View\Alteracao\Alteracao_TipoServico.Designer.cs">
       <DependentUpon>Alteracao_TipoServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Alteracao\Alteracao_TotalServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Alteracao\Alteracao_TotalServico.Designer.cs">
+      <DependentUpon>Alteracao_TotalServico.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Cadastro\Cadastro_Departamento.cs">
       <SubType>Form</SubType>
@@ -292,10 +303,10 @@
     <Compile Include="View\Consulta\Consulta_OS.Designer.cs">
       <DependentUpon>Consulta_OS.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Consulta_TotalServico.cs">
+    <Compile Include="View\Consulta\Consulta_TotalServico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Consulta_TotalServico.Designer.cs">
+    <Compile Include="View\Consulta\Consulta_TotalServico.Designer.cs">
       <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Geracao\Geracao_OS.cs">
@@ -303,6 +314,12 @@
     </Compile>
     <Compile Include="View\Geracao\Geracao_OS.Designer.cs">
       <DependentUpon>Geracao_OS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Geracao\Geracao_Aceite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Geracao\Geracao_Aceite.Designer.cs">
+      <DependentUpon>Geracao_Aceite.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Menu.cs">
       <SubType>Form</SubType>
@@ -346,11 +363,14 @@
     <EmbeddedResource Include="View\Alteracao\Alteracao_Prioridade.resx">
       <DependentUpon>Alteracao_Prioridade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Alteracao_Sistema.resx">
+    <EmbeddedResource Include="View\Alteracao\Alteracao_Sistema.resx">
       <DependentUpon>Alteracao_Sistema.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Alteracao_TipoServico.resx">
+    <EmbeddedResource Include="View\Alteracao\Alteracao_TipoServico.resx">
       <DependentUpon>Alteracao_TipoServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Alteracao\Alteracao_TotalServico.resx">
+      <DependentUpon>Alteracao_TotalServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastro\Cadastro_Departamento.resx">
       <DependentUpon>Cadastro_Departamento.cs</DependentUpon>
@@ -394,11 +414,14 @@
     <EmbeddedResource Include="View\Consulta\Consulta_TipoServico.resx">
       <DependentUpon>Consulta_TipoServico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Consulta_TotalServico.resx">
+    <EmbeddedResource Include="View\Consulta\Consulta_TotalServico.resx">
       <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Geracao\Geracao_OS.resx">
       <DependentUpon>Geracao_OS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Geracao\Geracao_Aceite.resx">
+      <DependentUpon>Geracao_Aceite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -406,6 +429,17 @@
     <EmbeddedResource Include="View\Consulta\Consulta_OS.resx">
       <DependentUpon>Consulta_OS.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BD\Consulta_Aceite.xsc">
+      <DependentUpon>Consulta_Aceite.xsd</DependentUpon>
+    </None>
+    <None Include="BD\Consulta_Aceite.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Consulta_Aceite.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BD\Consulta_Aceite.xss">
+      <DependentUpon>Consulta_Aceite.xsd</DependentUpon>
+    </None>
     <None Include="BD\OS_ Ativas_Atrasadas.xsc">
       <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
     </None>

@@ -88,10 +88,11 @@ namespace OS_CodeFirst.View
                     statcon.trataRequisicao("Cadastrar", statOS);
                 }
 
-                this.Close();
+                
                 
               
             }
+            this.Close();
 
         }
 
@@ -113,9 +114,14 @@ namespace OS_CodeFirst.View
 
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void Alteracao_OS_Load(object sender, EventArgs e)
         {
-            
+           
 
         }
     }

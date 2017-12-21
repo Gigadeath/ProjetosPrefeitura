@@ -25,6 +25,8 @@ namespace OS_CodeFirst.View
 
         private void Geracao_OS_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'consulta_Aceite.Aceite'. Você pode movê-la ou removê-la conforme necessário.
+            this.aceiteTableAdapter.Fill(this.consulta_Aceite.Aceite);
             // TODO: esta linha de código carrega dados na tabela 'oSSet.os'. Você pode movê-la ou removê-la conforme necessário.
             this.osTableAdapter.Fill(this.oSSet.os);
 

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Consulta_Aceite" targetNamespace="http://tempuri.org/Consulta_Aceite.xsd" xmlns:mstns="http://tempuri.org/Consulta_Aceite.xsd" xmlns="http://tempuri.org/Consulta_Aceite.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ordemservicoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ordemservicoConnectionString (Settings)" PropertyReference="ApplicationSettings.OS_CodeFirst.Properties.Settings.GlobalReference.Default.ordemservicoConnectionString1" Provider="Devart.Data.MySql" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AceiteTableAdapter" GeneratorDataComponentClassName="AceiteTableAdapter" Name="Aceite" UserDataComponentName="AceiteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ordemservicoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        os.Id, os.OSN, totalservico.DataLimite, statusos.Status_Id
+FROM            os INNER JOIN
+                         statusos ON os.Id = statusos.OS_Id INNER JOIN
+                         totalservico ON os.Id = totalservico.OS_id
+WHERE        (os.DataEntregue &gt;= os.DataEmissao) AND (statusos.Status_Id = 7) AND (os.DataEntregue &gt;= os.DataEmissao)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="OSN" DataSetColumn="OSN" />
+              <Mapping SourceColumn="DataLimite" DataSetColumn="DataLimite" />
+              <Mapping SourceColumn="Status_Id" DataSetColumn="Status_Id" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Consulta_Aceite" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Consulta_Aceite" msprop:Generator_UserDSName="Consulta_Aceite">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Aceite" msprop:Generator_TableClassName="AceiteDataTable" msprop:Generator_TableVarName="tableAceite" msprop:Generator_TablePropName="Aceite" msprop:Generator_RowDeletingName="AceiteRowDeleting" msprop:Generator_RowChangingName="AceiteRowChanging" msprop:Generator_RowEvHandlerName="AceiteRowChangeEventHandler" msprop:Generator_RowDeletedName="AceiteRowDeleted" msprop:Generator_UserTableName="Aceite" msprop:Generator_RowChangedName="AceiteRowChanged" msprop:Generator_RowEvArgName="AceiteRowChangeEvent" msprop:Generator_RowClassName="AceiteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="OSN" msprop:Generator_ColumnVarNameInTable="columnOSN" msprop:Generator_ColumnPropNameInRow="OSN" msprop:Generator_ColumnPropNameInTable="OSNColumn" msprop:Generator_UserColumnName="OSN" type="xs:string" />
+              <xs:element name="DataLimite" msprop:Generator_ColumnVarNameInTable="columnDataLimite" msprop:Generator_ColumnPropNameInRow="DataLimite" msprop:Generator_ColumnPropNameInTable="DataLimiteColumn" msprop:Generator_UserColumnName="DataLimite" type="xs:dateTime" />
+              <xs:element name="Status_Id" msprop:Generator_ColumnVarNameInTable="columnStatus_Id" msprop:Generator_ColumnPropNameInRow="Status_Id" msprop:Generator_ColumnPropNameInTable="Status_IdColumn" msprop:Generator_UserColumnName="Status_Id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

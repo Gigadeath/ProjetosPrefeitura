@@ -427,6 +427,7 @@ namespace OS_CodeFirst.View
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // Frm_CadastraOS
             // 

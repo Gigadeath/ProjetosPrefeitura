@@ -93,3 +93,5 @@ C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeF
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_Prioridade.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_Sistema.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_TipoServico.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_TotalServico.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Geracao_Aceite.resources

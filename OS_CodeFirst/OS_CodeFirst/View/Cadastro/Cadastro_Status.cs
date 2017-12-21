@@ -24,5 +24,10 @@ namespace OS_CodeFirst.View
             Cadastro_Status cadsta = new Cadastro_Status();
             cadsta.Show();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

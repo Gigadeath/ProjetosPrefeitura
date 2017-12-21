@@ -28,6 +28,12 @@ namespace OS_CodeFirst.View
             pri.Nivel = txtNivel.Text;
             pri.status = true;
             pcon.trataRequisicao(btnSalvar.Text,pri);
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

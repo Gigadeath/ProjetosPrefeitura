@@ -86,5 +86,19 @@ namespace OS_CodeFirst.Controller
                 }
             }
         }
+        public OS VerificaPrioridade(int codigo)
+        {
+            var query = db.TotalServico.Where(x => x.id == codigo).First();
+            var OS = db.OS.Where(x => x.Id == query.OS_id).First();
+
+            return OS;
+        }
+
+        public TotalServico GetDados(int codigo)
+        {
+            var query = db.TotalServico.Where(x => x.id == codigo).First();
+            return query;
+        }
+
     }
 }
