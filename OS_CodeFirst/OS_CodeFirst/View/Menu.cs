@@ -22,16 +22,7 @@ namespace OS_CodeFirst
         public FrmInicial()
         {
             InitializeComponent();
-            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-
-            // Configure color schema
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Blue700, Primary.Blue900,
-                Primary.Blue700, Accent.LightBlue100,
-                TextShade.WHITE
-            );
+            
             TimeSpan diff = DateTime.Now - DateTime.Now;
             int conta = 0; int index = 0;
             var item = consulta_UltimoStatusTableAdapter.GetDataBy().ToList();
@@ -372,6 +363,26 @@ namespace OS_CodeFirst
         {
             Geracao_Aceite gea = new Geracao_Aceite();
             gea.ShowDialog();
+        }
+
+        private void FrmInicial_Activated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmInicial_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmInicial_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmInicial_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

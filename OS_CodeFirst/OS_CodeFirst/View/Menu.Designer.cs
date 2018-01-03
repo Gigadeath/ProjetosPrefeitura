@@ -52,6 +52,7 @@
             this.entregaProdamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aCEITEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreAjudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlOS = new System.Windows.Forms.Panel();
             this.StatusDaOs = new OS_CodeFirst.BD.OS__Ativas_Atrasadas();
@@ -59,7 +60,6 @@
             this.consulta_UltimoStatusTableAdapter = new OS_CodeFirst.BD.OS__Ativas_AtrasadasTableAdapters.Consulta_UltimoStatusTableAdapter();
             this.OsAtivasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet();
-            this.aCEITEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDaOs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oS__Ativas_Atrasadas)).BeginInit();
@@ -77,7 +77,7 @@
             this.sobreAjudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(434, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(342, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -245,9 +245,16 @@
             // oSToolStripMenuItem1
             // 
             this.oSToolStripMenuItem1.Name = "oSToolStripMenuItem1";
-            this.oSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.oSToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.oSToolStripMenuItem1.Text = "OS";
             this.oSToolStripMenuItem1.Click += new System.EventHandler(this.oSToolStripMenuItem1_Click);
+            // 
+            // aCEITEToolStripMenuItem
+            // 
+            this.aCEITEToolStripMenuItem.Name = "aCEITEToolStripMenuItem";
+            this.aCEITEToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aCEITEToolStripMenuItem.Text = "Aceite";
+            this.aCEITEToolStripMenuItem.Click += new System.EventHandler(this.aCEITEToolStripMenuItem_Click);
             // 
             // sobreAjudaToolStripMenuItem
             // 
@@ -290,13 +297,6 @@
             this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet";
             this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // aCEITEToolStripMenuItem
-            // 
-            this.aCEITEToolStripMenuItem.Name = "aCEITEToolStripMenuItem";
-            this.aCEITEToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aCEITEToolStripMenuItem.Text = "Aceite";
-            this.aCEITEToolStripMenuItem.Click += new System.EventHandler(this.aCEITEToolStripMenuItem_Click);
-            // 
             // FrmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +309,9 @@
             this.Name = "FrmInicial";
             this.Sizable = false;
             this.Text = "Sistema de Gerenciamento de Ordens de Serviço";
+            this.Activated += new System.EventHandler(this.FrmInicial_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInicial_FormClosing);
+            this.Load += new System.EventHandler(this.FrmInicial_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.StatusDaOs)).EndInit();

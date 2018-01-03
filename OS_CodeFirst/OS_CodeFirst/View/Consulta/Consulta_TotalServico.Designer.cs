@@ -185,10 +185,18 @@ namespace OS_CodeFirst.View
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTotalServico;
+#pragma warning disable CS0169 // O campo "Consulta_TotalServico.idDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_TotalServico.idDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_TotalServico.oSidDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn oSidDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_TotalServico.oSidDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_TotalServico.totalHorasDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn totalHorasDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_TotalServico.totalHorasDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_TotalServico.dataLimiteDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn dataLimiteDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_TotalServico.dataLimiteDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.Label lblOSN;
         private System.Windows.Forms.Label lblDataLimite;
         private System.Windows.Forms.MaskedTextBox mtxtOS;

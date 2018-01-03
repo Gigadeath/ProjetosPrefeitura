@@ -113,6 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DepartamentoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Migrations\201712191325453_Initial.cs" />
     <Compile Include="Migrations\201712191325453_Initial.Designer.cs">
       <DependentUpon>201712191325453_Initial.cs</DependentUpon>
@@ -309,6 +310,12 @@
     <Compile Include="View\Consulta\Consulta_TotalServico.Designer.cs">
       <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormProgress.Designer.cs">
+      <DependentUpon>FormProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Geracao\Geracao_OS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +357,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Alteracao\Alteracao_OS.resx">
       <DependentUpon>Alteracao_OS.cs</DependentUpon>
@@ -416,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Consulta\Consulta_TotalServico.resx">
       <DependentUpon>Consulta_TotalServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormProgress.resx">
+      <DependentUpon>FormProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Geracao\Geracao_OS.resx">
       <DependentUpon>Geracao_OS.cs</DependentUpon>
@@ -591,6 +602,7 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
     <Content Include="OS.ico" />
+    <None Include="Resources\LogoOS.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

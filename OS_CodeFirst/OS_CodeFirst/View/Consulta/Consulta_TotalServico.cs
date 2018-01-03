@@ -38,7 +38,13 @@ namespace OS_CodeFirst.View
 
 
                 totalservicoBindingSource.Filter = "";
+#pragma warning disable CS0219 // A variável "SIS" é atribuída, mas seu valor nunca é usado
+#pragma warning disable CS0219 // A variável "DP" é atribuída, mas seu valor nunca é usado
+#pragma warning disable CS0219 // A variável "DEN" é atribuída, mas seu valor nunca é usado
                 string DE = " ", DP = " ", DEN = " ", OST = "", SIS = "";
+#pragma warning restore CS0219 // A variável "DEN" é atribuída, mas seu valor nunca é usado
+#pragma warning restore CS0219 // A variável "DP" é atribuída, mas seu valor nunca é usado
+#pragma warning restore CS0219 // A variável "SIS" é atribuída, mas seu valor nunca é usado
                 int count = 0;
                 if (mtxtDataLimite.Text == null  && mtxtOS.Text == null)
                 {

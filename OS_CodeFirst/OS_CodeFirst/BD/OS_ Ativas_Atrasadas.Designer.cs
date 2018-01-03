@@ -901,7 +901,8 @@ FROM            (SELECT        *
                                                                               ORDER BY os.Id DESC) SelecionaBase
                                                     ORDER BY `SelecionaBase`.`DataAlteracao` DESC) agrupaOS
                           GROUP BY agrupaOS.ID) compara
-WHERE        compara.statusos = 2";
+WHERE        compara.statusos = 2 And compara.Prioridade_Id=2
+";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         

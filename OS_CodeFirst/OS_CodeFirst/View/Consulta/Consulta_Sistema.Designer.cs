@@ -139,8 +139,12 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.DataGridView dgvSistema;
         private System.Windows.Forms.Label lblSistema;
         private System.Windows.Forms.TextBox txtSistema;
+#pragma warning disable CS0169 // O campo "Consulta_Sistema.idDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_Sistema.idDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_Sistema.nomeDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_Sistema.nomeDataGridViewTextBoxColumn" nunca é usado
         private SistemaSet sistemaSet;
         private System.Windows.Forms.BindingSource sistemaBindingSource;
         private BD.SistemaSetTableAdapters.sistemaTableAdapter sistemaTableAdapter;

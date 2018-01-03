@@ -95,7 +95,9 @@ namespace OS_CodeFirst.Controller
                 var Nsis = db.OS.Where(x => x.Sistema_Id == valor).OrderByDescending(x=>x.Id);
                 return Nsis.First().Id;
             }
+#pragma warning disable CS0168 // A variável "exception" está declarada, mas nunca é usada
             catch (Exception exception)
+#pragma warning restore CS0168 // A variável "exception" está declarada, mas nunca é usada
             {
                 return 0;
             }

@@ -129,8 +129,12 @@ namespace OS_CodeFirst.View
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTipoServ;
+#pragma warning disable CS0169 // O campo "Consulta_TipoServico.idDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_TipoServico.idDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_TipoServico.nomeDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_TipoServico.nomeDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.Label lblTipoServico;
         private System.Windows.Forms.TextBox txtTipoServico;
         private TipoServicoDataSet tipoServicoDataSet;

@@ -88,7 +88,8 @@ FROM            (SELECT        *
                                                                               ORDER BY os.Id DESC) SelecionaBase
                                                     ORDER BY `SelecionaBase`.`DataAlteracao` DESC) agrupaOS
                           GROUP BY agrupaOS.ID) compara
-WHERE        compara.statusos = 2</CommandText>
+WHERE        compara.statusos = 2 And compara.Prioridade_Id=2
+</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -103,7 +104,7 @@ WHERE        compara.statusos = 2</CommandText>
   <xs:element name="OS__Ativas_Atrasadas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OS__Ativas_Atrasadas" msprop:Generator_UserDSName="OS__Ativas_Atrasadas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Consulta_UltimoStatus" msprop:Generator_TableClassName="Consulta_UltimoStatusDataTable" msprop:Generator_TableVarName="tableConsulta_UltimoStatus" msprop:Generator_RowChangedName="Consulta_UltimoStatusRowChanged" msprop:Generator_TablePropName="Consulta_UltimoStatus" msprop:Generator_RowDeletingName="Consulta_UltimoStatusRowDeleting" msprop:Generator_RowChangingName="Consulta_UltimoStatusRowChanging" msprop:Generator_RowEvHandlerName="Consulta_UltimoStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="Consulta_UltimoStatusRowDeleted" msprop:Generator_RowClassName="Consulta_UltimoStatusRow" msprop:Generator_UserTableName="Consulta_UltimoStatus" msprop:Generator_RowEvArgName="Consulta_UltimoStatusRowChangeEvent">
+        <xs:element name="Consulta_UltimoStatus" msprop:Generator_TableClassName="Consulta_UltimoStatusDataTable" msprop:Generator_TableVarName="tableConsulta_UltimoStatus" msprop:Generator_TablePropName="Consulta_UltimoStatus" msprop:Generator_RowDeletingName="Consulta_UltimoStatusRowDeleting" msprop:Generator_RowChangingName="Consulta_UltimoStatusRowChanging" msprop:Generator_RowEvHandlerName="Consulta_UltimoStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="Consulta_UltimoStatusRowDeleted" msprop:Generator_UserTableName="Consulta_UltimoStatus" msprop:Generator_RowChangedName="Consulta_UltimoStatusRowChanged" msprop:Generator_RowEvArgName="Consulta_UltimoStatusRowChangeEvent" msprop:Generator_RowClassName="Consulta_UltimoStatusRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OSN" msprop:Generator_ColumnVarNameInTable="columnOSN" msprop:Generator_ColumnPropNameInRow="OSN" msprop:Generator_ColumnPropNameInTable="OSNColumn" msprop:Generator_UserColumnName="OSN" type="xs:string" />

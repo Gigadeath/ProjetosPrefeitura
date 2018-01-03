@@ -338,8 +338,12 @@ namespace OS_CodeFirst.View
         }
 
         #endregion
+#pragma warning disable CS0169 // O campo "Consulta_OS.oSIdDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn oSIdDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.oSIdDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_OS.statusIdDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn statusIdDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.statusIdDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.Label lblOS;
         private System.Windows.Forms.Label lblDataemis;
         private System.Windows.Forms.MaskedTextBox mtxtDataEmis;
@@ -353,12 +357,24 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.Label lblSistema;
         private System.Windows.Forms.ComboBox cmbSistema;
         private System.Windows.Forms.MaskedTextBox mtxtOS;
+#pragma warning disable CS0169 // O campo "Consulta_OS.sistemaIdDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn sistemaIdDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.sistemaIdDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_OS.oSNDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn oSNDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.oSNDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_OS.dataPrevistaDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn dataPrevistaDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.dataPrevistaDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_OS.dataEntregueDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEntregueDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.dataEntregueDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_OS.dataEmissaoDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn dataEmissaoDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.dataEmissaoDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_OS.solicitacaoDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn solicitacaoDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_OS.solicitacaoDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn Sistema_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

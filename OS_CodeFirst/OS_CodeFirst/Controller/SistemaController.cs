@@ -94,7 +94,9 @@ namespace OS_CodeFirst.Controller
               var OSN =db.OS.Where(x=> x.Sistema_Id == valor).OrderByDescending(x=>x.Id).First();
               return Convert.ToString(OSN.OSN);
            }
+#pragma warning disable CS0168 // A variável "exception" está declarada, mas nunca é usada
             catch (Exception exception)
+#pragma warning restore CS0168 // A variável "exception" está declarada, mas nunca é usada
             {
                 return "";
                 
@@ -108,7 +110,9 @@ namespace OS_CodeFirst.Controller
                 var Nsis = db.Sistema.Where(x => x.Id == valor).First();
                 return Nsis.Numero_OS;
             }
+#pragma warning disable CS0168 // A variável "exception" está declarada, mas nunca é usada
             catch (Exception exception)
+#pragma warning restore CS0168 // A variável "exception" está declarada, mas nunca é usada
             {
                 return "";
             }

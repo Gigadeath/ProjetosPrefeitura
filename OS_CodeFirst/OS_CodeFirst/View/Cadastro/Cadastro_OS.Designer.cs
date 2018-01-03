@@ -179,6 +179,7 @@ namespace OS_CodeFirst.View
             // 
             // mtxtDataEmissao
             // 
+            this.mtxtDataEmissao.Enabled = false;
             this.mtxtDataEmissao.Location = new System.Drawing.Point(280, 139);
             this.mtxtDataEmissao.Mask = "00/00/0000";
             this.mtxtDataEmissao.Name = "mtxtDataEmissao";

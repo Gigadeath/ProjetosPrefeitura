@@ -30,6 +30,7 @@ namespace OS_CodeFirst.View
         public Frm_CadastraOS()
         {
             InitializeComponent();
+            mtxtDataEmissao.Text = DateTime.Today.ToString();
         }
 
         private void Cadastro_OS_Load(object sender, EventArgs e)
@@ -89,82 +90,102 @@ namespace OS_CodeFirst.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (mtxtPrev.Text.Replace("/", "").Trim().Length == 8 && mtxtDataEmissao.Text.Replace("/", "").Trim().Length == 8 && txtSolicitacao.Text !="") 
+            int aux = 0;
+            if (mtxtPrev.Text.Replace("/", "").Trim().Length == 8 && mtxtDataEmissao.Text.Replace("/", "").Trim().Length == 8 && txtSolicitacao.Text !="" && Convert.ToDateTime(mtxtDataEmissao.Text) <= Convert.ToDateTime(mtxtPrev.Text)) 
             {
-                OS osm = new OS();
-               // MessageBox.Show(mtxtEntregue.Text);
-                OSController osc = new OSController();
-                try
-                {
-                    osm.OSN = mtxtOS.Text;
-                    osm.Sistema_Id = Convert.ToInt32(cmbSistema.SelectedValue);
-                    osm.PA = mtxtPA.Text;
-                    osm.TC = mtxtTC.Text;
-                    osm.DataEmissao = Convert.ToDateTime(mtxtDataEmissao.Text);
-                    osm.Funcionario_Id = Convert.ToInt32(cmbResp.SelectedValue);
-                    osm.Prioridade_Id = Convert.ToInt32(cmbPrioridade.SelectedValue);
-                    osm.TipoServico_Id = Convert.ToInt32(cmbTipo.SelectedValue);
-                    osm.ItemContratual = txtItem.Text;
-                    osm.Servico = cmbServico.Text;
-                    osm.DataPrevista = Convert.ToDateTime(mtxtPrev.Text);
-                    osm.Departamento_Id = dfc.LastDepartamento(osm.Funcionario_Id).Departamento_Id;
-                    if (mtxtEntregue.Text.Replace("/", "").Trim().Length == 8)
-                    {
-                        osm.DataEntregue = Convert.ToDateTime(mtxtEntregue.Text);
-
-                    }
-                    else
-                    {
-                        osm.DataEntregue = DateTime.MinValue;
-                    }
-
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Erro: " + exception);
-                }
-                osm.Solicitacao = txtSolicitacao.Text;
-                osc.trataRequisicao(btnSalvar.Text, osm);
-
-                staOS.Descricao = "Ordem de Serviço Gerada";
-                staOS.OS_Id = oscon.getUltimaOS(Convert.ToInt32(cmbSistema.SelectedValue), osm);
-                staOS.Status_Id = 1;
-                staOS.dataAlteracao = DateTime.Now;
-                statCon.trataRequisicao(btnSalvar.Text, staOS);
-
-
-                if (mtxtEntregue.Text.Replace("/", "").Trim().Length == 8)
+                if (mtxtEntregue.Text.Replace("/", "").Trim().Length ==8)
                 {
                     if (Convert.ToDateTime(mtxtEntregue.Text) >= Convert.ToDateTime(mtxtDataEmissao.Text))
                     {
-                        staOS.Descricao = "Ordem de Serviço Encerrada";
-                        staOS.OS_Id = oscon.getUltimaOS(Convert.ToInt32(cmbSistema.SelectedValue), osm);
-                        staOS.Status_Id = 7;
-                        staOS.dataAlteracao = DateTime.Now;
-                        statCon.trataRequisicao(btnSalvar.Text, staOS);
-                    }
-
-                }
-
-                if (Convert.ToInt32(cmbPrioridade.SelectedValue) == 1)
-                {
-                    if (DateTime.Now.DayOfWeek.ToString().Equals("Monday") || DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
-                    {
-                        totServ.DataLimite = DateTime.Now.AddDays(3);
+                        aux = 1;
                     }
                     else
                     {
-                        totServ.DataLimite = DateTime.Now.AddDays(5);
+                        aux = 0;
+                        MessageBox.Show("Data de Emissao maior que data Entregue ou data Prevista...");
                     }
                 }
                 else
                 {
-                    totServ.DataLimite = DateTime.MinValue;
-                    MessageBox.Show("Preencher data limite na tela de Entrega Prodam", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    aux = 1;
                 }
-                totServ.totalHoras = 0;
-                totServ.OS_id = oscon.getUltimaOS(Convert.ToInt32(cmbSistema.SelectedValue), osm);
-                totServCon.trataRequisicao("Cadastrar", totServ);
+                if (aux == 1)
+                {
+                    OS osm = new OS();
+                    // MessageBox.Show(mtxtEntregue.Text);
+                    OSController osc = new OSController();
+                    try
+                    {
+                        osm.OSN = mtxtOS.Text;
+                        osm.Sistema_Id = Convert.ToInt32(cmbSistema.SelectedValue);
+                        osm.PA = mtxtPA.Text;
+                        osm.TC = mtxtTC.Text;
+                        osm.DataEmissao = Convert.ToDateTime(mtxtDataEmissao.Text);
+                        osm.Funcionario_Id = Convert.ToInt32(cmbResp.SelectedValue);
+                        osm.Prioridade_Id = Convert.ToInt32(cmbPrioridade.SelectedValue);
+                        osm.TipoServico_Id = Convert.ToInt32(cmbTipo.SelectedValue);
+                        osm.ItemContratual = txtItem.Text;
+                        osm.Servico = cmbServico.Text;
+                        osm.DataPrevista = Convert.ToDateTime(mtxtPrev.Text);
+                        osm.Departamento_Id = dfc.LastDepartamento(osm.Funcionario_Id).Departamento_Id;
+                        if (mtxtEntregue.Text.Replace("/", "").Trim().Length == 8)
+                        {
+                            osm.DataEntregue = Convert.ToDateTime(mtxtEntregue.Text);
+
+                        }
+                        else
+                        {
+                            osm.DataEntregue = DateTime.MinValue;
+                        }
+
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show("Erro: " + exception);
+                    }
+                    osm.Solicitacao = txtSolicitacao.Text;
+                    osc.trataRequisicao(btnSalvar.Text, osm);
+
+                    staOS.Descricao = "Ordem de Serviço Gerada";
+                    staOS.OS_Id = oscon.getUltimaOS(Convert.ToInt32(cmbSistema.SelectedValue), osm);
+                    staOS.Status_Id = 1;
+                    staOS.dataAlteracao = DateTime.Now;
+                    statCon.trataRequisicao(btnSalvar.Text, staOS);
+
+
+                    if (mtxtEntregue.Text.Replace("/", "").Trim().Length == 8)
+                    {
+                        if (Convert.ToDateTime(mtxtEntregue.Text) >= Convert.ToDateTime(mtxtDataEmissao.Text))
+                        {
+                            staOS.Descricao = "Ordem de Serviço Encerrada";
+                            staOS.OS_Id = oscon.getUltimaOS(Convert.ToInt32(cmbSistema.SelectedValue), osm);
+                            staOS.Status_Id = 7;
+                            staOS.dataAlteracao = DateTime.Now;
+                            statCon.trataRequisicao(btnSalvar.Text, staOS);
+                        }
+
+                    }
+
+                    if (Convert.ToInt32(cmbPrioridade.SelectedValue) == 1)
+                    {
+                        if (DateTime.Now.DayOfWeek.ToString().Equals("Monday") || DateTime.Now.DayOfWeek.ToString().Equals("Tuesday"))
+                        {
+                            totServ.DataLimite = DateTime.Now.AddDays(3);
+                        }
+                        else
+                        {
+                            totServ.DataLimite = DateTime.Now.AddDays(5);
+                        }
+                    }
+                    else
+                    {
+                        totServ.DataLimite = DateTime.MinValue;
+                        MessageBox.Show("Preencher data limite na tela de Entrega Prodam", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    totServ.totalHoras = 0;
+                    totServ.OS_id = oscon.getUltimaOS(Convert.ToInt32(cmbSistema.SelectedValue), osm);
+                    totServCon.trataRequisicao("Cadastrar", totServ);
+                }
             }
             else
             {

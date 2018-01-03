@@ -83,7 +83,6 @@ C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeF
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.csproj.ResolveComReference.cache
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Geracao_OS.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\bin\Debug\Xceed.Words.NET.dll
-C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.csprojResolveAssemblyReference.cache
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Cadastro.Cadastro_Departamento.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Cadastro.Cadastro_DepxFun.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.Migrations.Initial.resources
@@ -95,3 +94,6 @@ C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeF
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_TipoServico.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Alteracao_TotalServico.resources
 C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.Geracao_Aceite.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\obj\Debug\OS_CodeFirst.View.FormProgress.resources
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\bin\Debug\OS_CodeFirst.exe.CodeAnalysisLog.xml
+C:\Users\Administrador\Documents\GitHub\ProjetosPrefeitura\OS_CodeFirst\OS_CodeFirst\bin\Debug\OS_CodeFirst.exe.lastcodeanalysissucceeded

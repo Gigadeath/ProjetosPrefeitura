@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OS_CodeFirst.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace OS_CodeFirst
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInicial());
+            Application.Run(new FormProgress());
         }
     }
 }

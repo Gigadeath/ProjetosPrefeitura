@@ -206,15 +206,25 @@ namespace OS_CodeFirst.View
         private System.Windows.Forms.TextBox txtSetor;
         private System.Windows.Forms.Label lblSetor;
         private System.Windows.Forms.MaskedTextBox mtxtRF;
+#pragma warning disable CS0169 // O campo "Consulta_Funcionario.idDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_Funcionario.idDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_Funcionario.rFDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn rFDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_Funcionario.rFDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_Funcionario.nomeDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_Funcionario.nomeDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "Consulta_Funcionario.setorDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn setorDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "Consulta_Funcionario.setorDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.BindingSource ordemservicoDataSetBindingSource;
         private ordemservicoDataSet ordemservicoDataSet;
         private System.Windows.Forms.BindingSource funcionarioBindingSource;
         private BD.ordemservicoDataSetTableAdapters.funcionarioTableAdapter funcionarioTableAdapter;
+#pragma warning disable CS0169 // O campo "Consulta_Funcionario.dataGridViewTextBoxColumn4" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+#pragma warning restore CS0169 // O campo "Consulta_Funcionario.dataGridViewTextBoxColumn4" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
