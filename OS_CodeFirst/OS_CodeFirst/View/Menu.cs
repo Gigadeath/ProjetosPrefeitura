@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OS_CodeFirst.BD;
+using OS_CodeFirst.Model;
+using OS_CodeFirst.Controller;
 
 namespace OS_CodeFirst
 {
@@ -16,8 +19,192 @@ namespace OS_CodeFirst
         public FrmInicial()
         {
             InitializeComponent();
-            
-            
+            TimeSpan diff = DateTime.Now - DateTime.Now;
+            int conta = 0; int index = 0;
+            var item = consulta_UltimoStatusTableAdapter.GetDataBy().ToList();
+            int aux = 60;
+            var label = new Label();
+            label.Text = "Ordens de Serviços Atrasadas";
+            label.Size = new Size(196, 13);
+            label.Location = new Point(0,0);
+            label.Font = new Font(label.Font, FontStyle.Underline);
+            pnlOS.Controls.Add(label);
+
+            label = new Label();
+            label.Text = "OS em Aberto";
+            label.Size = new Size(196, 13);
+            label.Location = new Point(0, 22);
+            pnlOS.Controls.Add(label);
+
+            if (item.Count > 0)
+            {
+                
+                for (index = 0; index < item.Count; index++)
+                {
+
+                    label = new Label();
+                    label.Text = item.ElementAt(index).OSN;
+                    label.Location = new Point(23, aux);
+                    label.DoubleClick += new EventHandler(redirect);
+                    label.MouseUp += new MouseEventHandler(nohover);
+                    label.MouseDown += new MouseEventHandler(nohover);
+                    label.MouseMove += new MouseEventHandler(hover);
+                    label.ForeColor = Color.DarkBlue;
+                    aux += 22;
+                    pnlOS.Controls.Add(label);
+
+                }
+            }else
+            {
+                label = new Label();
+                label.Text = "Nenhuma OS pendente";
+                label.Location = new Point(30, aux);
+                label.Size = new Size(140, 13);
+                label.ForeColor = Color.Red;
+                pnlOS.Controls.Add(label);
+                aux += 50;
+            }
+
+            label = new Label();
+            label.Text = "OS com estimativa pendente";
+            label.Size = new Size(196,13);
+            label.Location = new Point(0, aux);
+            aux += 22;
+            pnlOS.Controls.Add(label);
+            OSController osc = new OSController();
+            var estimativa = consulta_UltimoStatusTableAdapter.GetEstimativa().ToList();
+
+            if (estimativa.Count() > 0)
+            {
+                foreach (var obj in estimativa)
+                {
+                    diff = osc.GetDataAtt(obj.ID);
+                    conta = osc.ContaOS(obj.ID);
+                    if (conta > 0)
+                    {
+
+                        if (conta > 1)
+                        {
+
+                            if (!DateTime.Now.DayOfWeek.Equals("Friday"))
+                            {
+                                if (diff.Days > 2)
+                                {
+                                    label = new Label();
+                                    label.Text = osc.getDados(obj.ID).OSN;
+                                    label.Location = new Point(23, aux);
+                                    label.DoubleClick += new EventHandler(redirect);
+                                    label.MouseUp += new MouseEventHandler(nohover);
+                                    label.MouseDown += new MouseEventHandler(nohover);
+                                    label.MouseMove += new MouseEventHandler(hover);
+                                    label.ForeColor = Color.DarkBlue;
+                                    aux += 22;
+                                    pnlOS.Controls.Add(label);
+                                }
+                            }
+                            else
+                            {
+                                if (diff.Days > 4)
+                                {
+                                    label = new Label();
+                                    label.Text = osc.getDados(obj.ID).OSN;
+                                    label.Location = new Point(23, aux);
+                                    label.DoubleClick += new EventHandler(redirect);
+                                    label.MouseUp += new MouseEventHandler(nohover);
+                                    label.MouseDown += new MouseEventHandler(nohover);
+                                    label.MouseMove += new MouseEventHandler(hover);
+                                    label.ForeColor = Color.DarkBlue;
+                                    aux += 22;
+                                    pnlOS.Controls.Add(label);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (DateTime.Now.DayOfWeek.Equals("Monday") || DateTime.Now.DayOfWeek.Equals("Tuesday"))
+                            {
+                                if (diff.Days > 4)
+                                {
+                                    label = new Label();
+                                    label.Text = osc.getDados(obj.ID).OSN;
+                                    label.Location = new Point(23, aux);
+                                    label.DoubleClick += new EventHandler(redirect);
+                                    label.MouseUp += new MouseEventHandler(nohover);
+                                    label.MouseDown += new MouseEventHandler(nohover);
+                                    label.MouseMove += new MouseEventHandler(hover);
+                                    label.ForeColor = Color.DarkBlue;
+                                    aux += 22;
+                                    pnlOS.Controls.Add(label);
+                                }
+
+                            }
+                            else
+                            {
+                                if (diff.Days > 6)
+                                {
+                                    label = new Label();
+                                    label.Text = osc.getDados(obj.ID).OSN;
+                                    label.Location = new Point(23, aux);
+                                    label.DoubleClick += new EventHandler(redirect);
+                                    label.MouseUp += new MouseEventHandler(nohover);
+                                    label.MouseDown += new MouseEventHandler(nohover);
+                                    label.MouseMove += new MouseEventHandler(hover);
+                                    label.ForeColor = Color.DarkBlue;
+                                    aux += 22;
+                                    pnlOS.Controls.Add(label);
+                                }
+
+                            }
+
+
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                label = new Label();
+                label.Text = "Nenhuma OS pendente";
+                label.Location = new Point(30, aux);
+                label.Size = new Size(140, 13);
+                label.ForeColor = Color.Red;
+                pnlOS.Controls.Add(label);
+                aux += 50;
+            }
+            label = new Label();
+            label.Text = "OS com data Limite atrasada";
+            label.Size = new Size(196, 13);
+            label.Location = new Point(0, aux);
+            aux += 22;
+            pnlOS.Controls.Add(label);
+            var desenvolvimento = consulta_UltimoStatusTableAdapter.GetEstimativa().ToList();
+            if (desenvolvimento.Count()>0)
+            {
+                foreach (var obj in desenvolvimento)
+                {
+                    label = new Label();
+                    label.Text = osc.getDados(obj.ID).OSN;
+                    label.Location = new Point(23, aux);
+                    label.DoubleClick += new EventHandler(redirect);
+                    label.MouseUp += new MouseEventHandler(nohover);
+                    label.MouseDown += new MouseEventHandler(nohover);
+                    label.MouseMove += new MouseEventHandler(hover);
+                    label.ForeColor = Color.DarkBlue;
+                    aux += 22;
+                    pnlOS.Controls.Add(label);
+                }
+            }
+            else
+            {
+                label = new Label();
+                label.Text = "Nenhuma OS pendente";
+                label.Location = new Point(30, aux);
+                label.Size = new Size(140, 13);
+                label.ForeColor = Color.Red;
+                pnlOS.Controls.Add(label);
+                aux += 50;
+            }
         }
 
         private void cadastroAlteraçãoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,7 +288,7 @@ namespace OS_CodeFirst
 
         private void statusDaOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Consulta_StatusOS conStatus = new Consulta_StatusOS();
+            Consulta_StatusOS conStatus = new Consulta_StatusOS(null);
             conStatus.ShowDialog();
         }
 
@@ -126,6 +313,34 @@ namespace OS_CodeFirst
         {
             Geracao_OS genOs = new Geracao_OS();
             genOs.ShowDialog();
+        }
+
+       
+        private void redirect(object sender, EventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+            Consulta_StatusOS staOS = new Consulta_StatusOS(clickedLabel.Text);
+            staOS.ShowDialog();
+        }
+        private void hover(object sender, EventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+            clickedLabel.Font= new Font(clickedLabel.Font,FontStyle.Underline);
+        }
+        private void nohover(object sender, EventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+            clickedLabel.Font = new Font(clickedLabel.Font, FontStyle.Regular);
+        }
+
+        private void lblLegenda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlOS_AutoSizeChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,9 +12,11 @@ namespace OS_CodeFirst.View
 {
     public partial class Consulta_StatusOS : Form
     {
-        public Consulta_StatusOS()
+        public Consulta_StatusOS(string os)
         {
             InitializeComponent();
+            mtxtOS.Text = os;
+            FiltraStatusOS();
         }
 
         private void Consulta_StatusOS_Load(object sender, EventArgs e)
@@ -160,6 +162,7 @@ namespace OS_CodeFirst.View
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            this.statusosTableAdapter.Fill(this.ordemservicoDataSet4.statusos);
         }
     }
 }

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OS__Ativas_Atrasadas" targetNamespace="http://tempuri.org/OS_ Ativas_Atrasadas.xsd" xmlns:mstns="http://tempuri.org/OS_ Ativas_Atrasadas.xsd" xmlns="http://tempuri.org/OS_ Ativas_Atrasadas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ordemservicoConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ordemservicoConnectionString1 (Settings)" PropertyReference="ApplicationSettings.OS_CodeFirst.Properties.Settings.GlobalReference.Default.ordemservicoConnectionString1" Provider="Devart.Data.MySql" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Consulta_UltimoStatusTableAdapter" GeneratorDataComponentClassName="Consulta_UltimoStatusTableAdapter" Name="Consulta_UltimoStatus" UserDataComponentName="Consulta_UltimoStatusTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ordemservicoConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select* From(Select DISTINCT * From (SELECT  os.Id,t.Status_Id as statusos,os.OSN , status.Nome, totalservico.DataLimite, os.DataPrevista,t.dataAlteracao FROM            os INNER JOIN
+                         statusos as t ON os.Id = t.OS_Id INNER JOIN
+                         status ON t.Status_Id = status.Id INNER JOIN
+                         totalservico ON os.Id = totalservico.OS_id
+Order by os.Id Desc
+ )SelecionaBase
+ORDER BY `SelecionaBase`.`DataAlteracao`  DESC)agrupaOS
+GROUP by agrupaOS.ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OSN" DataSetColumn="OSN" />
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="DataLimite" DataSetColumn="DataLimite" />
+              <Mapping SourceColumn="DataPrevista" DataSetColumn="DataPrevista" />
+              <Mapping SourceColumn="Id" DataSetColumn="ID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ordemservicoConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        *
+FROM            (SELECT        *
+                          FROM            (SELECT DISTINCT *
+                                                    FROM            (SELECT        os.Id, t .Status_Id AS statusos, os.OSN, status.Nome, totalservico.DataLimite, os.DataPrevista, t .dataAlteracao, 
+                                                                                                        os.Prioridade_Id
+                                                                              FROM            os INNER JOIN
+                                                                                                        statusos AS t ON os.Id = t .OS_Id INNER JOIN
+                                                                                                        status ON t .Status_Id = status.Id INNER JOIN
+                                                                                                        totalservico ON os.Id = totalservico.OS_id
+                                                                              ORDER BY os.Id DESC) SelecionaBase
+                                                    ORDER BY `SelecionaBase`.`DataAlteracao` DESC) agrupaOS
+                          GROUP BY agrupaOS.ID) compara
+WHERE        compara.statusos = 1 AND compara.Prioridade_Id &lt;&gt; 1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ordemservicoConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillDesenvolvimento" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDesenvolvimento" GeneratorSourceName="FillDesenvolvimento" GetMethodModifier="Public" GetMethodName="GetDesenvolvimento" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDesenvolvimento" UserSourceName="FillDesenvolvimento">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        *
+FROM            (SELECT        *
+                          FROM            (SELECT DISTINCT *
+                                                    FROM            (SELECT        os.Id, t .Status_Id AS statusos, os.OSN, status.Nome, totalservico.DataLimite, os.DataPrevista, t .dataAlteracao, 
+                                                                                                        os.Prioridade_Id
+                                                                              FROM            os INNER JOIN
+                                                                                                        statusos AS t ON os.Id = t .OS_Id INNER JOIN
+                                                                                                        status ON t .Status_Id = status.Id INNER JOIN
+                                                                                                        totalservico ON os.Id = totalservico.OS_id
+                                                                              ORDER BY os.Id DESC) SelecionaBase
+                                                    ORDER BY `SelecionaBase`.`DataAlteracao` DESC) agrupaOS
+                          GROUP BY agrupaOS.ID) compara
+WHERE         compara.DataLimite &lt; (Select CURRENT_DATE()) And compara.statusos &gt;=5 and compara.statusos&lt;=6</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ordemservicoConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillEstimativa" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetEstimativa" GeneratorSourceName="FillEstimativa" GetMethodModifier="Public" GetMethodName="GetEstimativa" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetEstimativa" UserSourceName="FillEstimativa">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        *
+FROM            (SELECT        *
+                          FROM            (SELECT DISTINCT *
+                                                    FROM            (SELECT        os.Id, t .Status_Id AS statusos, os.OSN, status.Nome, totalservico.DataLimite, os.DataPrevista, t .dataAlteracao, 
+                                                                                                        os.Prioridade_Id
+                                                                              FROM            os INNER JOIN
+                                                                                                        statusos AS t ON os.Id = t .OS_Id INNER JOIN
+                                                                                                        status ON t .Status_Id = status.Id INNER JOIN
+                                                                                                        totalservico ON os.Id = totalservico.OS_id
+                                                                              ORDER BY os.Id DESC) SelecionaBase
+                                                    ORDER BY `SelecionaBase`.`DataAlteracao` DESC) agrupaOS
+                          GROUP BY agrupaOS.ID) compara
+WHERE        compara.statusos = 2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OS__Ativas_Atrasadas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OS__Ativas_Atrasadas" msprop:Generator_UserDSName="OS__Ativas_Atrasadas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Consulta_UltimoStatus" msprop:Generator_TableClassName="Consulta_UltimoStatusDataTable" msprop:Generator_TableVarName="tableConsulta_UltimoStatus" msprop:Generator_RowChangedName="Consulta_UltimoStatusRowChanged" msprop:Generator_TablePropName="Consulta_UltimoStatus" msprop:Generator_RowDeletingName="Consulta_UltimoStatusRowDeleting" msprop:Generator_RowChangingName="Consulta_UltimoStatusRowChanging" msprop:Generator_RowEvHandlerName="Consulta_UltimoStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="Consulta_UltimoStatusRowDeleted" msprop:Generator_RowClassName="Consulta_UltimoStatusRow" msprop:Generator_UserTableName="Consulta_UltimoStatus" msprop:Generator_RowEvArgName="Consulta_UltimoStatusRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OSN" msprop:Generator_ColumnVarNameInTable="columnOSN" msprop:Generator_ColumnPropNameInRow="OSN" msprop:Generator_ColumnPropNameInTable="OSNColumn" msprop:Generator_UserColumnName="OSN" type="xs:string" />
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" type="xs:string" />
+              <xs:element name="DataLimite" msprop:Generator_ColumnVarNameInTable="columnDataLimite" msprop:Generator_ColumnPropNameInRow="DataLimite" msprop:Generator_ColumnPropNameInTable="DataLimiteColumn" msprop:Generator_UserColumnName="DataLimite" type="xs:dateTime" />
+              <xs:element name="DataPrevista" msprop:Generator_ColumnVarNameInTable="columnDataPrevista" msprop:Generator_ColumnPropNameInRow="DataPrevista" msprop:Generator_ColumnPropNameInTable="DataPrevistaColumn" msprop:Generator_UserColumnName="DataPrevista" type="xs:dateTime" />
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

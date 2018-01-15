@@ -78,6 +78,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\OS_ Ativas_Atrasadas.cs">
+      <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD\OS_ Ativas_Atrasadas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\OSController.cs" />
     <Compile Include="Controller\PrioridadeController.cs" />
@@ -357,6 +365,17 @@
     <EmbeddedResource Include="View\Consulta\Consulta_OS.resx">
       <DependentUpon>Consulta_OS.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BD\OS_ Ativas_Atrasadas.xsc">
+      <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
+    </None>
+    <None Include="BD\OS_ Ativas_Atrasadas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OS_ Ativas_Atrasadas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BD\OS_ Ativas_Atrasadas.xss">
+      <DependentUpon>OS_ Ativas_Atrasadas.xsd</DependentUpon>
+    </None>
     <None Include="Documentos\Ordem de Serviço PAPA.docx" />
     <None Include="BD\FuncionarioSet.xsc">
       <DependentUpon>FuncionarioSet.xsd</DependentUpon>

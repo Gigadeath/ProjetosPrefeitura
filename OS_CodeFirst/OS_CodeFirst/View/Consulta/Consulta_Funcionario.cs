@@ -53,6 +53,7 @@ namespace OS_CodeFirst.View
                 if (mtxtRF.Text == null && txtNome.Text == null && txtSetor == null)
                 {
                     funcionarioBindingSource.Filter = "";
+                    
 
                 }
                 else if (mtxtRF.Text != null || txtNome.Text != null || txtSetor.Text != null)

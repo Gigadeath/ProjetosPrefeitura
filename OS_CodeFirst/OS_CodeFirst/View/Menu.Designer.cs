@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroAlteraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,10 +47,20 @@
             this.tipoDeServiçoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusDaOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregaProdamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreAjudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geraçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oSToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreAjudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlOS = new System.Windows.Forms.Panel();
+            this.StatusDaOs = new OS_CodeFirst.BD.OS__Ativas_Atrasadas();
+            this.oS__Ativas_Atrasadas = new OS_CodeFirst.BD.OS__Ativas_Atrasadas();
+            this.consulta_UltimoStatusTableAdapter = new OS_CodeFirst.BD.OS__Ativas_AtrasadasTableAdapters.Consulta_UltimoStatusTableAdapter();
+            this.OsAtivasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordemservicoDataSet1 = new OS_CodeFirst.BD.ordemservicoDataSet();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StatusDaOs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oS__Ativas_Atrasadas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OsAtivasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -192,13 +203,6 @@
             this.entregaProdamToolStripMenuItem.Text = "Entrega Prodam";
             this.entregaProdamToolStripMenuItem.Click += new System.EventHandler(this.entregaProdamToolStripMenuItem_Click);
             // 
-            // sobreAjudaToolStripMenuItem
-            // 
-            this.sobreAjudaToolStripMenuItem.Name = "sobreAjudaToolStripMenuItem";
-            this.sobreAjudaToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.sobreAjudaToolStripMenuItem.Text = "Sobre/Ajuda";
-            this.sobreAjudaToolStripMenuItem.Click += new System.EventHandler(this.sobreAjudaToolStripMenuItem_Click);
-            // 
             // geraçãoToolStripMenuItem
             // 
             this.geraçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -211,21 +215,67 @@
             // oSToolStripMenuItem1
             // 
             this.oSToolStripMenuItem1.Name = "oSToolStripMenuItem1";
-            this.oSToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.oSToolStripMenuItem1.Size = new System.Drawing.Size(89, 22);
             this.oSToolStripMenuItem1.Text = "OS";
             this.oSToolStripMenuItem1.Click += new System.EventHandler(this.oSToolStripMenuItem1_Click);
+            // 
+            // sobreAjudaToolStripMenuItem
+            // 
+            this.sobreAjudaToolStripMenuItem.Name = "sobreAjudaToolStripMenuItem";
+            this.sobreAjudaToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.sobreAjudaToolStripMenuItem.Text = "Sobre/Ajuda";
+            this.sobreAjudaToolStripMenuItem.Click += new System.EventHandler(this.sobreAjudaToolStripMenuItem_Click);
+            // 
+            // pnlOS
+            // 
+            this.pnlOS.AutoScroll = true;
+            this.pnlOS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlOS.Location = new System.Drawing.Point(548, 27);
+            this.pnlOS.Name = "pnlOS";
+            this.pnlOS.Size = new System.Drawing.Size(200, 359);
+            this.pnlOS.TabIndex = 1;
+            this.pnlOS.AutoSizeChanged += new System.EventHandler(this.pnlOS_AutoSizeChanged);
+            // 
+            // StatusDaOs
+            // 
+            this.StatusDaOs.DataSetName = "OS__Ativas_Atrasadas";
+            this.StatusDaOs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // oS__Ativas_Atrasadas
+            // 
+            this.oS__Ativas_Atrasadas.DataSetName = "OS__Ativas_Atrasadas";
+            this.oS__Ativas_Atrasadas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // consulta_UltimoStatusTableAdapter
+            // 
+            this.consulta_UltimoStatusTableAdapter.ClearBeforeFill = true;
+            // 
+            // OsAtivasBindingSource
+            // 
+            this.OsAtivasBindingSource.DataMember = "Consulta_UltimoStatus";
+            this.OsAtivasBindingSource.DataSource = this.StatusDaOs;
+            // 
+            // ordemservicoDataSet1
+            // 
+            this.ordemservicoDataSet1.DataSetName = "ordemservicoDataSet";
+            this.ordemservicoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // FrmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 388);
+            this.Controls.Add(this.pnlOS);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmInicial";
             this.Text = "Sistema de Gerenciamento de Ordens de Serviço";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StatusDaOs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oS__Ativas_Atrasadas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OsAtivasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordemservicoDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +303,12 @@
         private System.Windows.Forms.ToolStripMenuItem entregaProdamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geraçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oSToolStripMenuItem1;
+        private System.Windows.Forms.Panel pnlOS;
+        private BD.OS__Ativas_Atrasadas StatusDaOs;
+        private BD.OS__Ativas_Atrasadas oS__Ativas_Atrasadas;
+        private BD.OS__Ativas_AtrasadasTableAdapters.Consulta_UltimoStatusTableAdapter consulta_UltimoStatusTableAdapter;
+        private System.Windows.Forms.BindingSource OsAtivasBindingSource;
+        private BD.ordemservicoDataSet ordemservicoDataSet1;
     }
 }
 

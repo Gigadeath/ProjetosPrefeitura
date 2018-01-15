@@ -156,5 +156,25 @@ namespace OS_CodeFirst.Controller
                 MessageBox.Show("Erro: " + ex);
             }
         }
+        public List<StatusOS> verificaEstimativa()
+        {
+
+            var query = db.StatusOS.Where(x => x.Status_Id == 2).ToList();
+            return query;
+            
+        }
+
+        public int ContaOS(int os)
+        {
+            var query = db.StatusOS.Where(x => x.Status_Id == 2 && x.OS_Id==os).Count();
+            return query;
+        }
+
+        public TimeSpan  GetDataAtt(int os)
+        {
+            var query = db.StatusOS.Where(x => x.OS_Id == os && x.Status_Id == 2).First();
+            var Resultado = DateTime.Now - query.dataAlteracao;
+            return Resultado;
+        }
     }
 }
